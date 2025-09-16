@@ -1,0 +1,45 @@
+\documentclass[notitlepage]
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amssymb}
+\usepackage[magyar]{babel}
+\usepackage[T1]{fontenc}
+
+\title{Algoritmikus Játékelmélet}
+\author{Ádám Gutbrod, Dorottya Ács}
+\date{2025}
+\begin{document}
+
+
+
+
+\chapter [Kombinatorikus játék, éles és betli játék]{Kombinatorikus játék fogalma, éles játék, betli játék, nyerő stratégia. Irányított gráf magja, mag egyértelműsége DAG-ban. Játékok, ill. pozíciók típusa}
+
+
+{Kombinatorikus játék fogalma}
+
+Def.: Kombinatorikus játék: $ J=(G,N_W,N_L,N_T,V_0) $, ahol $ G, DAG, N_W,L,T$ nyelők partíciója, $v_0 \in V(G)$ kiinduló állapot \\
+
+{Éles játék}
+Éles játék: $N_L \cup N_T=\varnothing$
+
+Betli játék: $N_W \cup N_T = \varnothing$ \\
+Megf.: Ha $N_T = \varnothing \Rightarrow \forall$ kombinatorikai játék v.vhető éles játékra.
+
+Biz.: Bevezetünk egy extra csúcsot és $\forall N_L$-beli csúcsból 1-l ir. élt ide \\
+
+Tétel: Tetszőleges éles kombinatorikus játékban $\forall$ csúcshoz egyértelműen eldönthető, hogy I vagy II típusú.
+\begin{itemize}
+    \item I-es típusú csúcsból indulva a kezdő garantálni tudja a győzelmet
+    \item II-es típusú csúcsból indulva a másodiknak lépő játékos tudja garantálni azt
+\end{itemize}
+
+Biz.: Fordított topologikus sorrendben meghatározzuk $\forall$ csúcs típusát
+$v_i típusa$ ...
+\begin{itemize}
+    \item II-es típusú, ha $\nexists v_iv_j \in E(G)$, amire $v_j$ típusa II-es
+    \item  I-es, ha $\exists v_iv_j \in E(G)$, amire $v_j$ II-es
+\end{itemize}
+
+Megfigyelés: 
+
+\end{document}

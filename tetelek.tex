@@ -1,0 +1,188 @@
+% !TeX spellcheck = hu_HU
+\documentclass[a4paper,12pt]{article}
+
+% Magyar nyelvi beállítások
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel}
+
+% Szebb betűtípus
+\usepackage{lmodern}
+
+% Matematika
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+
+% Oldalmargók
+\usepackage[margin=2.5cm]{geometry}
+
+% Színes dobozok definíciókhoz, tételekhez stb.
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+
+% Tételstílusok
+%no counter / number within=section
+\newtcbtheorem[no counter]{definition}{Def.}%
+{colback=blue!5,colframe=blue!50!black,fonttitle=\bfseries}{def}
+
+\newtcbtheorem[no counter]{theorem}{Tétel}%
+{colback=green!5,colframe=green!50!black,fonttitle=\bfseries}{th}
+
+\newtcbtheorem[no counter]{example}{Példa}%
+{colback=yellow!10,colframe=yellow!50!black,fonttitle=\bfseries}{ex}
+
+\newtcbtheorem[no counter]{remark}{Megjegyzés}%
+{colback=gray!10,colframe=gray!50!black,fonttitle=\bfseries}{rem}
+
+\newtcbtheorem[no counter]{observation}{Megfigyelés}%
+{colback=orange!5, colframe=orange!80!black, fonttitle=\bfseries}{obs}
+
+% Fejezetcímekhez kicsit szebb stílus
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection.}{0.5em}{}
+
+\begin{document}
+
+\title{Algoritmikus játékelmélet}
+\author{Ács Dorottya, Gutbrod Ádám}
+\date{2025}
+\maketitle
+
+\tableofcontents
+\newpage
+%Kombinatorikus játék fogalma, éles játék, betli játék, nyerő stratégia. Irányított gráf magja, mag egyértelműsége DAG-ban. Játékok, ill. pozíciók típusa.
+\section{Tétel}
+\begin{definition}{Kombinatorikus játék}{}
+$ J=(G,N_W,N_L,N_T,V_0) $, ahol $ G DAG, N_W,N_L,N_T$ nyelők partíciója és $v_0 \in V(G)$ kiinduló állapot
+\end{definition}
+Tulajdonságai:
+\begin{itemize}
+    \item Kétszemélyes és szekvenciális: a két játékos felváltva lép
+    \item A játéknak kétféle kimenetele van: vagy az egyik játékos nyer és a másik veszt, vagy pedig döntetlen.
+\end{itemize}
+Példák:
+\begin{itemize}
+    \item Mérgezett csoki
+    \item Sakk
+    \item Nim
+\end{itemize}
+
+\begin{definition}{Éles játék}{}
+Éles játék: $N_L \cup N_T=\varnothing$
+\end{definition}
+
+\begin{definition}{Betli játék}{}
+Betli játék: $N_W \cup N_T = \varnothing$
+\end{definition}
+
+\begin{observation}{}
+Ha $N_T = \varnothing \Rightarrow \forall$ kombinatorikai játék v.vhető éles játékra.
+\end{observation}
+
+Biz.: Bevezetünk egy extra csúcsot és $\forall N_L$-beli csúcsból 1-l ir. élt ide \\
+
+\begin{theorem}{Gráf csúcsok típusa}
+    Tetszőleges éles kombinatorikus játékban $\forall$ csúcshoz egyértelműen eldönthető, hogy I vagy II típusú.
+\end{theorem}
+
+\begin{itemize}
+    \item I-es típusú csúcsból indulva a kezdő garantálni tudja a győzelmet
+    \item II-es típusú csúcsból indulva a másodiknak lépő játékos tudja garantálni azt
+\end{itemize}
+
+Biz.: Fordított topologikus sorrendben meghatározzuk $\forall$ csúcs típusát
+$v_i típusa$ ...
+\begin{itemize}
+    \item II-es típusú, ha $\nexists v_iv_j \in E(G)$, amire $v_j$ típusa II-es
+    \item  I-es, ha $\exists v_iv_j \in E(G)$, amire $v_j$ II-es
+\end{itemize}
+
+\begin{observation}{}
+    II-es típusú csúcsok halmaza:
+    \begin{itemize}
+        \item független halmaz
+        \item $\forall$ nem II-esből vezet él I-esbe
+    \end{itemize}
+\end{observation}
+
+\begin{definition}{Stratégia}
+    Stratégia alatt egy V → V függvényt értünk, amely minden V -beli helyzethez, amelyik nem nyelő, hozzárendeli az egyik ki-szomszédját: vagyis tetszőleges álláshoz hozzárendelünk egyet a lehetséges lépések közül. Egy játékos követi az adott stratégiát, ha mindig a stratégia által kijelölt pozícióba lép. 
+\end{definition}
+
+\begin{definition}{Nyerő stratégia}
+    Nyerő egy stratégia, ha őt követve mindig nyerni tudunk, akármit is lépjen közben a másik játékos. A következő tétel a kombinatorikus játékelmélet alaptételének tekinthető. A bizonyítás módszere a bevezető gondolatmenet általánosítása, a visszafejtés (angolul backward tracking). 
+\end{definition}
+
+\begin{definition}{Mag}
+    G irányított gráf magja a csúcsok olyanf ftn. M részhalmaza, amibe $\forall$ M-en kívüli csúcsból vezet él
+\end{definition}
+Köv.: G DAG $\Rightarrow$ G-ben $\nexists$ mag
+
+\begin{definition}{Játék típusa}
+    A $J = (v, N_W, v_0)$ éles játék típusa $v_0$
+\end{definition}
+
+
+
+\newpage
+%Játékok összege, az összeg típusa. Grundy-számozás. NIM-összeadás és tulajdonságai.
+\section{Tétel}
+\begin{definition}{Játékok összege}
+    A $J_1 + J_2$ játék
+\end{definition}
+
+\begin{definition}{Grundy-számozás}
+    G ir. gráf $g: V(G) \rightarrow \mathbb{N} $
+\end{definition}
+
+\begin{theorem}{}{}
+    $J_1 + J_2$-ben II-es típusú $\Rightarrow g_1(V_1) = g_2(V_2)$
+\end{theorem}
+
+\begin{theorem}{}{}
+    $g_1(v_1v_2) = g_1(v_1)\oplus g_2(v_2)$
+\end{theorem}
+
+\begin{definition}{NIM-összeadás}{}
+    $a \oplus b = c$ a NIM-összeg, ahol ezt úgy kapjuk, hogy a és b 2es számrendszerbeli alakját írásban összeadjuk, de a maradékot elfelejtjük 
+\end{definition}
+
+\begin{observation}{NIM-összeadás tulajdonságai}{}
+    \begin{itemize}
+        \item $a\oplus b = b\oplus a$
+        \item $(a \oplus b ) \oplus c = a \oplus (b \oplus c)$
+        \item $a \oplus a = 0$
+        \item $a \oplus b = a \oplus b'$
+        \item $c < a \oplus b \Rightarrow \exists a' < a: c =a' \oplus b$
+    \end{itemize}
+\end{observation}
+
+\newpage
+%Sprague–Grundy-tétel, Bouton-tétel. Játékok izomorfiája és ekvivalenciája
+\section{Tétel}
+
+\newpage
+\section{Források}
+\begin{itemize}
+    \item Dr. Fleiner Tamás és Nemkin Viktória előadásán elhangzottak
+    %\item Algoritmikus játékelmélet szóbeli tematika 2024 \url(https://www.cs.bme.hu/%7Efleiner/alje2024/tematika.pdf)
+    %\item Végh László, Király Tamás, Pap Júlia: Játékelmélet jegyzet (http://tkiraly.web.elte.hu/students/jatekelmelet_jegyzet.pdf)
+    %\item Bernhard von Stengel: Game Theory Basics (http://www.maths.lse.ac.uk/personal/stengel/lectnotes1-7.pdf)
+    
+\end{itemize}
+
+
+
+\begin{theorem}{Halmazegyenlőség}{}
+Két halmaz pontosan akkor egyenlő, ha ugyanazokat az elemeket tartalmazzák.
+\end{theorem}
+
+\begin{example}{Egyszerű példa}{}
+A $\{1,2,3\}$ és $\{3,2,1\}$ halmazok egyenlőek.
+\end{example}
+
+\begin{remark}{Megjegyzés}{}
+A sorrend nem számít a halmazok esetén.
+\end{remark}
+
+\end{document}

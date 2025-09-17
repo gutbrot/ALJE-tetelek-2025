@@ -75,13 +75,12 @@ Példák:
 Betli játék: $N_W \cup N_T = \varnothing$
 \end{definition}
 
-\begin{observation}{}
+\begin{observation}{}{}
 Ha $N_T = \varnothing \Rightarrow \forall$ kombinatorikai játék v.vhető éles játékra.
 \end{observation}
 
 Biz.: Bevezetünk egy extra csúcsot és $\forall N_L$-beli csúcsból 1-l ir. élt ide \\
-
-\begin{theorem}{Gráf csúcsok típusa}
+\begin{theorem}{Gráf csúcsok típusa}{}
     Tetszőleges éles kombinatorikus játékban $\forall$ csúcshoz egyértelműen eldönthető, hogy I vagy II típusú.
 \end{theorem}
 
@@ -90,36 +89,38 @@ Biz.: Bevezetünk egy extra csúcsot és $\forall N_L$-beli csúcsból 1-l ir. �
     \item II-es típusú csúcsból indulva a másodiknak lépő játékos tudja garantálni azt
 \end{itemize}
 
-Biz.: Fordított topologikus sorrendben meghatározzuk $\forall$ csúcs típusát
+Biz.: Fordított topologikus sorrendben meghatározzuk $\forall$ csúcs típusát,
 $v_i típusa$ ...
 \begin{itemize}
     \item II-es típusú, ha $\nexists v_iv_j \in E(G)$, amire $v_j$ típusa II-es
-    \item  I-es, ha $\exists v_iv_j \in E(G)$, amire $v_j$ II-es
+    \item  I-es, ha $\exists v_iv_j \in E(G)$, amire $v_j$ II-es\\
+    (És ez a két eset egymás komplementere.)
 \end{itemize}
 
-\begin{observation}{}
+
+\begin{observation}{}{}
     II-es típusú csúcsok halmaza:
     \begin{itemize}
-        \item független halmaz
-        \item $\forall$ nem II-esből vezet él I-esbe
+        \item független 
+        \item $\forall$ nem II-esből vezet él II-esbe
     \end{itemize}
 \end{observation}
 
-\begin{definition}{Stratégia}
-    Stratégia alatt egy V → V függvényt értünk, amely minden V -beli helyzethez, amelyik nem nyelő, hozzárendeli az egyik ki-szomszédját: vagyis tetszőleges álláshoz hozzárendelünk egyet a lehetséges lépések közül. Egy játékos követi az adott stratégiát, ha mindig a stratégia által kijelölt pozícióba lép. 
+\begin{definition}{Stratégia}{}
+    Stratégia alatt egy V → V függvényt értünk, amely minden V -beli helyzethez amelyik nem nyelő, hozzárendeli az egyik ki-szomszédját: vagyis tetszőleges álláshoz hozzárendelünk egyet a lehetséges lépések közül. Egy játékos követi az adott stratégiát, ha mindig a stratégia által kijelölt pozícióba lép. 
 \end{definition}
 
-\begin{definition}{Nyerő stratégia}
-    Nyerő egy stratégia, ha őt követve mindig nyerni tudunk, akármit is lépjen közben a másik játékos. A következő tétel a kombinatorikus játékelmélet alaptételének tekinthető. A bizonyítás módszere a bevezető gondolatmenet általánosítása, a visszafejtés (angolul backward tracking). 
+\begin{definition}{Nyerő stratégia}{}
+    Nyerő egy stratégia, ha őt követve mindig nyerni tudunk, akármit is lépjen közben a másik játékos.
 \end{definition}
 
-\begin{definition}{Mag}
-    G irányított gráf magja a csúcsok olyanf ftn. M részhalmaza, amibe $\forall$ M-en kívüli csúcsból vezet él
+\begin{definition}{Mag}{}
+    G irányított gráf magja a csúcsok olyan független M részhalmaza, amikbe $\forall$ M-en kívüli csúcsból vezet él.
 \end{definition}
 Köv.: G DAG $\Rightarrow$ G-ben $\nexists$ mag
 
-\begin{definition}{Játék típusa}
-    A $J = (v, N_W, v_0)$ éles játék típusa $v_0$
+\begin{definition}{Játék típusa}{}
+    A $J = (v, N_W, v_0)$ éles játék típusa $v_0$.
 \end{definition}
 
 
@@ -127,17 +128,22 @@ Köv.: G DAG $\Rightarrow$ G-ben $\nexists$ mag
 \newpage
 %Játékok összege, az összeg típusa. Grundy-számozás. NIM-összeadás és tulajdonságai.
 \section{Tétel}
-\begin{definition}{Játékok összege}
-    A $J_1 + J_2$ játék
+\begin{definition}{Játékok összege}{}
+    A $J_1 + J_2$ játék kimenetelét az utolsónak befejezett játék határozza meg.
 \end{definition}
 
-\begin{definition}{Grundy-számozás}
-    G ir. gráf $g: V(G) \rightarrow \mathbb{N} $
+\begin{definition}{Grundy-számozás}{}
+    G ir. gráfnak $g: V(G) \rightarrow \mathbb{N}$ Grundy-számozása, ha $g(v)=mex \{g(n): vu\in E(G)\}$ 
 \end{definition}
 
-\begin{theorem}{}{}
-    $J_1 + J_2$-ben II-es típusú $\Rightarrow g_1(V_1) = g_2(V_2)$
-\end{theorem}
+\begin{observation}{}{}
+	\begin{itemize}
+		\item $J + J\rightarrow$ II-es típusú (másolás)
+		\item $II_1 + II_2\rightarrow$ II-es típusú (mindkettőt meg tudja nyerni a 2. játékos)
+		\item $I + II\rightarrow$ I-es típusú (a kezdő az I-es játékban a nyerő stratégiája szerint lép)
+		\item $I + I\rightarrow$ nem egyértelmű...
+	\end{itemize}
+\end{observation}
 
 \begin{theorem}{}{}
     $g_1(v_1v_2) = g_1(v_1)\oplus g_2(v_2)$

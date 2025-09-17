@@ -160,6 +160,26 @@ Köv.: G DAG $\Rightarrow$ G-ben $\nexists$ mag
 \newpage
 %Sprague–Grundy-tétel, Bouton-tétel. Játékok izomorfiája és ekvivalenciája
 \section{Tétel}
+\begin{theorem}{Sprague–Grundy}{}
+	 Ha u és v $J_1 és J_"$ kombinatorikus játékokban állások, akkor $g_{J_1,J_2}(u, v) = g_{J_1}(u)\oplus g_{J_2}(v)$
+\end{theorem}
+
+\begin{theorem}{Bouton}{}
+	k-nim II-es típusú $\Leftrightarrow n_1 \oplus n_2 \oplus ... \oplus n_k = 0$, ahol $nn_1, ... n_k$ a kupacok méretei.
+\end{theorem}
+
+\begin{definition}{Játékok izomorfia}{}
+	$J = (G, N_W, N_T, N_L, v_0)$ kombinatorikus játék izomorf $J' = (G', N_W', N_T', N_L', v_0')$ kombinatorikus játékkal, ha van olyan $G~G'$ gráfizomorfia, hogy $N_W$ és $N_W'$, $N_T$ és $N_T'$, $N_L$ és $N_L'$, $v_0$ és $v_0'$ egymásnak felelnek meg.
+\end{definition}
+
+\begin{definition}{Ekvivalencia}{}
+	$J_1$ és $J_2$ kombinatorikus játék $u_0$ és $v_0$ kezdőpozíciókkal ekvivalensek, ha...
+	\begin{itemize}
+		\item $J_1 + J_2 = II$
+		\item $g_{J_1}(u_0) = g_{J_2}(v_0)$
+		\item $\forall H$ kombinatorikus játékban igaz $H + J_1 = H + J_2$ azonos típusúak
+	\end{itemize}
+\end{definition}
 
 \newpage
 \section{Források}

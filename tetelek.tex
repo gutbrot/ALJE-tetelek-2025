@@ -36,6 +36,9 @@
 \newtcbtheorem[no counter]{observation}{Megfigyelés}%
 {colback=orange!5, colframe=orange!80!black, fonttitle=\bfseries}{obs}
 
+\newtcbtheorem[no counter]{statement}{Allítás}%
+{colback=orange!5, colframe=red!80!black, fonttitle=\bfseries}{obs}
+
 % Fejezetcímekhez kicsit szebb stílus
 \usepackage{titlesec}
 \titleformat{\section}{\Large\bfseries}{\thesection.}{0.5em}{}
@@ -145,12 +148,30 @@ Köv.: G DAG $\Rightarrow$ G-ben $\nexists$ mag
 	\end{itemize}
 \end{observation}
 
+\begin{statement}{}{}
+	$G$ véges DAG $\Rightarrow G$-nek $\exists$! Grundy-számozása.
+\end{statement}
+Biz: $\exists$ topológikus sorrend, ebben visszafelé haladva egyértelműen adódik minden csúcsé.
+	
+\begin{statement}{}{}
+	Tfh. $J_1$ kezdőállapotának Grundy-száma $g_1, J_2$ kezdőállapotáé $g_2$. \\
+	$J_1 + J_2$ típusa I-es, ha $g_1 \not= g_2$, és II-es ha $g_1 = g_2$.
+\end{statement}
+Biz: 
+\begin{itemize}
+	\item Tfh. $g_1=g_2$. \\
+	Ekkor a 2. játékos nyerni tud azzal, hogy mindigy úgy lép, hogy a két állapot Grundy-száma megegyezzen.
+	\item Tfh. $g_1 \not= g_2$.  \\
+	Ekkor a kezdő nyer azzal, hogy a nagyobbik g-t a kisebbikre csökkenti.
+\end{itemize}
+
+		
 \begin{theorem}{}{}
     $g_1(v_1v_2) = g_1(v_1)\oplus g_2(v_2)$
 \end{theorem}
 
-\begin{definition}{NIM-összeadás}{}
-    $a \oplus b = c$ a NIM-összeg, ahol ezt úgy kapjuk, hogy a és b 2es számrendszerbeli alakját írásban összeadjuk, de a maradékot elfelejtjük 
+\begin{definition}{NIM-összeadás (bitenkénti XOR)}{}
+    $a \oplus b = c$ a NIM-összeadás, ahol $c$-t úgy kapjuk, hogy $a$ és $b$ 2-es számrendszerbeli alakját írásban összeadjuk, de a maradékot elfelejtjük. 
 \end{definition}
 
 \begin{observation}{NIM-összeadás tulajdonságai}{}
@@ -158,10 +179,11 @@ Köv.: G DAG $\Rightarrow$ G-ben $\nexists$ mag
         \item $a\oplus b = b\oplus a$
         \item $(a \oplus b ) \oplus c = a \oplus (b \oplus c)$
         \item $a \oplus a = 0$
-        \item $a \oplus b = a \oplus b'$
-        \item $c < a \oplus b \Rightarrow \exists a' < a: c =a' \oplus b$
+        \item $a \oplus b = a \oplus b'\Rightarrow b=b'$
+        \item $c < a \oplus b \Rightarrow \exists a' < a: c =a' \oplus b$ vagy $\exists b' < b: c =a \oplus b'$
     \end{itemize}
 \end{observation}
+Biz: \\
 
 \newpage
 %Sprague–Grundy-tétel, Bouton-tétel. Játékok izomorfiája és ekvivalenciája

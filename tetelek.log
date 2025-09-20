@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.17)  17 SEP 2025 12:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.17)  20 SEP 2025 10:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,6 +6,7 @@ entering extended mode
 (tetelek.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
+(sablon.tex
 (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
 (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
@@ -618,9 +619,9 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \titlewidth=\dimen278
 \titlewidthlast=\dimen279
 \titlewidthfirst=\dimen280
-)
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 44
-.
+))
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 2.
+
  (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -628,30 +629,23 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 tex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count327
-) (tetelek.aux
-
-LaTeX Warning: Label `def:A' multiply defined.
-
-
-LaTeX Warning: Label `def:G' multiply defined.
-
-)
+) (tetelek.aux)
 \openout1 = `tetelek.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -717,45 +711,43 @@ LaTeX Info: Redefining \cal on input line 497.
 LaTeX Info: Redefining \mit on input line 498.
 )
 Package babel Info: 'magyar' activates 'magyar' shorthands.
-(babel)             Reported on input line 44.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-9.
+(babel)             Reported on input line 2.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
+.
 
 (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-9.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
+.
 
 (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-49.
+7.
 
 (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-49.
+7.
 
 (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 49.
+(Font)              <14.4> on input line 7.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 49.
+(Font)              <10> on input line 7.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 49.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 49.
-
+(Font)              <7> on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
 
 (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 49.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
 
 (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -772,23 +764,23 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/gutbr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/gutb
 r/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 56.
+(Font)              <12> on input line 14.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 56.
+(Font)              <8> on input line 14.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 56.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 6
-0.
+(Font)              <6> on input line 14.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+8.
 
 (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
+Underfull \hbox (badness 10000) in paragraph at lines 40--43
 
  []
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 94.
+LaTeX Warning: Command \' invalid in math mode on input line 51.
 
 
 
@@ -800,31 +792,36 @@ c}{C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C
 [3]
 
 [4]
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
-LaTeX Warning: Command \' invalid in math mode on input line 164.
+ []
 
 
 
 [5]
 
-[6] (tetelek.aux)
+LaTeX Warning: Command \' invalid in math mode on input line 147.
+
+
+
+[6]
+
+[7]
+
+[8] (tetelek.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 19126 strings out of 468133
- 392201 string characters out of 5430712
- 785913 words of memory out of 5000000
- 47424 multiletter control sequences out of 15000+600000
+ 19137 strings out of 468133
+ 392441 string characters out of 5430712
+ 788136 words of memory out of 5000000
+ 47432 multiletter control sequences out of 15000+600000
  670595 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,6n,121p,448b,666s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 121i,6n,124p,467b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
 b><C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pf
 b><C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb
@@ -836,9 +833,9 @@ sers/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/U
 sers/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Us
 ers/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
-Output written on tetelek.pdf (6 pages, 179741 bytes).
+Output written on tetelek.pdf (8 pages, 187096 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
+ 93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

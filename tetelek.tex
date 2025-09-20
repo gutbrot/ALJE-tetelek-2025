@@ -187,36 +187,27 @@ Tegyük fel indirekt: a második játékosnak van nyerő stratégiája. Ekkor va
 
 Biz.: nincs döntetlen + stratégialopás \\
 vagyük a künöböző színű mezők közötti mezőhatárokat. Írjunk ezekbe irányított éleket. \\
-Bal felső nagy nyílból kiindulva lépek az élek mentén, elakadni nem fogok (?), önmagába visszafordulni se, mert nem létezhet 3 irányított éllel szomszédos pont, tehát valamelyik nagy nyílba fogok elérkezni. EKkor a kapott útnak egyik oldalon csupa azonos színű, a megfigyelt 2 térfélt összekötő utat kapunk.\\
-\includegraphics[width=60mm]{teszt_kep}
+Bal felső nagy nyílból kiindulva lépek az élek mentén, elakadni nem fogok, önmagába visszafordulni se, mert nem létezhet 3 irányított éllel szomszédos pont, tehát valamelyik nagy nyílba fogok elérkezni. EKkor a kapott útnak egyik oldalon csupa azonos színű, a megfigyelt 2 térfélt összekötő utat kapunk.\\
+\begin{center}
+	\includegraphics[width=90mm]{hex_biz}
+\end{center}
+
 
 \begin{theorem}{Véges amőba}{}
 	Az elsőnek van nem vesztő stratégiája
 \end{theorem}
-Biz.: 
+Biz.: indirekten tegyük fel, hogy a második játékosnak van nem vesztő stratégiája \\
+Első játékos: X, második játékos: O\\
+Játsszon az első játékos egy olyan táblán, amire ő gondolatban valamilyen (i, j) mezőre egy X-et odaképzelt. Játssza ezen a képzeletbeli táblán az első játékos a második játékos nyerő stratégiáját. Ha a második pont erre az (i, j) mezőre tesz, akkor válasszon az első egy tetszőleges másik üres mezőt és képzelje oda az X-et $\rightarrowtail$ (i', j'). \\
+A játék végén: a képzelt táblán az első nem fog veszíteni, tehát a valódin sem.
 
 \newpage
 \section{Források}
 \begin{itemize}
     \item Dr. Fleiner Tamás és Nemkin Viktória előadásán elhangzottak
-    %\item Algoritmikus játékelmélet szóbeli tematika 2024 \url(https://www.cs.bme.hu/%7Efleiner/alje2024/tematika.pdf)
-    %\item Végh László, Király Tamás, Pap Júlia: Játékelmélet jegyzet (http://tkiraly.web.elte.hu/students/jatekelmelet_jegyzet.pdf)
-    %\item Bernhard von Stengel: Game Theory Basics (http://www.maths.lse.ac.uk/personal/stengel/lectnotes1-7.pdf)
-    
+    \item Algoritmikus játékelmélet szóbeli tematika 2024 \url{https://www.cs.bme.hu/\%7Efleiner/alje2024/tematika.pdf}
+    \item Végh László, Király Tamás, Pap Júlia: Játékelmélet jegyzet \url{http://tkiraly.web.elte.hu/students/jatekelmelet_jegyzet.pdf}
+    \item Bernhard von Stengel: Game Theory Basics \url{http://www.maths.lse.ac.uk/personal/stengel/lectnotes1-7.pdf}     
 \end{itemize}
-
-
-
-\begin{theorem}{Halmazegyenlőség}{}
-Két halmaz pontosan akkor egyenlő, ha ugyanazokat az elemeket tartalmazzák.
-\end{theorem}
-
-\begin{example}{Egyszerű példa}{}
-A $\{1,2,3\}$ és $\{3,2,1\}$ halmazok egyenlőek.
-\end{example}
-
-\begin{remark}{Megjegyzés}{}
-A sorrend nem számít a halmazok esetén.
-\end{remark}
 
 \end{document}

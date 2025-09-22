@@ -8,6 +8,9 @@
 
 \tableofcontents
 \newpage
+
+
+
 %Kombinatorikus játék fogalma, éles játék, betli játék, nyerő stratégia. Irányított gráf magja, mag egyértelműsége DAG-ban. Játékok, ill. pozíciók típusa.
 \section{Tétel}
 \begin{definition}{Kombinatorikus játék}{}
@@ -122,7 +125,7 @@ Biz:
 
 		
 \begin{theorem}{}{}
-    $g_1(v_1v_2) = g_1(v_1)\oplus g_2(v_2)$
+    $g(v_1v_2) = g_1(v_1)\oplus g_2(v_2)$
 \end{theorem}
 
 \begin{definition}{NIM-összeadás (bitenkénti XOR)}{}
@@ -144,7 +147,7 @@ Biz: \\
 %Sprague–Grundy-tétel, Bouton-tétel. Játékok izomorfiája és ekvivalenciája
 \section{Tétel}
 \begin{theorem}{Sprague–Grundy}{}
-	 Ha u és v $J_1 és J_"$ kombinatorikus játékokban állások, akkor $g_{J_1,J_2}(u, v) = g_{J_1}(u)\oplus g_{J_2}(v)$
+	 Ha u és v $J_1 és J_2$ kombinatorikus játékokban állások, akkor $g_{J_1,J_2}(u, v) = g_{J_1}(u) \oplus g_{J_2}(v)$
 \end{theorem}
 
 \begin{theorem}{Bouton}{}
@@ -152,7 +155,7 @@ Biz: \\
 \end{theorem}
 
 \begin{definition}{Játékok izomorfia}{}
-	$J = (G, N_W, N_T, N_L, v_0)$ kombinatorikus játék izomorf $J' = (G', N_W', N_T', N_L', v_0')$ kombinatorikus játékkal, ha van olyan $G~G'$ gráfizomorfia, hogy $N_W$ és $N_W'$, $N_T$ és $N_T'$, $N_L$ és $N_L'$, $v_0$ és $v_0'$ egymásnak felelnek meg.
+	$J = (G, N_W, N_T, N_L, v_0)$ kombinatorikus játék izomorf $J' = (G', N_W', N_T', N_L', v_0')$ kombinatorikus játékkal, ha van olyan $G \cong G'$ gráfizomorfia, hogy $N_W$ és $N_W'$, $N_T$ és $N_T'$, $N_L$ és $N_L'$, $v_0$ és $v_0'$ egymásnak felelnek meg.
 \end{definition}
 
 \begin{definition}{Ekvivalencia}{}
@@ -160,7 +163,7 @@ Biz: \\
 	\begin{itemize}
 		\item $J_1 + J_2 = II$
 		\item $g_{J_1}(u_0) = g_{J_2}(v_0)$
-		\item $\forall H$ kombinatorikus játékban igaz $H + J_1 = H + J_2$ azonos típusúak
+		\item $\forall H$ kombinatorikus játékban igaz $H + J_1$ és $H + J_2$ azonos típusúak
 	\end{itemize}
 \end{definition}
 
@@ -186,8 +189,8 @@ Tegyük fel indirekt: a második játékosnak van nyerő stratégiája. Ekkor va
 \end{theorem}
 
 Biz.: nincs döntetlen + stratégialopás \\
-vagyük a künöböző színű mezők közötti mezőhatárokat. Írjunk ezekbe irányított éleket. \\
-Bal felső nagy nyílból kiindulva lépek az élek mentén, elakadni nem fogok, önmagába visszafordulni se, mert nem létezhet 3 irányított éllel szomszédos pont, tehát valamelyik nagy nyílba fogok elérkezni. EKkor a kapott útnak egyik oldalon csupa azonos színű, a megfigyelt 2 térfélt összekötő utat kapunk.\\
+Vegyük a künöböző színű mezők közötti mezőhatárokat. Írjunk ezekbe irányított éleket. \\
+Bal felső nagy nyílból kiindulva lépek az élek mentén, elakadni nem fogok, önmagába visszafordulni se, mert nem létezhet 3 irányított éllel szomszédos pont, tehát valamelyik nagy nyílba fogok elérkezni. Ekkor a kapott útnak egyik oldalon csupa azonos színű, a megfigyelt 2 térfélt összekötő utat kapunk.\\
 \begin{center}
 	\includegraphics[width=90mm]{hex_biz}
 \end{center}
@@ -200,6 +203,17 @@ Biz.: indirekten tegyük fel, hogy a második játékosnak van nem vesztő strat
 Első játékos: X, második játékos: O\\
 Játsszon az első játékos egy olyan táblán, amire ő gondolatban valamilyen (i, j) mezőre egy X-et odaképzelt. Játssza ezen a képzeletbeli táblán az első játékos a második játékos nyerő stratégiáját. Ha a második pont erre az (i, j) mezőre tesz, akkor válasszon az első egy tetszőleges másik üres mezőt és képzelje oda az X-et $\rightarrowtail$ (i', j'). \\
 A játék végén: a képzelt táblán az első nem fog veszíteni, tehát a valódin sem.
+
+\newpage
+\section{Tematika}
+\begin{enumerate}
+	\item Kombinatorikus játék fogalma, éles játék, betli játék, nyerő stratégia. Irányított gráf magja, mag
+	egyértelműsége DAG-ban. Játékok, ill. pozíciók típusa.
+	\item Játékok összege, az összeg típusa. Grundy-számozás. NIM-összeadás és tulajdonságai.
+	\item Sprague–Grundy-tétel
+	, Bouton-tétel. Játékok izomorfiája és ekvivalenciája.
+	\item Stratégialopás. Mérgezett csoki, amőba, hex.
+\end{enumerate}
 
 \newpage
 \section{Források}

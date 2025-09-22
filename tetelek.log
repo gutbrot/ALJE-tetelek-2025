@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.17)  20 SEP 2025 13:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.17)  22 SEP 2025 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -901,23 +901,23 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/gutbr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/gutb
 r/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 14.
+(Font)              <12> on input line 17.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 14.
+(Font)              <8> on input line 17.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 14.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-8.
+(Font)              <6> on input line 17.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+1.
 
 (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 40--43
+Underfull \hbox (badness 10000) in paragraph at lines 43--46
 
  []
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 51.
+LaTeX Warning: Command \' invalid in math mode on input line 54.
 
 
 
@@ -929,7 +929,7 @@ c}{C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C
 [3]
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
 
@@ -937,59 +937,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
 [5]
 
-LaTeX Warning: Command \' invalid in math mode on input line 147.
+LaTeX Warning: Command \' invalid in math mode on input line 150.
 
 
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 188--191
+Underfull \hbox (badness 10000) in paragraph at lines 191--194
 
  []
 
-<hex_biz.png, id=68, 701.62125pt x 406.51875pt>
+<hex_biz.png, id=73, 701.62125pt x 406.51875pt>
 File: hex_biz.png Graphic file (type png)
 <use hex_biz.png>
-Package pdftex.def Info: hex_biz.png  used on input line 192.
+Package pdftex.def Info: hex_biz.png  used on input line 195.
 (pdftex.def)             Requested size: 256.0748pt x 148.36879pt.
 
 
 [7 <./hex_biz.png>]
 
 [8]
+
+[9]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-08.
+22.
  (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (22.49681pt too wide) in paragraph at lines 208--209
+Overfull \hbox (22.49681pt too wide) in paragraph at lines 222--223
 []\T1/lmr/m/n/12 Algoritmikus já-ték-el-mé-let szó-be-li te-ma-ti-ka 2024 [][]$
 \T1/lmtt/m/n/12 https : / / www . cs . bme . hu / %7Efleiner /
  []
 
 
-Overfull \hbox (19.88739pt too wide) in paragraph at lines 210--211
+Overfull \hbox (19.88739pt too wide) in paragraph at lines 224--225
 []\T1/lmr/m/n/12 Bernhard von Sten-gel: Game The-ory Ba-sics [][]$\T1/lmtt/m/n/
 12 http : / / www . maths . lse . ac . uk / personal /
  []
 
 
 
-[9] (tetelek.aux)
+[10] (tetelek.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
  ***********
 Package rerunfilecheck Info: File `tetelek.out' has not changed.
-(rerunfilecheck)             Checksum: 57BC53190DFA02FD53056C2368200C04;370.
+(rerunfilecheck)             Checksum: B945362244CA46BAE9CAA2DD4D603017;453.
  ) 
 Here is how much of TeX's memory you used:
- 25797 strings out of 468133
- 497076 string characters out of 5430712
- 891170 words of memory out of 5000000
- 53985 multiletter control sequences out of 15000+600000
+ 25802 strings out of 468133
+ 497139 string characters out of 5430712
+ 891172 words of memory out of 5000000
+ 53984 multiletter control sequences out of 15000+600000
  670913 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 121i,6n,124p,546b,649s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 121i,10n,124p,546b,649s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
 b><C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pf
 b><C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb
@@ -1003,9 +1005,9 @@ ers/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Us
 ers/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msa
 m10.pfb><C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb>
-Output written on tetelek.pdf (9 pages, 257494 bytes).
+Output written on tetelek.pdf (10 pages, 259786 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
- 15 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 171 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

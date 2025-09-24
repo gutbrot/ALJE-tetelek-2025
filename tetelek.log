@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.17)  22 SEP 2025 15:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.17)  24 SEP 2025 16:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -946,7 +946,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--194
 
  []
 
-<hex_biz.png, id=73, 701.62125pt x 406.51875pt>
+<hex_biz.png, id=83, 701.62125pt x 406.51875pt>
 File: hex_biz.png Graphic file (type png)
 <use hex_biz.png>
 Package pdftex.def Info: hex_biz.png  used on input line 195.
@@ -957,42 +957,50 @@ Package pdftex.def Info: hex_biz.png  used on input line 195.
 
 [8]
 
-[9]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-22.
+[9{C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.en
+c}]
+
+[10]
+
+[11]
+
+[12]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
+17.
  (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (22.49681pt too wide) in paragraph at lines 222--223
+Overfull \hbox (22.49681pt too wide) in paragraph at lines 317--318
 []\T1/lmr/m/n/12 Algoritmikus já-ték-el-mé-let szó-be-li te-ma-ti-ka 2024 [][]$
 \T1/lmtt/m/n/12 https : / / www . cs . bme . hu / %7Efleiner /
  []
 
 
-Overfull \hbox (19.88739pt too wide) in paragraph at lines 224--225
+Overfull \hbox (19.88739pt too wide) in paragraph at lines 319--320
 []\T1/lmr/m/n/12 Bernhard von Sten-gel: Game The-ory Ba-sics [][]$\T1/lmtt/m/n/
 12 http : / / www . maths . lse . ac . uk / personal /
  []
 
 
 
-[10] (tetelek.aux)
+[13] (tetelek.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
  ***********
 Package rerunfilecheck Info: File `tetelek.out' has not changed.
-(rerunfilecheck)             Checksum: B945362244CA46BAE9CAA2DD4D603017;453.
+(rerunfilecheck)             Checksum: 80147C281A44266635B4CC834C9F6102;595.
  ) 
 Here is how much of TeX's memory you used:
- 25802 strings out of 468133
- 497139 string characters out of 5430712
- 891172 words of memory out of 5000000
- 53984 multiletter control sequences out of 15000+600000
+ 25822 strings out of 468133
+ 497411 string characters out of 5430712
+ 893172 words of memory out of 5000000
+ 53998 multiletter control sequences out of 15000+600000
  670913 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  121i,10n,124p,546b,649s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
+b><C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pf
 b><C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pf
 b><C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb
 ><C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb>
@@ -1005,9 +1013,9 @@ ers/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Us
 ers/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msa
 m10.pfb><C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb>
-Output written on tetelek.pdf (10 pages, 259786 bytes).
+Output written on tetelek.pdf (13 pages, 278858 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 201 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
+ 82 words of extra memory for PDF output out of 10000 (max. 10000000)
 

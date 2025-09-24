@@ -205,6 +205,101 @@ Játsszon az első játékos egy olyan táblán, amire ő gondolatban valamilyen
 A játék végén: a képzelt táblán az első nem fog veszíteni, tehát a valódin sem.
 
 \newpage
+\section{Tétel}
+\begin{definition}{Stratégiai játékok}{}
+	n játékos van $1\leq i \leq n$ esetén $S_i$ az i-edik játékos lehetséges stratégiája $S = S_1 \times S_2 \times ...  \times S_n$ stratégiaválasztások (kimenetelek) halmaza.\\
+	$u_i : S \longrightarrow \mathbb{R}$ i-edik játékos nyereség függvénye.
+\end{definition}
+
+$\forall$ stratégiai játékra teljesül
+\begin{itemize}
+	\item 1 lépéses, szinkron
+	\item teljes információs ($\forall$ játékos tisztában van  $\forall$ másik játékos stratégiájával)
+	\item $\forall$ játékos racionális ($\forall$ játékos a nyereségét akarja maximalizálni)
+\end{itemize}
+
+További lehetséges tulajdonságok
+\begin{itemize}
+	\item 0-összegű, ha $\sum_{i=1}^{n}{}u_i(s) = 0$  $\forall \quad s \in S$ (egy stratégiai választás)
+	\item szimmetrikus, ha $\exists k$, amire $|S_i|= k$ és ezek a stratégiák megszámlálhatók úgy 1-től k-ig, hogy $\forall \pi$ permutációra [n-en] $\forall 1\leq i \leq n \quad v_i(s)=u_{\pi (i)}(s_{\pi}) \quad \forall s \in S$
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{llll}
+	\hline
+	\multicolumn{1}{|l|}{}  & \multicolumn{1}{l|}{K}     & \multicolumn{1}{l|}{P}     & \multicolumn{1}{l|}{O}     \\ \hline
+	\multicolumn{1}{|l|}{K} & \multicolumn{1}{l|}{0, 0}  & \multicolumn{1}{l|}{-1, 1} & \multicolumn{1}{l|}{1, -1} \\ \hline
+	\multicolumn{1}{|l|}{P} & \multicolumn{1}{l|}{1, -1} & \multicolumn{1}{l|}{0, 0}  & \multicolumn{1}{l|}{-1, 1} \\ \hline
+	\multicolumn{1}{|l|}{O} & \multicolumn{1}{l|}{-1, 1} & \multicolumn{1}{l|}{1, -1} & \multicolumn{1}{l|}{0, 0}  \\ \hline
+	\multicolumn{4}{l}{Kő-papír-olló strat. mátrix}                                                               
+\end{tabular}
+\end{center}
+	
+
+
+\begin{definition}{Fogolydilemma}{}
+	content...
+\end{definition}
+
+\begin{center}
+	\begin{tabular}{lll}
+		\hline
+		\multicolumn{1}{|l|}{}     & \multicolumn{1}{l|}{önző}              & \multicolumn{1}{l|}{koop}         \\ \hline
+		\multicolumn{1}{|l|}{önző} & \multicolumn{1}{l|}{-100 + e, -100 +e} & \multicolumn{1}{l|}{-1 + e, -100} \\ \hline
+		\multicolumn{1}{|l|}{P}    & \multicolumn{1}{l|}{-100, -1 + e}      & \multicolumn{1}{l|}{-1, -1}       \\ \hline
+		\multicolumn{3}{l}{Fogoly-dilemma}                                                                     
+	\end{tabular}
+\end{center}
+
+\begin{definition}{Százlábú játék}{}
+	nem tudom, hogy ez kell-e
+\end{definition}
+
+\begin{definition}{Iterált szigorú eliminálás}{}
+	A dominált stratégiát töröljük, és ezt a lépést domináljuk
+\end{definition}
+
+\begin{definition}{Iterált laza eliminálás}{}
+	Ha gyengén dominált stratégiát törlünk.
+\end{definition}
+
+\begin{theorem}{Ennek mi a neve?}{}
+	Iterált szigorú eliminálásokat végezve, amíg lehet, mindig ugyanazt a játékot kapjuk
+\end{theorem}
+Biz.:\\
+Tfh.: $s_1, s_2, ... s_l$ sorrendben szigorúan eliminálva további elimináció nem végezhető, ill. $z_1, z_2, ... z_t$ stratégiákra ugyanezt. Cél $\{ s_1, s_2, ... s_l\} = \{z_1, ... z_t\}$\\
+Indirekt: Tfh. $\neq$, azaz  $\exists s_i \notin \{z_1, ... z_t\}$\\
+Legyen $i$ min erre!\\
+$s_1, s_2, ... s_{i-1} \in \{z_1, z_2 ... z_t\} \Longrightarrow z$ eliminálása után $s_i$ dominált.
+
+\begin{definition}{Pareto-optimális stratégiaválasztás}{}
+	$s, s' \in S, \quad s \quad$Pareto-dominálja s'-t, ha $u_i(s) \geq u_i(s') \quad \forall i \in [n]$ és $\exists j \in [n] : u_j(s) > u_j(s')$\\
+	$s \in S$ strat. választás Pareto-optimális, ha semelyik más strat. választás sem Pareto-dominálja
+\end{definition}
+
+[csinálok ide ábrát]
+
+\newpage
+\section{Tétel}
+\begin{definition}{Nash-egyensúly (NE)}{}
+	$s \in S$ tiszta Nash-egyensúly, ha egyetlen játékosnak sem érdeke más stratégiát választani azaz $u_i(s) \geq u_i(s',s_{-i}) \quad \forall \; 1 \leq i \leq n \quad \forall s' \in S$
+\end{definition}
+Példa: fogoly-dillemmában van ilyen, kő-papír-ollóban nincs
+
+\begin{theorem}{(iterált) eliminálás
+		hatása a Nash-egyensúlyokra}{}
+	Szig. elim. hatására a tiszta NE-k (tNE) halmaza nem változik
+\end{theorem}
+Biz.: \\
+Tfh.: $s \in S_i$ dominálja $s' \in S_i$-t és $s'$-t töröljük
+
+\begin{observation}{}{}
+	Törlés előtt tNE nem tartalmazta s'-t 
+\end{observation}
+Következmény: $\forall$ törlés tNE a törlés után is tNE marad \\
+Tfh.: z tNE a törlés után. Ha z nem tNE a törlés előtt $u_i(s', z_{-i}) > u_i(z)$
+
+\newpage
 \section{Tematika}
 \begin{enumerate}
 	\item Kombinatorikus játék fogalma, éles játék, betli játék, nyerő stratégia. Irányított gráf magja, mag

@@ -300,6 +300,106 @@ Következmény: $\forall$ törlés tNE a törlés után is tNE marad \\
 Tfh.: z tNE a törlés után. Ha z nem tNE a törlés előtt $u_i(s', z_{-i}) > u_i(z)$
 
 \newpage
+\section{Tétel}
+\begin{definition}{Kevert stratégia}{}
+	$\sigma : s_i \rightarrow \mathbb{R}_+$ kevert stratégia, ha $\sum_{s_i \in S_i} \sigma_i(s_i) = 1$ \\
+	$\Delta_i$: ezek halmaza $\rightarrow$ i-dik játékos kevert stratégiái 
+	$s_i \in S_i$-hez tartozó tiszta stratégia \\
+	$\chi_{s_i}$-vel jelöljük: 
+	\[
+	\chi_{s_i}(s') =
+	\begin{cases}
+		1 & \text{if } s' = s_i, \\
+		0 & \text{if } s' \neq s_i
+	\end{cases}
+	\] 
+	$\Delta = \Delta_1 \times , ..., \times \Delta_n$: kevert stratégia választások halmaza \\
+	$\sigma \in \Delta$ (kevert strat. választás), \quad $s \in S$ (konkrét strat. választás) ($\rightarrow$ rögzítünk egy konkrét strat. választást) $P_\sigma (s) = \prod_{i=1}^n \sigma_i(s_i) $ (független események)\\
+	$\sigma = (\sigma_1, ..., \sigma_n) \quad s=(s_1, ..., s_n) \quad u_i(\sigma) = \sum_{s \in S} P_\sigma (s) \cdot u_i(s)$ i-dik  játékos nyeresége, várható nyereség
+\end{definition}
+
+\begin{definition}{Legjobb válasz}{}
+	$s_{-i} = (s_1, ..., s_n) \in S_{-i},$ (i-dik játékos kivételével mindenkinek választottunk stratégiát) esetén $s_i$ az i-dik játékos számára legjobb válasza, ha $u_i(s_i,s{-i}) \geq u_i(s_i',s_{-i}) \quad \forall s_i \in S$
+\end{definition}
+
+Láttuk: $s \in S$ tNE, ha $\forall$ i-re $s_i$ legjobb válasza $s_i$-re, ahol $s = (s_1, ..., s_n)$
+
+\begin{definition}{Legjobb kevert stratégia}{}
+	$\sigma_{-i} \in \Delta_{-i}$ esetén $s_i \in S$ az i-dik játékos számára legjobb tiszta stratégiai választás, ha $u_i(s_i \sigma_{-i}) \geq u_i(s_i'\sigma_{-i}) \quad \forall s_i' \in S_i$-re
+\end{definition}
+
+$\sigma_i$ az i-dik játékos számára legjobb kevert stratégia, ha $u_i(\sigma_i, \sigma_{-i}) \geq u_i(\sigma_i', \sigma_{-i})$
+
+\begin{observation}{Legjobb tiszta válasz}{}
+	$\sigma_i$ az i-dik játékos számára legjobb kevert strat. $\Leftrightarrow \quad \sigma_i = \sum_{s \in S_i} \lambda_s \chi_s$, ahol $\lambda_s > 0$ esetén s legjobb tiszta válasz
+\end{observation}
+
+Biz.: [...]
+
+\begin{definition}{}{}
+	$\sigma = (\sigma_1, ..., \sigma_n) \in \Delta$ kevert Nash-egyensúly, ha $\sigma_i$ legjobb kevert k strat $\sigma_{-i}$-re $\forall 1\leq i \leq n$
+\end{definition}
+
+Pl.: kó-papír-olló
+\begin{center}
+	\begin{tabular}{llll}
+		\hline
+		\multicolumn{1}{|l|}{}  & \multicolumn{1}{l|}{K}     & \multicolumn{1}{l|}{P}     & \multicolumn{1}{l|}{O}     \\ \hline
+		\multicolumn{1}{|l|}{K} & \multicolumn{1}{l|}{0, 0}  & \multicolumn{1}{l|}{-1, 1} & \multicolumn{1}{l|}{1, -1} \\ \hline
+		\multicolumn{1}{|l|}{P} & \multicolumn{1}{l|}{1, -1} & \multicolumn{1}{l|}{0, 0}  & \multicolumn{1}{l|}{-1, 1} \\ \hline
+		\multicolumn{1}{|l|}{O} & \multicolumn{1}{l|}{-1, 1} & \multicolumn{1}{l|}{1, -1} & \multicolumn{1}{l|}{0, 0}  \\ \hline
+		\multicolumn{4}{l}{Kő-papír-olló strat. mátrix}                                                               
+	\end{tabular}
+\end{center}
+
+$\sigma_1 = (1/3, 1/3, 1/3) \quad \sigma_2 = (1/3, 1/3, 1/3)$
+
+\[
+legjobb tiszta válaszok
+\begin{cases}
+	u_1(k, \sigma_2) = 1/3(0+1-1)=0 \\
+	u_1(k, \sigma_2) = 1/3(1+0-1)=0 \\
+	u_1(k, \sigma_2) = 1/3(-1+1+0)=0
+\end{cases}
+\]
+
+\begin{theorem}{}{}
+	$\forall$ strat játéknak van kevert Nash-egyensúlya
+\end{theorem}
+
+Nem bizonyítjuk
+
+\begin{definition}{}{}
+	$\sigma_i \in \Delta_i$ erősen dominálja az $s \in S_i$ stratégiát, ha $u_i(\sigma_i, \sigma_{-i}) > u_i(s, \sigma_{-i}) \quad \forall \sigma_{-i} \in \Delta_{-i}$
+\end{definition}
+
+\begin{definition}{}{}
+	$\sigma_i \in \Delta_i$ gyengén dominálja az $s \in S_i$ stratégiát, ha $u_i(\sigma_i, \sigma_{-i}) \geq u_i(s, \sigma_{-i}) \quad \forall \sigma_{-i} \in \Delta_{-i}$
+\end{definition}
+
+[példa ábra]
+
+\begin{definition}{Szigorú / laza eliminálás}{}
+	erősen / gyengén dominált strat. törlése
+\end{definition}
+
+\begin{definition}{}{}
+	Iterált szig. / laza elim. ...
+\end{definition}
+
+\begin{statement}{}{}
+	Szig. elim.-sal kNE nem tűnik el
+\end{statement}
+
+Biz.: [...]
+
+\begin{statement}{}{}
+	Laza. elim. után kapott kNE az elim. előtti játékba is kNE
+\end{statement}
+
+Biz.: [...]
+
+\newpage
 \section{Tematika}
 \begin{enumerate}
 	\item Kombinatorikus játék fogalma, éles játék, betli játék, nyerő stratégia. Irányított gráf magja, mag

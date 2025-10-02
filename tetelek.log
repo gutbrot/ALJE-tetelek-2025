@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.17)  1 OCT 2025 15:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.17)  2 OCT 2025 09:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -969,29 +969,41 @@ c}]
 LaTeX Warning: Command \' invalid in math mode on input line 358.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--403
+
+ []
+
+
 
 [13]
 
 [14]
+
+[15]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-17.
+30.
  (C:\Users\gutbr\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (22.49681pt too wide) in paragraph at lines 417--418
+Overfull \hbox (22.49681pt too wide) in paragraph at lines 430--431
 []\T1/lmr/m/n/12 Algoritmikus já-ték-el-mé-let szó-be-li te-ma-ti-ka 2024 [][]$
 \T1/lmtt/m/n/12 https : / / www . cs . bme . hu / %7Efleiner /
  []
 
 
-Overfull \hbox (19.88739pt too wide) in paragraph at lines 419--420
+Overfull \hbox (19.88739pt too wide) in paragraph at lines 432--433
 []\T1/lmr/m/n/12 Bernhard von Sten-gel: Game The-ory Ba-sics [][]$\T1/lmtt/m/n/
 12 http : / / www . maths . lse . ac . uk / personal /
  []
 
 
 
-[15] (tetelek.aux)
+[16] (tetelek.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
@@ -1000,8 +1012,8 @@ Package rerunfilecheck Info: File `tetelek.out' has not changed.
 (rerunfilecheck)             Checksum: 7EB04FCEE47BF34EC64CF917E7D1C09B;666.
  ) 
 Here is how much of TeX's memory you used:
- 25846 strings out of 468133
- 497791 string characters out of 5430712
+ 25847 strings out of 468133
+ 497798 string characters out of 5430712
  893172 words of memory out of 5000000
  54017 multiletter control sequences out of 15000+600000
  676893 words of font info for 83 fonts, out of 8000000 for 9000
@@ -1022,9 +1034,9 @@ rs/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Use
 rs/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam
 10.pfb><C:/Users/gutbr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/symbols/msbm10.pfb>
-Output written on tetelek.pdf (15 pages, 294220 bytes).
+Output written on tetelek.pdf (16 pages, 295262 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
+ 223 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
  90 words of extra memory for PDF output out of 10000 (max. 10000000)
 

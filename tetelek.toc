@@ -5,5 +5,5 @@
 \select@language {magyar} \contentsline {section}{\numberline {5}Tétel}{9}{section.5}%
 \select@language {magyar} \contentsline {section}{\numberline {6}Tétel}{11}{section.6}%
 \select@language {magyar} \contentsline {section}{\numberline {7}Tétel}{12}{section.7}%
-\select@language {magyar} \contentsline {section}{\numberline {8}Tematika}{14}{section.8}%
-\select@language {magyar} \contentsline {section}{\numberline {9}Források}{15}{section.9}%
+\select@language {magyar} \contentsline {section}{\numberline {8}Tematika}{15}{section.8}%
+\select@language {magyar} \contentsline {section}{\numberline {9}Források}{16}{section.9}%

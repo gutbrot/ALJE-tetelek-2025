@@ -221,7 +221,7 @@ $\forall$ stratégiai játékra teljesül
 További lehetséges tulajdonságok
 \begin{itemize}
 	\item 0-összegű, ha $\sum_{i=1}^{n}{}u_i(s) = 0$  $\forall \quad s \in S$ (egy stratégiai választás)
-	\item szimmetrikus, ha $\exists k$, amire $|S_i|= k$ és ezek a stratégiák megszámlálhatók úgy 1-től k-ig, hogy $\forall \pi$ permutációra [n-en] $\forall 1\leq i \leq n \quad v_i(s)=u_{\pi (i)}(s_{\pi}) \quad \forall s \in S$
+	\item szimmetrikus, ha $\exists k$, amire $|S_i|= k$ és ezek a stratégiák megszámlálhatók úgy 1-től k-ig, hogy $\forall \pi$ permutációra [n-en] $\forall \quad 1\leq i \leq n \quad v_i(s)=u_{\pi (i)}(s_{\pi}) \quad \forall s \in S$
 \end{itemize}
 
 \begin{center}
@@ -397,7 +397,20 @@ Biz.: [...]
 	Laza. elim. után kapott kNE az elim. előtti játékba is kNE
 \end{statement}
 
-Biz.: [...]
+Biz.: [...] \\
+
+Köv.: iterált szigorú elim. nem változtatja akNE-ok halmazát. \\ 
+
+Példa: Játék: Ha a két szám megegyik az összeget a sorhátékos nyeri meg, ha nem, az oszlopjátékos
+
+\begin{center}
+	\begin{tabular}{llll}
+		&                            & \multicolumn{2}{c}{II.}                                 \\ \cline{2-4} 
+		\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{}      & \multicolumn{1}{l|}{a = 1} & \multicolumn{1}{l|}{b = 2} \\ \cline{2-4} 
+		\multicolumn{1}{l|}{I.} & \multicolumn{1}{l|}{x = 1} & \multicolumn{1}{l|}{2, 0}  & \multicolumn{1}{l|}{0, 3}  \\ \cline{2-4} 
+		\multicolumn{1}{l|}{}   & \multicolumn{1}{l|}{y = 2} & \multicolumn{1}{l|}{0, 3}  & \multicolumn{1}{l|}{4, 0}  \\ \cline{2-4} 
+	\end{tabular}
+\end{center}
 
 \newpage
 \section{Tematika}

@@ -1,5 +1,5 @@
 \select@language {magyar} \contentsline {section}{\numberline {1}Előadás}{2}{section.1}%
-\select@language {magyar} \contentsline {section}{\numberline {2}Előadás}{4}{section.2}%
+\select@language {magyar} \contentsline {section}{\numberline {2}Előadás}{5}{section.2}%
 \select@language {magyar} \contentsline {section}{\numberline {3}Előadás}{7}{section.3}%
 \select@language {magyar} \contentsline {section}{\numberline {4}Előadás}{10}{section.4}%
 \select@language {magyar} \contentsline {section}{\numberline {5}Előadás}{13}{section.5}%

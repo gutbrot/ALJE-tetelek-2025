@@ -148,6 +148,26 @@
 	\begin{theorem}{Sprague–Grundy}{}
 		Ha u és v $J_1 és J_2$ kombinatorikus játékokban állások, akkor $g_{J_1,J_2}(u, v) = g_{J_1}(u) \oplus g_{J_2}(v)$
 	\end{theorem}
+	\begin{center}
+		\includegraphics[width=100mm]{sprague-grundy_biz}
+	\end{center}
+	Biz. Teljes indukcióval:
+	\begin{enumerate}
+		\item $ g(w_{n,m})=g(u_n) \oplus g(v_m)$, mivel mindkettő nyelő $\Rightarrow0 = 0 \oplus 0$
+		\item Tfh.: $w_{i,j}$-től jobbra és lefelé $\forall$ csúcsra teljesül (topologikus sorrend szerint)
+		\item Kell: $g(w_{i,j}) = g(u_i) \oplus g(v_j)$
+		\begin{enumerate}
+			\item[a)] $w_{i,j} \forall z < g(u_i) \oplus g(v_j)$ értéket lát
+			\item[b)] $w_{i,j}$ nem lát $ g(u_i) \oplus g(v_j)$ értéket
+		\end{enumerate}
+		\item[a)] Tf. indirekten, hogy $\exists z < g(u_i) \oplus g(v_j)$, hogy $w_{i,j}$ nem látja. \newline
+		2.$\Rightarrow \exists g(u_i)'<g(u_i):$ $ z< g(u_i)' \oplus g(v_j)$ \newline
+		$\Rightarrow u_i$ csúcsra $g(u_i)$, tehát ő látja a $g(u_i)'<g(u_i)$ értéket valamilyen $u_k$ csúcsban. \newline
+		Az $u_i \rightarrow u_k$ él miatt van $w_{i,j} \rightarrow w_{k,j}$ él, és a $w_{k,j}$-re már igaz az indukciós feltétel, tehát neki $g(w_{k,j}) = g(u_i)' \oplus g(v_j) = z $, ez ellentmondás %villám jel?
+		\item[b)] Tf indirekten, hogy $w_{i,j}$ lát valamilyen $w_{l,j}$-t az oszlopában.\newline
+		 Az indukciós feltétel miatt $g(w_{l,j})=g(u_l) \oplus g(v_j) = g(u_i) \oplus g(v_j)$\newline
+		 $\Rightarrow$ 1.$ g(u_i) = g(u_l)$, ez ellentmondás, a $g(u_i)$ nem láthat magával egyező Grundy-értéket($g(u_l))$ %villám jel?
+	\end{enumerate}
 	
 	\begin{theorem}{Bouton}{}
 		k-nim II-es típusú $\Leftrightarrow n_1 \oplus n_2 \oplus ... \oplus n_k = 0$, ahol $nn_1, ... n_k$ a kupacok méretei.

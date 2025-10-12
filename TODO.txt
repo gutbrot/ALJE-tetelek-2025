@@ -1,7 +1,3 @@
-- abra a maghoz
 - veges amoba abra
-- fogolydilemma leiras
 - szazlabu jatek leiras es abra
 - pareto diminalas abra
-- Sprague grundy abra
-- 2. es 3. eloadas atnezese	

@@ -618,14 +618,16 @@
 	\newpage
 	\section{Előadás}
 	\begin{definition}{}{}
-		Strat. játék esetén az i-dik játékos maximin stratégiája egy olyan $\sigma_1 \in \Delta$ kevert stratégiája, amire $min u_i(\sigma_i, s_{-i})$
+		Strat. játék esetén az i-dik játékos maximin stratégiája egy olyan $\sigma_1 \in \Delta$ kevert stratégiája, amire $min u_i(\sigma_i, s_{-i}) \geq min u_i (\sigma_i, \sigma_{-i}) \quad \forall \sigma_i \in \Delta_i$
 	\end{definition}
 	
-	[ábra ...]
+	\begin{center}
+		\includegraphics[width=90mm]{veto_kieg.jpg}
+	\end{center}
 	
 	\begin{observation}{}{}
 		\begin{enumerate}
-			\item A mximin stratégiaválasztása általában nem kNE
+			\item A maximin stratégiaválasztása általában nem kNE
 			\item Mindig van mximin stratégia, és ez egy Lineáris Programozási feladat megoldásával kapható
 		\end{enumerate}
 	\end{observation}
@@ -636,17 +638,32 @@
 		$max c(x), ahol A \times x \leq b$
 	\end{definition}
 	
-	[ábra ...]
+	\begin{center}
+		\includegraphics[width=50mm]{standardLP.jpg}
+	\end{center}
 	
-	\begin{definition}{Biztonsági szint}{}
-		explicit nem mondtuk ki órán, de szerintem kellene
+	\begin{definition}{Oszlopjátékos maximin stratégiájának keresése}{}
+		Milyen valószínűséggel választunk egy oszlop kevert stratégiát \\
+		\[
+		Biztonsági szint : max
+		\begin{cases}
+			\alpha : M \cdot x \geq \alpha \cdot 1\\
+			1^T \cdot x = 1, x \geq 0
+		\end{cases}
+		\]
 	\end{definition}
-	[ábra ...]
+	\begin{center}
+		\includegraphics[width=90mm]{oszlop_maximin.jpg}
+	\end{center}
 	
 	\begin{theorem}{Neumann-tétel}{}
 		2 személyes 0-összegű játék esetén a sorjátékos biztonsági szintje megegyezik az oszlopjátékos biztonsági szintjének (-1)-szeresével
 	\end{theorem}
-	[ábra...] \\
+	
+	\begin{center}
+		\includegraphics[width=100mm]{Neumann_tetel.jpg}
+	\end{center}
+	
 	Köv.: 2 személyes 0-összegű játék esetén a c maximin stratégiák kNE-t adnak \\
 	csőd probléma a Talmudban ppt
 	

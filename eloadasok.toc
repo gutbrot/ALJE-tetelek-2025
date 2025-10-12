@@ -3,4 +3,4 @@
 \select@language {magyar} \contentsline {section}{\numberline {3}Előadás}{8}{section.3}%
 \select@language {magyar} \contentsline {section}{\numberline {4}Előadás}{11}{section.4}%
 \select@language {magyar} \contentsline {section}{\numberline {5}Előadás}{14}{section.5}%
-\select@language {magyar} \contentsline {section}{\numberline {6}Források}{16}{section.6}%
+\select@language {magyar} \contentsline {section}{\numberline {6}Források}{18}{section.6}%

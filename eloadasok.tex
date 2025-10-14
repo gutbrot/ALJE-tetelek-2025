@@ -369,7 +369,7 @@
 	\end{definition}
 	
 	\begin{definition}{Legjobb válasz}{}
-		$s_{-i} = (s_1, ..., s_n) \in S_{-i},$ (i-dik játékos kivételével mindenkinek választottunk stratégiát) esetén $s_i$ az i-dik játékos számára legjobb válasza, ha $u_i(s_i,s{-i}) \geq u_i(s_i',s_{-i}) \quad \forall s_i \in S$
+		$s_{-i} = (s_1, ..., s_n) \in S_{-i},$ (i-dik játékos kivételével mindenkinek választottunk stratégiát) esetén $s_i$ az i-dik játékos számára legjobb válasza, ha $u_i(s_i,s_{-i}) \geq u_i(s_i',s_{-i}) \quad \forall s_i \in S$
 	\end{definition}
 	
 	Láttuk: $s \in S$ tNE, ha $\forall$ i-re $s_i$ legjobb válasza $s_i$-re, ahol $s = (s_1, ..., s_n)$
@@ -386,7 +386,7 @@
 	
 	Biz.: [...]
 	
-	\begin{definition}{}{}
+	\begin{definition}{Kevert Nash-egyensúly (kNE)}{}
 		$\sigma = (\sigma_1, ..., \sigma_n) \in \Delta$ kevert Nash-egyensúly, ha $\sigma_i$ legjobb kevert k strat $\sigma_{-i}$-re $\forall 1\leq i \leq n$
 	\end{definition}
 	
@@ -406,8 +406,7 @@
 		$\sigma_1 = (1/3, 1/3, 1/3) \quad \sigma_2 = (1/3, 1/3, 1/3)$
 	\end{center}
 	
-	\[
-	legjobb tiszta válaszok
+	\[\text{legjobb tiszta válaszok}
 	\begin{cases}
 		u_1(k, \sigma_2) = 1/3(0+1-1)=0 \\
 		u_1(k, \sigma_2) = 1/3(1+0-1)=0 \\
@@ -443,26 +442,26 @@
 	\end{center}
 	
 	\begin{definition}{Szigorú / laza eliminálás}{}
-		erősen / gyengén dominált strat. törlése
+		erősen / gyengén dominált stratégia törlése
 	\end{definition}
 	
 	\begin{definition}{}{}
-		Iterált szig. / laza elim. ...
+		Iterált szigorú / laza eliminálás ...
 	\end{definition}
 	
 	\begin{statement}{}{}
-		Szig. elim.-sal kNE nem tűnik el
+		Szigorú eliminálással kNE nem tűnik el
 	\end{statement}
 	
 	Biz.: [...]
 	
 	\begin{statement}{}{}
-		Laza. elim. után kapott kNE az elim. előtti játékba is kNE
+		Laza eliminálás után kapott kNE az eliminálás előtti játékban is kNE
 	\end{statement}
 	
 	Biz.: [...] \\
 	
-	Köv.: iterált szigorú elim. nem változtatja a kNE-ok halmazát. \\ 
+	Köv.: iterált szigorú eliminálás nem változtatja a kNE-ok halmazát. \\ 
 	
 	Példa: Játék: Ha a két szám megegyezik az összeget a sorjátékos nyeri meg, ha nem, az oszlopjátékos
 	
@@ -637,7 +636,7 @@
 	
 	\newpage
 	\section{Előadás}
-	\begin{definition}{}{}
+	\begin{definition}{Maximin stratégia}{}
 		Strat. játék esetén az i-dik játékos maximin stratégiája egy olyan $\sigma_1 \in \Delta$ kevert stratégiája, amire $min u_i(\sigma_i, s_{-i}) \geq min u_i (\sigma_i, \sigma_{-i}) \quad \forall \sigma_i \in \Delta_i$
 	\end{definition}
 	
@@ -648,7 +647,7 @@
 	\begin{observation}{}{}
 		\begin{enumerate}
 			\item A maximin stratégiaválasztása általában nem kNE
-			\item Mindig van mximin stratégia, és ez egy Lineáris Programozási feladat megoldásával kapható
+			\item Mindig van maximin stratégia, és ez egy Lineáris Programozási feladat megoldásával kapható
 		\end{enumerate}
 	\end{observation}
 	
@@ -663,9 +662,8 @@
 	\end{center}
 	
 	\begin{definition}{Oszlopjátékos maximin stratégiájának keresése}{}
-		Milyen valószínűséggel választunk egy oszlop kevert stratégiát \\
-		\[
-		Biztonsági szint : max
+		Milyen valószínűséggel választunk egy oszlop kevert stratégiát 
+		\[\text{Biztonsági szint : max}
 		\begin{cases}
 			\alpha : M \cdot x \geq \alpha \cdot 1\\
 			1^T \cdot x = 1, x \geq 0
@@ -687,16 +685,6 @@
 	Köv.: 2 személyes 0-összegű játék esetén a c maximin stratégiák kNE-t adnak \\
 	csőd probléma a Talmudban ppt
 	
-	
-	\newpage
-	\begin{enumerate}
-		\item Kombinatorikus játék fogalma, éles játék, betli játék, nyerő stratégia. Irányított gráf magja, mag
-		egyértelműsége DAG-ban. Játékok, ill. pozíciók típusa.
-		\item Játékok összege, az összeg típusa. Grundy-számozás. NIM-összeadás és tulajdonságai.
-		\item Sprague–Grundy-tétel
-		, Bouton-tétel. Játékok izomorfiája és ekvivalenciája.
-		\item Stratégialopás. Mérgezett csoki, amőba, hex.
-	\end{enumerate}
 	
 	\newpage
 	\section{Források}

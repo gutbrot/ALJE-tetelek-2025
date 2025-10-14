@@ -283,7 +283,7 @@
 	
 	\begin{definition}{Dominálás}{}
 		$ 1 \leq i \leq n \quad  s,s' \in S_i$, $s$ dominálja $s'$-t, ha $ \forall\quad z \in S_{-i} : u_i(s,z) > u_i(s',z)$,
-		 ahol $S_{-i} = S_1\times ... \times S_{i-1} \times S_{i+1} \times ... \times S_{n}$
+		 ahol $S_{-i} = S_1\times ... \times S_{i-1} \times S_{i+1} \times ... \times S_{n}$.
 		 \begin{itemize}
 		 	\item Ez gyenge dominálás, ha $  u_i(s,z) \geq u_i(s',z)$
 		 	\item $s$ az i. játékosé, $z$ mindenki más stratégiája
@@ -294,7 +294,8 @@
 		\begin{itemize}
 			\item 2 játékos
 			\item lépéskor: kiszáll/játszik tovább
-			\item a racionális döntés kiszállni
+			\item $(n,m)$: $n$ az első játékos, $m$ a második játékos nyeresége 
+			\item minden lépésnél a racionális döntés kiszállni
 		\end{itemize}
 	\end{definition}
 	\begin{center}
@@ -302,7 +303,7 @@
 	\end{center}
 	
 	\begin{definition}{Iterált szigorú eliminálás}{}
-		A dominált stratégiát töröljük, és ezt a lépést domináljuk
+		A dominált stratégiát töröljük, és ezt a lépést domináljuk.
 	\end{definition}
 	
 	\begin{definition}{Iterált laza eliminálás}{}
@@ -310,7 +311,7 @@
 	\end{definition}
 	
 	\begin{theorem}{}{}
-		Iterált szigorú eliminálásokat végezve, amíg lehet, mindig ugyanazt a játékot kapjuk
+		Iterált szigorú eliminálásokat végezve, amíg lehet, mindig ugyanazt a játékot kapjuk.
 	\end{theorem}
 	Biz.:\\
 	Tfh.: $s_1, s_2, ... s_l$ sorrendben szigorúan eliminálva további elimináció nem végezhető, ill. $z_1, z_2, ... z_t$ stratégiákra ugyanezt. Cél $\{ s_1, s_2, ... s_l\} = \{z_1, ... z_t\}$\\
@@ -318,10 +319,15 @@
 	Legyen $i$ min erre!\\
 	$s_1, s_2, ... s_{i-1} \in \{z_1, z_2 ... z_t\} \Longrightarrow z$ eliminálása után $s_i$ dominált.
 	
-	\begin{definition}{Pareto-optimális stratégiaválasztás}{}
-		$s, s' \in S, \quad s \quad$Pareto-dominálja s'-t, ha $u_i(s) \geq u_i(s') \quad \forall i \in [n]$ és $\exists j \in [n] : u_j(s) > u_j(s')$\\
-		$s \in S$ strat. választás Pareto-optimális, ha semelyik más strat. választás sem Pareto-dominálja
+	\begin{definition}{Pareto dominálás}{}
+		$s, s' \in S, \quad s \quad$Pareto-dominálja s'-t, ha $u_i(s) \geq u_i(s') \quad \forall i \in [n]$ és $\exists j \in [n] : u_j(s) > u_j(s')$.
 	\end{definition}
+	pl. Fogoly dilemmában: önő + önző P-dominálva van
+	
+	\begin{definition}{Pareto-optimális stratégiaválasztás}{}
+		$s \in S$ strat. választás Pareto-optimális, ha semelyik más strat. választás sem Pareto-dominálja.
+	\end{definition}
+	pl. Kő - Papír - Olló lépései
 	
 	[diagram]
 	
@@ -334,7 +340,7 @@
 			hatása a Nash-egyensúlyokra}{}
 		Szig. elim. hatására a tiszta NE-k (tNE) halmaza nem változik
 	\end{theorem}
-	Biz.: [...] \\
+	Biz.: [...] 
 	Tfh.: $s \in S_i$ dominálja $s' \in S_i$-t és $s'$-t töröljük
 	
 	\begin{observation}{}{}

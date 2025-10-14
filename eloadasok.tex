@@ -81,7 +81,7 @@
 	Köv.: G DAG $\Rightarrow$ G-ben $\nexists$ mag
 	
 	\begin{center}
-		\includegraphics[width=90mm]{mag_abra}
+		\includegraphics[width=90mm]{res/mag_abra}
 	\end{center}
 	
 	\begin{definition}{Játék típusa}{}
@@ -118,7 +118,7 @@
 	Biz: 
 	\begin{itemize}
 		\item Tfh. $g_1=g_2$. \\
-		Ekkor a 2. játékos nyerni tud azzal, hogy mindigy úgy lép, hogy a két állapot Grundy-száma megegyezzen.
+		Ekkor a 2. játékos nyerni tud azzal, hogy mindig úgy lép, hogy a két állapot Grundy-száma megegyezzen.
 		\item Tfh. $g_1 \not= g_2$.  \\
 		Ekkor a kezdő nyer azzal, hogy a nagyobbik g-t a kisebbikre csökkenti.
 	\end{itemize}
@@ -149,7 +149,7 @@
 		Ha u és v $J_1 és J_2$ kombinatorikus játékokban állások, akkor $g_{J_1,J_2}(u, v) = g_{J_1}(u) \oplus g_{J_2}(v)$
 	\end{theorem}
 	\begin{center}
-		\includegraphics[width=100mm]{sprague-grundy_biz}
+		\includegraphics[width=100mm]{res/sprague-grundy_biz}
 	\end{center}
 	Biz. Teljes indukcióval:
 	\begin{enumerate}
@@ -207,10 +207,10 @@
 	\end{theorem}
 	
 	Biz.: nincs döntetlen + stratégialopás \\
-	Vegyük a künöböző színű mezők közötti mezőhatárokat. Írjunk ezekbe irányított éleket. \\
+	Vegyük a különböző színű mezők közötti mezőhatárokat. Írjunk ezekbe irányított éleket. \\
 	Bal felső nagy nyílból kiindulva lépek az élek mentén, elakadni nem fogok, önmagába visszafordulni se, mert nem létezhet 3 irányított éllel szomszédos pont, tehát valamelyik nagy nyílba fogok elérkezni. Ekkor a kapott útnak egyik oldalon csupa azonos színű, a megfigyelt 2 térfélt összekötő utat kapunk.\\
 	\begin{center}
-		\includegraphics[width=90mm]{hex_biz}
+		\includegraphics[width=90mm]{res/hex_biz}
 	\end{center}
 	
 	
@@ -630,14 +630,16 @@
 	\newpage
 	\section{Előadás}
 	\begin{definition}{}{}
-		Strat. játék esetén az i-dik játékos maximin stratégiája egy olyan $\sigma_1 \in \Delta$ kevert stratégiája, amire $min u_i(\sigma_i, s_{-i})$
+		Strat. játék esetén az i-dik játékos maximin stratégiája egy olyan $\sigma_1 \in \Delta$ kevert stratégiája, amire $min u_i(\sigma_i, s_{-i}) \geq min u_i (\sigma_i, \sigma_{-i}) \quad \forall \sigma_i \in \Delta_i$
 	\end{definition}
 	
-	[ábra ...]
+	\begin{center}
+		\includegraphics[width=90mm]{res/veto_kieg.jpg}
+	\end{center}
 	
 	\begin{observation}{}{}
 		\begin{enumerate}
-			\item A mximin stratégiaválasztása általában nem kNE
+			\item A maximin stratégiaválasztása általában nem kNE
 			\item Mindig van mximin stratégia, és ez egy Lineáris Programozási feladat megoldásával kapható
 		\end{enumerate}
 	\end{observation}
@@ -648,17 +650,32 @@
 		$max c(x), ahol A \times x \leq b$
 	\end{definition}
 	
-	[ábra ...]
+	\begin{center}
+		\includegraphics[width=50mm]{res/standardLP.jpg}
+	\end{center}
 	
-	\begin{definition}{Biztonsági szint}{}
-		explicit nem mondtuk ki órán, de szerintem kellene
+	\begin{definition}{Oszlopjátékos maximin stratégiájának keresése}{}
+		Milyen valószínűséggel választunk egy oszlop kevert stratégiát \\
+		\[
+		Biztonsági szint : max
+		\begin{cases}
+			\alpha : M \cdot x \geq \alpha \cdot 1\\
+			1^T \cdot x = 1, x \geq 0
+		\end{cases}
+		\]
 	\end{definition}
-	[ábra ...]
+	\begin{center}
+		\includegraphics[width=90mm]{res/oszlop_maximin.jpg}
+	\end{center}
 	
 	\begin{theorem}{Neumann-tétel}{}
 		2 személyes 0-összegű játék esetén a sorjátékos biztonsági szintje megegyezik az oszlopjátékos biztonsági szintjének (-1)-szeresével
 	\end{theorem}
-	[ábra...] \\
+	
+	\begin{center}
+		\includegraphics[width=100mm]{res/Neumann_tetel.jpg}
+	\end{center}
+	
 	Köv.: 2 személyes 0-összegű játék esetén a c maximin stratégiák kNE-t adnak \\
 	csőd probléma a Talmudban ppt
 	

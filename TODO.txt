@@ -1,3 +1,3 @@
+- nim osszeg biz
 - veges amoba abra
-- szazlabu jatek leiras es abra
 - pareto diminalas abra

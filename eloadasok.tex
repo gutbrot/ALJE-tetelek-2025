@@ -682,13 +682,78 @@
 		\includegraphics[width=100mm]{res/Neumann_tetel.jpg}
 	\end{center}
 	
-	Köv.: 2 személyes 0-összegű játék esetén a c maximin stratégiák kNE-t adnak \\
-	csőd probléma a Talmudban ppt
+	Köv.: 2 személyes 0-összegű játék esetén a c maximin stratégiák kNE-t adnak 
+	\begin{definition}{Csődprobléma a Talmudban}
+		lásd ppt
+	\end{definition}
 	
 	\section{Előadás}
 	\begin{definition}{Osztozkodási probléma}{}
-		A[0,1)
+		A[0,1) egy elosztása: \\
+		$[0,1) = A_1 \cup A_2 \cup ... \cup A_n$, ahol $\forall A_i$ balról zárt, jobbról nyílt páronként diszjunkt intervallumok uniója
 	\end{definition}
+	
+	A játékosok $P_1, P_2, ..., P_n \quad P_i$ értékelő eloszlás fv.-e \\
+	$f_i[0,1]:=[0,x)$ intervallum értéke a $P_i$ játékos számára. $P_i$ értékelő fv.-e $\mu_i, ahol I = [x,y)$ esetén $\mu(I) = f_i(y) - f_i(x)$ és $\mu_i$ diszjunkt intervallumokon additív \\
+	
+	\begin{definition}{Elosztás arányok}{}
+		$(A_1, ..., A_n)$ elosztás arányok, ha $\mu_i(A_i) \geq (1/n) \quad \forall i $
+	\end{definition} 
+	
+	\begin{definition}{Mérés művelet}{}
+		$Mér_i(x): f_i(x) érték meghatározása$
+	\end{definition}
+	
+	\begin{definition}{Vágás művelet}{}
+		$Vág_i(y): min{f_i^{-1}(y)}$ meghatároz $f(x) + [f(y)-f(x)]/2$
+	\end{definition}
+	
+	\begin{definition}{Oszt-választ protokoll}{}
+		$P_1$ vág 1/2-nél \\
+		$P_2$ ,ér $P_1$ vágásánál
+	\end{definition}
+	
+	\begin{definition}{Fink eljárás}{}
+		\begin{itemize}
+			\item $P_1$ megkapja az egészet
+			\item az i-dik lépésben $P_i$ megérkezik. Ekkor $P_1, ..., P_{i-1}$ már arányosan osztozkodott 
+			\item $\forall$ játékos a saját részét i egyforma részre osztja szét [egyenlet?]
+			\item $P_i \quad \forall$ játékostól választ 1-1 részt [ábra] 
+		\end{itemize}
+	\end{definition}
+	
+	\begin{definition}{Tasnádi rekurzív módszere}{}
+		$P_i$ felosztja a [0,1)-t n egyforma részre és mindegyikhez kibocsát (n-1) jegyet. Minden játékos $P_2, ..., P_n$ a számára legjobb n-1 részhez húz 1-1 jegyet. Ezek után mindenkinek n-1 jegye lesz. Minden részt arányosan kiosztanak a jeggyel [?] játékosok között T.-eljárással
+	\end{definition}
+	
+	\begin{definition}{Diszkrét mozgó késes eljárás}{}
+		$Vág(1/n) \quad \forall i $ [ábra] \\
+		Aki balrább jelöl, az vág és távozik. Művelet igény $n+(n-1)+(n-2)+... \Rightarrow \binom{n+1}{2}$
+	\end{definition}
+	
+	\begin{definition}{Elan-Paz protokoll}{}
+		$Vág(\lfloor n/2 \rfloor /n) \quad \forall i$ [ábra] \\
+		Az $Vág(\lfloor n/2 \rfloor /n)$-ik jel mentén vágunk. A bal oldali részt a $\lfloor n/2 \rfloor /n$ legkisebb jelet lerakó játékos, a jobb oldalit pedig az $\lceil n/2 \rceil /n$ legmagasabb jelet lerakó játékos közt osztjuk szét. Így a baloldalon $\lfloor n/2 \rfloor /n$, a jobboldalon $\lceil n/2 \rceil /n$ játékos osztozik arányosan
+	\end{definition}
+	Az Elan-Paz eljárást követve... \\
+	$A_1, A_2, ..., A_n$ eloszlás irigységmentes, ha $\mu_i(A_i) \geq \mu_i(A_i) \quad \forall $ [?]
+	
+	\begin{observation}{Irigységmentes $\Rightarrow$ arányos}{}
+		...
+	\end{observation}
+	
+	\begin{definition}{Selfridge-Conway-eljárás}{}
+		3 játékos: A, B, C. Cél: irigységmentes elosztás
+		\begin{enumerate}
+			\item A 3 egyforma részre oszt
+			\item B preferenciája [?]
+			\item B kettévágja x-et $x=x' \cup M$ úgy, hogy $\mu_B(x') = \mu_B(y)$
+			\item x', y, z darabból választanak C, B, A sorrendben úgy, hogy B x'-t választja, ha tudja
+			\item P(x') az x'-t kapó játékos $P(x') \in {C, B}$
+			\item E 3 részt $P(x'), A, P(\overline{x})$ sorrendben osztják ki ${C, B} = {P(x'), P(\overline{x})}$
+		\end{enumerate}
+	\end{definition}
+	[biz: ppt]
 	
 	\newpage
 	\section{Források}

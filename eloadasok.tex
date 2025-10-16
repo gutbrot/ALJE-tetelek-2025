@@ -690,22 +690,24 @@
 	\section{Előadás}
 	\begin{definition}{Osztozkodási probléma}{}
 		A[0,1) egy elosztása: \\
-		$[0,1) = A_1 \cup A_2 \cup ... \cup A_n$, ahol $\forall A_i$ balról zárt, jobbról nyílt páronként diszjunkt intervallumok uniója
+		$[0,1) = A_1 \cup A_2 \cup ... \cup A_n$, ahol $\forall A_i$ balról zárt, jobbról nyílt páronként diszjunkt intervallumok uniója, $A_i$ véges sok
 	\end{definition}
 	
-	A játékosok $P_1, P_2, ..., P_n \quad P_i$ értékelő eloszlás fv.-e \\
-	$f_i[0,1]:=[0,x)$ intervallum értéke a $P_i$ játékos számára. $P_i$ értékelő fv.-e $\mu_i, ahol I = [x,y)$ esetén $\mu(I) = f_i(y) - f_i(x)$ és $\mu_i$ diszjunkt intervallumokon additív \\
+	A játékosok $P_1, P_2, ..., P_n \quad P_i$ értékelő eloszlás fv.-e, $f_i[0,1] \rightarrow [0,1]$, mon. növ.: $f_i(0)=0, f_i(1)=1$ \\
+	
+	$f_i[0,1]:=[0,x)$ intervallum értéke a $P_i$ játékos számára. $P_i$ értékelő fv.-e $\mu_i$, ahol $I = [x,y)$ esetén $\mu_i(I) = f_i(y) - f_i(x)$ és $\mu_i$ diszjunkt intervallumokon additív \\
 	
 	\begin{definition}{Elosztás arányok}{}
 		$(A_1, ..., A_n)$ elosztás arányok, ha $\mu_i(A_i) \geq (1/n) \quad \forall i $
 	\end{definition} 
 	
 	\begin{definition}{Mérés művelet}{}
-		$Mér_i(x): f_i(x) érték meghatározása$
+		$Mér_i(x): f_i(x)$ érték meghatározása
 	\end{definition}
 	
 	\begin{definition}{Vágás művelet}{}
-		$Vág_i(y): min{f_i^{-1}(y)}$ meghatároz $f(x) + [f(y)-f(x)]/2$
+		$Vág_i(y): min{f_i^{-1}(y)}$ meghatároz $\rightarrow$ nem egyértelmű \\
+		$f(x) + [f(y)-f(x)]/2$
 	\end{definition}
 	
 	\begin{definition}{Oszt-választ protokoll}{}
@@ -714,46 +716,68 @@
 	\end{definition}
 	
 	\begin{definition}{Fink eljárás}{}
+		Egyesével érkező n db játékos
 		\begin{itemize}
 			\item $P_1$ megkapja az egészet
-			\item az i-dik lépésben $P_i$ megérkezik. Ekkor $P_1, ..., P_{i-1}$ már arányosan osztozkodott 
-			\item $\forall$ játékos a saját részét i egyforma részre osztja szét [egyenlet?]
-			\item $P_i \quad \forall$ játékostól választ 1-1 részt [ábra] 
+			\item az i-dik lépésben $P_i$ megérkezik. Ekkor $P_1, ..., P_j,..., P_{i-1}$ már arányosan osztozkodott 
+			\item $\forall$ játékos a saját részét i egyforma részre osztja szét
+			\item $P_i \quad \forall$ játékostól választ 1-1 részt 
 		\end{itemize}
+		[ábra]
 	\end{definition}
 	
 	\begin{definition}{Tasnádi rekurzív módszere}{}
-		$P_i$ felosztja a [0,1)-t n egyforma részre és mindegyikhez kibocsát (n-1) jegyet. Minden játékos $P_2, ..., P_n$ a számára legjobb n-1 részhez húz 1-1 jegyet. Ezek után mindenkinek n-1 jegye lesz. Minden részt arányosan kiosztanak a jeggyel [?] játékosok között T.-eljárással
+		\begin{itemize}
+			\item $P_i$ felosztja a [0,1)-t n egyforma részre és mindegyikhez kibocsát (n-1) jegyet
+			\item Minden játékos $P_2, ..., P_n$ a számára legjobb n-1 részhez húz 1-1 jegyet
+			\item Ezek után mindenkinek n-1 jegye lesz
+			\item Minden részt arányosan kiosztanak a jeggyel rendelkező játékosok között T.-eljárással
+		\end{itemize}
 	\end{definition}
 	
 	\begin{definition}{Diszkrét mozgó késes eljárás}{}
-		$Vág(1/n) \quad \forall i $ [ábra] \\
-		Aki balrább jelöl, az vág és távozik. Művelet igény $n+(n-1)+(n-2)+... \Rightarrow \binom{n+1}{2}$
+		$Vág_i(1/n) \quad \forall i $ [ábra]
+		\begin{itemize}
+			\item Aki legbalrább jelöl, az vág és távozik
+			\item Ismételjük a maradék intervallumon, amíg el nem fogy
+		\end{itemize}
+		Művelet igény $n+(n-1)+(n-2)+...+1 \Rightarrow \binom{n+1}{2}$
 	\end{definition}
+	Ennek különböző verziói: Banach-Kraster, Dubins-Spanier
 	
 	\begin{definition}{Elan-Paz protokoll}{}
-		$Vág(\lfloor n/2 \rfloor /n) \quad \forall i$ [ábra] \\
-		Az $Vág(\lfloor n/2 \rfloor /n)$-ik jel mentén vágunk. A bal oldali részt a $\lfloor n/2 \rfloor /n$ legkisebb jelet lerakó játékos, a jobb oldalit pedig az $\lceil n/2 \rceil /n$ legmagasabb jelet lerakó játékos közt osztjuk szét. Így a baloldalon $\lfloor n/2 \rfloor /n$, a jobboldalon $\lceil n/2 \rceil /n$ játékos osztozik arányosan
+		$Vág(\lfloor n/2 \rfloor /n) \quad \forall i$ [ábra] 
+		\begin{itemize}
+			\item Az $\lfloor n/2 \rfloor /n$-ik jel mentén vágunk
+			\item A bal oldali részt a $\lfloor n/2 \rfloor /n$ legkisebb jelet lerakó játékos, a jobb oldalit pedig az $\lceil n/2 \rceil$ legmagasabb jelet lerakó játékos közt osztjuk szét
+			\item Így a baloldalon $\lfloor n/2 \rfloor$, a jobboldalon $\lceil n/2 \rceil$ játékos osztozik arányosan az Evan-Paz eljárást követve
+		\end{itemize}
+		Műv. igény: O(nlogn) \\
+		$A_1, A_2, ..., A_n$ eloszlás irigységmentes, ha $\mu_i(A_i) \geq \mu_i(A_j) \quad \forall i\neq j$
 	\end{definition}
-	Az Elan-Paz eljárást követve... \\
-	$A_1, A_2, ..., A_n$ eloszlás irigységmentes, ha $\mu_i(A_i) \geq \mu_i(A_i) \quad \forall $ [?]
+
 	
 	\begin{observation}{Irigységmentes $\Rightarrow$ arányos}{}
-		...
+		\begin{itemize}
+			\item i.m. $\Rightarrow$ arányos
+			\item $A_1,...,A_n$ részek adottak és $P_1,P_2,...,P_n$ sorrendben választanak 1-1 részt $\Rightarrow$ csak később választó játékos lehet irigy korábban választóra
+			\item $\mu_n(A_1) = \mu_n(A_2) = ... = \mu_n(A_n) \Rightarrow $ az utolsónak választó játékos nem lesz irigy 
+		\end{itemize}
 	\end{observation}
 	
 	\begin{definition}{Selfridge-Conway-eljárás}{}
 		3 játékos: A, B, C. Cél: irigységmentes elosztás
 		\begin{enumerate}
 			\item A 3 egyforma részre oszt
-			\item B preferenciája [?]
+			\item B preferenciája ezen részeken: x > y > z
 			\item B kettévágja x-et $x=x' \cup M$ úgy, hogy $\mu_B(x') = \mu_B(y)$
 			\item x', y, z darabból választanak C, B, A sorrendben úgy, hogy B x'-t választja, ha tudja
 			\item P(x') az x'-t kapó játékos $P(x') \in {C, B}$
+			\item $P(\overline{x})$ M-t 3 egyforma részre osztja
 			\item E 3 részt $P(x'), A, P(\overline{x})$ sorrendben osztják ki ${C, B} = {P(x'), P(\overline{x})}$
 		\end{enumerate}
 	\end{definition}
-	[biz: ppt]
+	[biz: ppt ]
 	
 	\newpage
 	\section{Források}

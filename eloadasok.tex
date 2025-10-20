@@ -352,7 +352,7 @@
 	\newpage
 	\section{Előadás}
 	\begin{definition}{Kevert stratégia}{}
-		$\sigma_i : s_i \rightarrow \mathbb{R}_+$ kevert stratégia, ha $\sum_{s_i \in S_i} \sigma_i(s_i) = 1$ \\
+		$\sigma_i : S_i \rightarrow \mathbb{R}_+$ kevert stratégia, ha $\sum_{s_i \in S_i} \sigma_i(s_i) = 1$ \\
 		$\Delta_i$: ezek halmaza $\rightarrow$ i-dik játékos kevert stratégiái 
 		$s_i \in S_i$-hez tartozó tiszta stratégia \\
 		$\chi_{s_i}$-vel jelöljük: 
@@ -375,7 +375,7 @@
 	Láttuk: $s \in S$ tNE, ha $\forall$ i-re $s_i$ legjobb válasza $s_i$-re, ahol $s = (s_1, ..., s_n)$
 	
 	\begin{definition}{Legjobb kevert stratégia}{}
-		$\sigma_{-i} \in \Delta_{-i}$ esetén $s_i \in S$ az i-dik játékos számára legjobb tiszta stratégiai választás, ha $u_i(s_i \sigma_{-i}) \geq u_i(s_i'\sigma_{-i}) \quad \forall s_i' \in S_i$-re
+		$\sigma_{-i} \in \Delta_{-i}$ esetén $s_i \in S$ az i-dik játékos számára legjobb tiszta stratégiai választás, ha $u_i(s_i, \sigma_{-i}) \geq u_i(s_i',\sigma_{-i}) \quad \forall s_i' \in S_i$-re
 	\end{definition}
 	
 	$\sigma_i$ az i-dik játékos számára legjobb kevert stratégia, ha $u_i(\sigma_i, \sigma_{-i}) \geq u_i(\sigma_i', \sigma_{-i})$

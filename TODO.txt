@@ -3,11 +3,8 @@
 - pareto diminalas abra
 
 Fleiner javitas:
-7. oldal véges amőba biz: az X és O nem konzisztens. -> szerintem már jó, de légyszi nézd meg te is
-
-11. oldal, 1. def: \sigma az S_i-ből képez.-> itt nem tudom hogy kellene javítani, átírtam \sigma-ról \sigma_i-re, mert matyinál így volt
-
 11. oldal, kNE def: legjobb kevert _válasz_ -> ezt is nézd meg légyszi
+	-> szerintem jó, de nem teljesen értem a jelöléseket még mindig
 
 15-16. oldal, linprog séma: az egy sorral és oszloppal kiegészített -M
 mátrix alatti sorban a célfüggvényben szereplő 1-es rossz helyen áll. Ahol

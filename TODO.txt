@@ -1,17 +1,14 @@
 - nim osszeg biz
 - veges amoba abra
 - pareto diminalas abra
-3. oldal következményben: _létezik_ mag.
-4. oldali tételben: g(v_1,v_2)
-6. oldal ekvivalencia definícióban az 1. pont a definíció, a másik kettő
-esetén pedig egy-egy tétel, hogy ekvivalensek a definícióval.
-7. oldal véges amőba biz: az X és O nem konzisztens.
-8. oldal alsó táblázat: P?
-9. oldal, 3. def: domináljuk -> iteráljuk
-10. oldal, NE def: s' az S_i-ből való.
-11. oldal, 1. def: \sigma az S_i-ből képez.
-11. oldal, legjobb válasz def: \forall s'_i
-11. oldal, kNE def: legjobb kevert _válasz_
+
+Fleiner javitas:
+7. oldal véges amőba biz: az X és O nem konzisztens. -> szerintem már jó, de légyszi nézd meg te is
+
+11. oldal, 1. def: \sigma az S_i-ből képez.-> itt nem tudom hogy kellene javítani, átírtam \sigma-ról \sigma_i-re, mert matyinál így volt
+
+11. oldal, kNE def: legjobb kevert _válasz_ -> ezt is nézd meg légyszi
+
 15-16. oldal, linprog séma: az egy sorral és oszloppal kiegészített -M
 mátrix alatti sorban a célfüggvényben szereplő 1-es rossz helyen áll. Ahol
 áll, oda nem kell semmi, hanem a csupa0 sorvektor végére kerül az 1-es. Ez
@@ -21,5 +18,3 @@ x_1+...+x_n=1. Hiányzik még az ábráról az x\ge 0 feltétel jelzése. A 16.
 oldalon hasonló igaz: y\ge 0-t érdemes jelezni, valamint az utolsó
 oszlopnak megfelelő lineáris feltétel nem egyenlőtlenség, hanem
 egyenlőség.
-17. oldal, 2. def: ArányoS elosztás
-18. oldal, Even-Paz műveletigénye O(n\cdot \log n)

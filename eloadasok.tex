@@ -78,7 +78,7 @@
 	\begin{definition}{Mag}{}
 		G irányított gráf magja a csúcsok olyan független M részhalmaza, amikbe $\forall$ M-en kívüli csúcsból vezet él.
 	\end{definition}
-	Köv.: G DAG $\Rightarrow$ G-ben $\nexists$ mag
+	Köv.: G DAG $\Rightarrow$ G-ben $\exists$ mag
 	
 	\begin{center}
 		\includegraphics[width=90mm]{res/mag_abra}
@@ -125,7 +125,7 @@
 	
 	
 	\begin{theorem}{}{}
-		$g(v_1v_2) = g_1(v_1)\oplus g_2(v_2)$
+		$g(v_1,v_2) = g_1(v_1)\oplus g_2(v_2)$
 	\end{theorem}
 	
 	\begin{definition}{NIM-összeadás (bitenkénti XOR)}{}
@@ -178,14 +178,14 @@
 	\end{definition}
 	
 	\begin{definition}{Ekvivalencia}{}
-		$J_1$ és $J_2$ kombinatorikus játék $u_0$ és $v_0$ kezdőpozíciókkal ekvivalensek, ha...
-		\begin{itemize}
-			\item $J_1 + J_2 = II$
-			\item $g_{J_1}(u_0) = g_{J_2}(v_0)$
-			\item $\forall H$ kombinatorikus játékban igaz $H + J_1$ és $H + J_2$ azonos típusúak
-		\end{itemize}
+		$J_1$ és $J_2$ kombinatorikus játék $u_0$ és $v_0$ kezdőpozíciókkal ekvivalensek, ha $J_1 + J_2 = II$
+		
 	\end{definition}
-	
+	A definícióval ekvivalens tételek:  
+	\begin{itemize}
+		\item $g_{J_1}(u_0) = g_{J_2}(v_0)$
+		\item $\forall H$ kombinatorikus játékban igaz $H + J_1$ és $H + J_2$ azonos típusúak
+	\end{itemize}
 
 	\begin{definition}{Stratégia lopás}{}
 		Bizonyítási módszer arra, hogy...
@@ -218,7 +218,7 @@
 		Az elsőnek van nem vesztő stratégiája
 	\end{theorem}
 	Biz.: indirekten tegyük fel, hogy a második játékosnak van nem vesztő stratégiája \\
-	Első játékos: X, második játékos: O\\
+	Első játékos: O, második játékos: X\\
 	Játsszon az első játékos egy olyan táblán, amire ő gondolatban valamilyen (i, j) mezőre egy X-et odaképzelt. Játssza ezen a képzeletbeli táblán az első játékos a második játékos nyerő stratégiáját. Ha a második pont erre az (i, j) mezőre tesz, akkor válasszon az első egy tetszőleges másik üres mezőt és képzelje oda az X-et $\rightarrowtail$ (i', j'). \\
 	A játék végén: a képzelt táblán az első nem fog veszíteni, tehát a valódin sem.
 	
@@ -276,7 +276,7 @@
 			\hline
 			\multicolumn{1}{|l|}{}     & \multicolumn{1}{l|}{önző}              & \multicolumn{1}{l|}{koop}         \\ \hline
 			\multicolumn{1}{|l|}{önző} & \multicolumn{1}{l|}{-100 + $\varepsilon$, -100 +$\varepsilon$} & \multicolumn{1}{l|}{-1 + $\varepsilon$, -100} \\ \hline
-			\multicolumn{1}{|l|}{P}    & \multicolumn{1}{l|}{-100, -1 + $\varepsilon$}      & \multicolumn{1}{l|}{-1, -1}       \\ \hline
+			\multicolumn{1}{|l|}{koop}    & \multicolumn{1}{l|}{-100, -1 + $\varepsilon$}      & \multicolumn{1}{l|}{-1, -1}       \\ \hline
 			\multicolumn{3}{l}{Fogoly-dilemma}                                                                     
 		\end{tabular}
 	\end{center}
@@ -303,7 +303,7 @@
 	\end{center}
 	
 	\begin{definition}{Iterált szigorú eliminálás}{}
-		A dominált stratégiát töröljük, és ezt a lépést domináljuk.
+		A dominált stratégiát töröljük, és ezt a lépést iteráljuk.
 	\end{definition}
 	
 	\begin{definition}{Iterált laza eliminálás}{}
@@ -332,7 +332,7 @@
 	[diagram]
 	
 	\begin{definition}{Nash-egyensúly (NE)}{}
-		$s \in S$ tiszta Nash-egyensúly, ha egyetlen játékosnak sem érdeke más stratégiát választani azaz $u_i(s) \geq u_i(s',s_{-i}) \quad \forall \; 1 \leq i \leq n \quad \forall s' \in S$
+		$s \in S$ tiszta Nash-egyensúly, ha egyetlen játékosnak sem érdeke más stratégiát választani azaz $u_i(s) \geq u_i(s',s_{-i}) \quad \forall \; 1 \leq i \leq n \quad \forall s' \in S_i$
 	\end{definition}
 	Példa: fogoly-dillemmában van ilyen, kő-papír-ollóban nincs
 	
@@ -352,7 +352,7 @@
 	\newpage
 	\section{Előadás}
 	\begin{definition}{Kevert stratégia}{}
-		$\sigma : s_i \rightarrow \mathbb{R}_+$ kevert stratégia, ha $\sum_{s_i \in S_i} \sigma_i(s_i) = 1$ \\
+		$\sigma_i : s_i \rightarrow \mathbb{R}_+$ kevert stratégia, ha $\sum_{s_i \in S_i} \sigma_i(s_i) = 1$ \\
 		$\Delta_i$: ezek halmaza $\rightarrow$ i-dik játékos kevert stratégiái 
 		$s_i \in S_i$-hez tartozó tiszta stratégia \\
 		$\chi_{s_i}$-vel jelöljük: 
@@ -369,7 +369,7 @@
 	\end{definition}
 	
 	\begin{definition}{Legjobb válasz}{}
-		$s_{-i} = (s_1, ..., s_n) \in S_{-i},$ (i-dik játékos kivételével mindenkinek választottunk stratégiát) esetén $s_i$ az i-dik játékos számára legjobb válasza, ha $u_i(s_i,s_{-i}) \geq u_i(s_i',s_{-i}) \quad \forall s_i \in S$
+		$s_{-i} = (s_1, ..., s_n) \in S_{-i},$ (i-dik játékos kivételével mindenkinek választottunk stratégiát) esetén $s_i$ az i-dik játékos számára legjobb válasza, ha $u_i(s_i,s_{-i}) \geq u_i(s_i',s_{-i}) \quad \forall s'_i \in S$
 	\end{definition}
 	
 	Láttuk: $s \in S$ tNE, ha $\forall$ i-re $s_i$ legjobb válasza $s_i$-re, ahol $s = (s_1, ..., s_n)$
@@ -387,7 +387,7 @@
 	Biz.: [...]
 	
 	\begin{definition}{Kevert Nash-egyensúly (kNE)}{}
-		$\sigma = (\sigma_1, ..., \sigma_n) \in \Delta$ kevert Nash-egyensúly, ha $\sigma_i$ legjobb kevert k strat $\sigma_{-i}$-re $\forall 1\leq i \leq n$
+		$\sigma = (\sigma_1, ..., \sigma_n) \in \Delta$ kevert Nash-egyensúly, ha $\sigma_i$ legjobb kevert válasz $\sigma_{-i}$-re $\forall 1\leq i \leq n$
 	\end{definition}
 	
 	Pl.: kő-papír-olló
@@ -670,17 +670,18 @@
 		\end{cases}
 		\]
 	\end{definition}
-	\begin{center}
-		\includegraphics[width=90mm]{res/oszlop_maximin.jpg}
-	\end{center}
+	[javítás alatt]
+	%\begin{center}
+	%	\includegraphics[width=90mm]{res/oszlop_maximin.jpg}
+	%\end{center}
 	
 	\begin{theorem}{Neumann-tétel}{}
 		2 személyes 0-összegű játék esetén a sorjátékos biztonsági szintje megegyezik az oszlopjátékos biztonsági szintjének (-1)-szeresével
 	\end{theorem}
-	
-	\begin{center}
-		\includegraphics[width=100mm]{res/Neumann_tetel.jpg}
-	\end{center}
+	[javítás alatt]
+	%\begin{center}
+	%	\includegraphics[width=100mm]{res/Neumann_tetel.jpg}
+	%\end{center}
 	
 	Köv.: 2 személyes 0-összegű játék esetén a c maximin stratégiák kNE-t adnak 
 	\begin{definition}{Csődprobléma a Talmudban}{}
@@ -707,8 +708,8 @@
 	$P_i$ értékelő fv.-e $\mu_i$, ahol $I = [x,y)$ esetén $\mu_i(I) = f_i(y) - f_i(x)$. \\
 	$\mu_i$ diszjunkt intervallumokon additív 
 	
-	\begin{definition}{Elosztás arányok}{}
-		$(A_1, ..., A_n)$ elosztás arányok, ha $\mu_i(A_i) \geq (1/n) \quad \forall i $.
+	\begin{definition}{Arányos elosztás}{}
+		$(A_1, ..., A_n)$ arányos elosztások, ha $\mu_i(A_i) \geq (1/n) \quad \forall i $.
 	\end{definition} 
 	
 	\begin{definition}{Mérés művelet}{}
@@ -766,7 +767,7 @@
 			\item A bal oldali részt az $\lfloor n/2 \rfloor$ legkisebb jelet lerakó játékos, a jobb oldalit pedig az $\lceil n/2 \rceil$ legmagasabb jelet lerakó játékos közt osztjuk szét
 			\item Így a baloldalon $\lfloor n/2 \rfloor$, a jobboldalon $\lceil n/2 \rceil$ játékos osztozik arányosan az Even-Paz eljárást követve
 		\end{itemize}
-		Művelet igény: $O(n * logn)$ \\
+		Művelet igény: $O(n\cdot logn)$ \\
 	\end{definition}
 
 	\begin{definition}{Irigységmentesség}{}

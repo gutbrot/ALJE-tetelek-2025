@@ -374,7 +374,7 @@
 	
 	Láttuk: $s \in S$ tNE, ha $\forall$ i-re $s_i$ legjobb válasza $s_i$-re, ahol $s = (s_1, ..., s_n)$
 	
-	\begin{definition}{Legjobb kevert stratégia}{}
+	\begin{definition}{Legjobb kevert válasz}{}
 		$\sigma_{-i} \in \Delta_{-i}$ esetén $s_i \in S$ az i-dik játékos számára legjobb tiszta stratégiai választás, ha $u_i(s_i, \sigma_{-i}) \geq u_i(s_i',\sigma_{-i}) \quad \forall s_i' \in S_i$-re
 	\end{definition}
 	
@@ -797,10 +797,68 @@
 	[biz: ppt ]
 	
 	\newpage
+	\section{Előadás}
+	Lásd "Szavazási eljárások diasor"
+	
+	\newpage
+	\section{Előadás}
+	\begin{definition}{Árverási model}{}
+		$N = \{1, 2, ..., n\}$ licitálók $A = \{a_1, ..., a_k\}$ \\
+		$\hat{v}_i: A \rightarrow \mathbb{R} \forall i \in N$ az i-dik licitáló értékelése \\
+		$V_i: A \rightarrow \mathbb{R}$ az i-dik licitáló licitje \\
+		$S_i:$ az i-dik licitáló lehetséges licitje\\
+		$S = S_1 \times ... \times S_n$ S elemi a licitprofilok
+	\end{definition}
+	
+	%% $\underline{v} \in S \Rightarrow v = (v_1, ..., v_n)$
+	%% ez nem tudom hova jön xd
+	
+	\begin{definition}{Árverési mechanizmus}{}
+		$f: S \rightarrow A$ a győztes alternatívát kiválasztó a fv. és $p_i: S \rightarrow \mathbb{R}$ mutatja meg, hogy az i-dik licitáló mennyit fizet az $f(\underline{v})$ alternatíva győzelme esetén
+	\end{definition}
+	
+	Az i-dik licitáló nyeresége $u_i(\underline{v}) = \hat{v}_i (f(\underline{v}))-p_i(\underline{v})$
+	
+	\begin{definition}{M mechanizmus taktikázás biztos}{}
+		Ha $u_i(\underline{v}) \leq u_i(\underline{v}_{-i},\hat{v}_i) \quad \forall \underline{v} \in S \quad \forall i \in N$
+	\end{definition}
+	
+	\begin{definition}{Vickrey-Clarke-Groves (VCG)}{}
+		\begin{itemize}
+			\item $f(\underline{v}) maximalizálja \sum_{i=1}^{n} v_i (a) \in A$-ra $\sum_{i=1}^{n} v_i (f(\underline{v})) \geq \sum_{i=1}^{n} v_i(a) \quad \forall a \forall \underline{v} \in S$
+			\item $p_i(\underline{v}) = h_i(\underline{v}-i) - \sum_{j \neq i} v_j (f(\underline{v})) $ teljesül, ahol tetszőleges $h_i: S_{-i} \rightarrow \mathbb{R}$
+			%% $\forall \underline(v) $\forall$ i$
+			%% ezt se tudom hova jön
+		\end{itemize}
+	\end{definition}
+	
+	\begin{theorem}{VCG taktikázás biztos $\forall h$-ra}{}
+		Biz.:
+	\end{theorem}
+	
+	\begin{definition}{M szubvenciómentes}{}
+		Ha $p_i \geq 0 \quad \forall i$
+	\end{definition}
+	
+	\begin{definition}{M veszteségmentes}{}
+		Ha $ \forall i \in N \quad \forall \underline{v} \in S u_i(\underline{v}) \geq 0$, ha $v_i = \hat{v}_i$
+	\end{definition}
+	
+	\begin{definition}{Clarke-szabály}{}
+		$h_i(\underline{v}_{-i}) = max\{ \sum_{i \neq j} v_j(a): a \in A\}$
+	\end{definition}
+	
+	\begin{theorem}{Név?}{}
+		A VCG mechanizmus a Clarke-szabállyal veszteség- és szubvenció mentes, ha $\hat{v}_i(a) \geq 0 \quad \forall i \forall S$ 
+	\end{theorem}
+	Biz.:
+	
+	\newpage
 	\section{Források}
 	\begin{itemize}
 		\item Dr. Fleiner Tamás és Nemkin Viktória előadásán elhangzottak
 		\item Algoritmikus játékelmélet szóbeli tematika 2024 \url{https://www.cs.bme.hu/\%7Efleiner/alje2024/tematika.pdf}
+		\item Nemkin Viktória feladat megoldások \url{https://cs.bme.hu/~nemkin/jatek/}
 		\item Végh László, Király Tamás, Pap Júlia: Játékelmélet jegyzet \url{http://tkiraly.web.elte.hu/students/jatekelmelet_jegyzet.pdf}
 		\item Bernhard von Stengel: Game Theory Basics \url{http://www.maths.lse.ac.uk/personal/stengel/lectnotes1-7.pdf}     
 	\end{itemize}

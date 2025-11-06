@@ -854,6 +854,93 @@
 	Biz.:
 	
 	\newpage
+	\section{Előadás}
+	\begin{remark}{Terminológia}{}
+		Egyenértékűnek számít a jegyzetben a szendvics, jószág és a lakás.
+	\end{remark}
+	\begin{definition}{Újraosztási feladat}{}
+		$N = {1, 2, ..., n} \preceq_i \in P = {1, 2, ..., n}$-en szigorú pref. rendezéssel $\forall i \in N$ \\
+		$\Pi = (\preceq_1, ..., \preceq_n) \in P^n$ pref. profil \\
+		$f: P^n \rightarrow S_N$ (= N.en a permutációk halmaza) mechanizmus, ahol $f(\Pi) = \sigma)$ esetén $\sigma(i) = j$ jelenetése az, hogy i-dik játékos a j-dik játékos jószágát kapja meg
+	\end{definition}
+	
+	\begin{definition}{}{}
+		$\sigma \in S_N$-et a $B \subseteq N \quad \underline{gyengén blokkolja}$, ha $\exists \pi \in S_B$, amire a $\sigma(i) \preceq_i \in B$ és $\exists j \in B \quad \sigma(j) \preceq_j \pi(j) | \sigma \in $ erős mag, ha $\nexists$ gyengén blokkolók. 
+	\end{definition}
+	
+	\begin{definition}{}{}
+		$S \subseteq N D(S)$ segédgráf csúcsai: $S \forall i $ csúcsból 1-1 irányított él fut abba a csúcsba, amelyik lakását i a legjobban preferálja az S-beliek közül
+	\end{definition}
+	
+	\begin{definition}{Top Trading Cycles algoritmus}{}
+		\begin{enumerate}
+			\item $S = N \quad i = 1$
+			\item $S_i = \emptyset \rightarrow $ END
+			\item $S_i \neq \emptyset \quad N_i = C(D(S_i)) \quad S_{i+1} =  S_i\backslash N_i$
+			\item $N_i$-beli játékosokra definiáljuk a $\sigma$-t a $D(S-i)$-ben
+			\item $i = i+1$ GOTO 2. lépés
+		\end{enumerate}
+	\end{definition}
+	
+	\begin{remark}{}{}
+		$\sigma$ a TTC outputja!
+	\end{remark}
+	
+	Példa a működésre: \url{https://blockchain-academy.hs-mittweida.de/courses/game-theory-blockchain/lessons/cooperative-game-theory/topic/top-trading-cycle-algorithm/}
+	
+	\begin{theorem}{Lemma}{}
+		ha $s \neq$ $\Rightarrow D(S)$ tartalmaz irányított kört [diszjunkt körök] = $D(S)$-beli irányított körök csúcshalmaza 
+	\end{theorem}
+	
+	\begin{definition}{}{}
+		j játékos rangja i, ha $j \neq N_i$
+	\end{definition}
+	
+	\begin{theorem}{Lemma}{}
+		Ha j játékos egy újraosztás során $\sigma$-hoz képest jobban jár $\rightarrow$ a saját rangjánál kisebb rangú játékos lakását kapja \\
+		Ha j a saját rangjánál nagyobb rangú játékos lakását kapja $\Rightarrow \sigma$-hoz képest rosszabbul jár 
+	\end{theorem}
+	
+	\begin{theorem}{Shapley-Scart-tétel}{}
+		\begin{enumerate}
+			\item a TTC $\sigma$ outputja benne van az erős magban
+			\item másrészt nincs a $\sigma$-n kívül más eleme az erős magnak
+		\end{enumerate}
+	\end{theorem}
+	Biz.: \\
+	\url{https://www.sciencedirect.com/science/article/pii/S0304406824000296}
+	
+	\begin{definition}{f újraosztási mechanizmus csoportosan manipulálható}{}
+		content...
+	\end{definition}
+	
+	\begin{definition}{f csoportosan taktikázásbiztos}{}
+		content...
+	\end{definition}
+	Biz*.: [előadáson nem fejeztük be]
+	
+	\begin{definition}{Piaci egyensúly}{}
+		content...
+	\end{definition}
+	
+	\begin{statement}{}{}
+		content...
+	\end{statement}
+	
+	\begin{observation}{}{}
+		$\sigma$-beli cserekörök mentén a lakások árait nem változtatjuk \\
+		$\pi(i) <_j \sigma(i) \Rightarrow$ nem blokkol gyengén $\rightarrow$ ellentmondás!
+	\end{observation}
+	
+	\begin{statement}{}{}
+		$\sigma$ a TTC outputja $\Rightarrow \exists p : N \rightarrow \mathbb{R}$, amire $(p, q)$ [???]
+	\end{statement}
+	Biz.: legyen $p(i) = |N|-r(i) \leftarrowtail$ i rangja [$|N|: játékosok száma$]
+	
+	\newpage
+	\section{Előadás}
+	
+	\newpage
 	\section{Források}
 	\begin{itemize}
 		\item Dr. Fleiner Tamás és Nemkin Viktória előadásán elhangzottak

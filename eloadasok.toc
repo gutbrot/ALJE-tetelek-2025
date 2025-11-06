@@ -6,4 +6,6 @@
 \select@language {magyar} \contentsline {section}{\numberline {6}Előadás}{16}{section.6}%
 \select@language {magyar} \contentsline {section}{\numberline {7}Előadás}{19}{section.7}%
 \select@language {magyar} \contentsline {section}{\numberline {8}Előadás}{20}{section.8}%
-\select@language {magyar} \contentsline {section}{\numberline {9}Források}{21}{section.9}%
+\select@language {magyar} \contentsline {section}{\numberline {9}Előadás}{21}{section.9}%
+\select@language {magyar} \contentsline {section}{\numberline {10}Előadás}{23}{section.10}%
+\select@language {magyar} \contentsline {section}{\numberline {11}Források}{24}{section.11}%

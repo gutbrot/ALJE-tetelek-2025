@@ -862,46 +862,54 @@
 		Egyenértékűnek számít a jegyzetben a szendvics, jószág és a lakás.
 	\end{remark}
 	\begin{definition}{Újraosztási feladat}{}
-		$N = {1, 2, ..., n} \preceq_i \in P = {1, 2, ..., n}$-en szigorú pref. rendezéssel $\forall i \in N$ \\
-		$\Pi = (\preceq_1, ..., \preceq_n) \in P^n$ pref. profil \\
-		$f: P^n \rightarrow S_N$ (= N.en a permutációk halmaza) mechanizmus, ahol $f(\Pi) = \sigma)$ esetén $\sigma(i) = j$ jelenetése az, hogy i-dik játékos a j-dik játékos jószágát kapja meg
+		$N = \{1, 2, ..., n\} \preceq_i \in P = \{1, 2, ..., n\}$-en szigorú preferencia rendezések $\forall i \in N$ \\
+		$\Pi = (\preceq_1, ..., \preceq_n) \in P^n$ preferencia profil \\
+		$f: P^n \rightarrow S_N$ (= N.en a permutációk halmaza) mechanizmus, ahol $f(\Pi) = \sigma$ esetén $\sigma(i) = j$ jelenetése az, hogy i-dik játékos a j-dik játékos jószágát kapja meg
+	\end{definition}
+	
+	\begin{definition}{Gyengén blokkolás}{}
+		$\sigma \in S_N$-et a $B \subseteq N \quad$ gyengén blokkolja, ha $\exists \pi \in S_B$, amire a $\sigma(i) \prec_i \pi(i), \forall i \in B$ és $\exists j \in B :  \sigma(j) \preceq_j \pi(j) $\\
+		$\sigma$ erős mag, ha $\nexists$ gyengén blokkoló koalíció. 
 	\end{definition}
 	
 	\begin{definition}{}{}
-		$\sigma \in S_N$-et a $B \subseteq N \quad \underline{gyengén blokkolja}$, ha $\exists \pi \in S_B$, amire a $\sigma(i) \preceq_i \in B$ és $\exists j \in B \quad \sigma(j) \preceq_j \pi(j) | \sigma \in $ erős mag, ha $\nexists$ gyengén blokkolók. 
-	\end{definition}
-	
-	\begin{definition}{}{}
-		$S \subseteq N D(S)$ segédgráf csúcsai: $S \forall i $ csúcsból 1-1 irányított él fut abba a csúcsba, amelyik lakását i a legjobban preferálja az S-beliek közül
+		$S \subseteq N D(S)$ irányított segédgráf csúcsai: $S \forall i $ csúcsból 1-1 irányított él fut abba a csúcsba, amelyik lakását i a legjobban preferálja az S-beliek közül.
 	\end{definition}
 	
 	\begin{definition}{Top Trading Cycles algoritmus}{}
 		\begin{enumerate}
-			\item $S = N \quad i = 1$
+			\item $S_i = N \quad i = 1$
 			\item $S_i = \emptyset \rightarrow $ END
 			\item $S_i \neq \emptyset \quad N_i = C(D(S_i)) \quad S_{i+1} =  S_i\backslash N_i$
-			\item $N_i$-beli játékosokra definiáljuk a $\sigma$-t a $D(S-i)$-ben
+			\item $N_i$-beli játékosokra definiáljuk a $\sigma$-t a $D(S_i)$-beli élek mentén
 			\item $i = i+1$ GOTO 2. lépés
 		\end{enumerate}
 	\end{definition}
 	
 	\begin{remark}{}{}
-		$\sigma$ a TTC outputja!
+		Innentől $\sigma$ a TTC outputja
 	\end{remark}
 	
 	Példa a működésre: \url{https://blockchain-academy.hs-mittweida.de/courses/game-theory-blockchain/lessons/cooperative-game-theory/topic/top-trading-cycle-algorithm/}
 	
 	\begin{theorem}{Lemma}{}
-		ha $s \neq$ $\Rightarrow D(S)$ tartalmaz irányított kört [diszjunkt körök] = $D(S)$-beli irányított körök csúcshalmaza 
+		Ha $S \neq \emptyset$ $\Rightarrow D(S)$ tartalmaz irányított kört %%[diszjunkt körök] %%
 	\end{theorem}
 	
 	\begin{definition}{}{}
-		j játékos rangja i, ha $j \neq N_i$
+		$C(D(S))$ := D(S)-beli körök csúcshalmaza
+	\end{definition}
+	
+	\begin{definition}{}{}
+		j játékos rangja i, ha $j \in N_i$
 	\end{definition}
 	
 	\begin{theorem}{Lemma}{}
 		Ha j játékos egy újraosztás során $\sigma$-hoz képest jobban jár $\rightarrow$ a saját rangjánál kisebb rangú játékos lakását kapja \\
-		Ha j a saját rangjánál nagyobb rangú játékos lakását kapja $\Rightarrow \sigma$-hoz képest rosszabbul jár 
+		Ha j a saját rangjánál nagyobb rangú játékos lakását kapja $\Rightarrow \sigma$-hoz képest rosszul
+		
+		
+		 jár 
 	\end{theorem}
 	
 	\begin{theorem}{Shapley-Scart-tétel}{}
@@ -913,35 +921,40 @@
 	Biz.: \\
 	\url{https://www.sciencedirect.com/science/article/pii/S0304406824000296}
 	
-	\begin{definition}{f újraosztási mechanizmus csoportosan manipulálható}{}
-		content...
+	\begin{definition}{}{}
+		f újraosztási mechanizmus csoportosan manipulálható, ha $\exists M \subseteq N, \exists \pi \in P^N, \exists \pi_M \in P^{|M|} $\\
+		$f(\pi)(j) \preceq_j f(\pi_M , \pi_{-M})(j) \forall j \in M$ és $\exists m \in M : f(\pi)(m)\prec_m f(\pi_M, \pi_{-M})$
 	\end{definition}
 	
-	\begin{definition}{f csoportosan taktikázásbiztos}{}
-		content...
+	\begin{definition}{}{}
+		f csoportosan tagadásbiztos, ha nem csoportosan manipulálható.
 	\end{definition}
+	
+	\begin{theorem}{}{}
+		TTC csoportosan tagadásbiztos
+	\end{theorem}
 	Biz*.: [előadáson nem fejeztük be]
 	
 	\begin{definition}{Piaci egyensúly}{}
-		$p: N \rightarrow \mathbb{R}$ ár függvény és $\sigma \in S_N$ a $(p, \sigma) \quad P-l, ha$
+		$p: N \rightarrow \mathbb{R}$ ár függvény és $\sigma \in S_N$ \\
+		a $(p, \sigma)$ piaci egyensúly, ha
 		\begin{itemize}
-			\item $p \sigma(i) \preceq p(i) \quad \forall i$
+			\item $p (\sigma(i)) \preceq p(i) \quad \forall i$
 			\item $\sigma(i) \preceq_i j \Rightarrow p(i) < p(j)$
 		\end{itemize}
 	\end{definition}
 	
 	\begin{statement}{}{}
-		$(p, \sigma) PE \Rightarrow \sigma$ erős magbeli 
+		$(p, \sigma) PE \Rightarrow \sigma$ erős magbeli k.
 	\end{statement}
 	Biz.:
 	
 	\begin{observation}{}{}
-		$\sigma$-beli cserekörök mentén a lakások árait nem változtatjuk \\
-		$\pi(i) <_j \sigma(i) \Rightarrow$ nem blokkol gyengén $\rightarrow$ ellentmondás!
+		$\sigma$-beli cserekörök mentén a lakások árai nem változnak.
 	\end{observation}
 	
 	\begin{statement}{}{}
-		$\sigma$ a TTC outputja $\Rightarrow \exists p : N \rightarrow \mathbb{R}$, amire $(p, q)$ [???]
+		$\sigma$ a TTC outputja $\Rightarrow \exists p : N \rightarrow \mathbb{R}$, amire $(p, q)$ piaci egyensúly.
 	\end{statement}
 	Biz.: legyen $p(i) = |N|-r(i) \leftarrowtail$ i rangja [$|N|: játékosok száma$]
 	

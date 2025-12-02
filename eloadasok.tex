@@ -977,7 +977,9 @@
 		Tfh. $C_1, C_2, ...$ cserekörök jönnek létre az őszinte TTC-ben \\
 		Hazug TTC cserekörei $C'_1, C'_2,...$ legyen $C'_i$ az első olyan csereköre ebben a sorrendben, ami nem jelenik meg  az őszinte TTC cserekörei között \\
 		ábra \\
-		$C'_i$-ben kétféle lakás tulajdonos lehet őszinte és hazug
+		$C'_i$-ben kétféle lakás tulajdonos lehet \underline{őszinte} és \underline{hazug}. Őszinte játékos őszinte TTC szerinti cserekötésben szereplő [nem tudom elolvasni mert rózsaszínnel írtam :(] $\Rightarrow$ őszinte játékos nem jár rosszul $C'_i$-ben az őszinte TTC-hez képest. \\
+		Tfh. egyetlen hazug játékos sem jár rosszul az őszinte TTC-hez képest. Legalább 1 játékos $C'_i$ másik lakást kap, mint az őszinte TTC szerint. Mivel senki sem jár rosszul $\rightarrow$ valaki jobban jár $\Rightarrow$ blokkoló koalíciót kapunk. \\
+		Őszinte TTC output-ja magbeli $\Rightarrow$ $\nexists$ blokkoló koalíció $\Rightarrow$ ellentmondás!
 		
 	\end{theorem}
 	
@@ -992,17 +994,39 @@
 	\end{definition}
 	
 	\begin{definition}{Felvételi séma}{}
-		$F \leq E$, amire $\forall i \in J$-ből $\leq 1$ F-beli él indul. $\forall s \in S$ szakból $\leq q_s$ indul
+		$F \leq E$, amire $\forall i \in J$-ből $\leq 1$ F-beli él indul. $\forall s \in S$ szakból $\leq q_s$ indul \\
+		$e = j_s$ él blokkolja felvéltelek számát, ha
+		\begin{itemize}
+			\item j fedetlen vagy j-t egy e-nél rosszabb él fedi
+			\item s nem töltötte fel a $q_s$ keretszámát vagy s-ből indul e-nél rosszabb él
+		\end{itemize}
 	\end{definition}
 	
 	\begin{statement}{}{}
-		
+		Egyetemi felvételi probléma visszavezethető páros gráf stabil párosításának keresésére
 	\end{statement}
 	Biz.:
 	
 	\begin{statement}{M párosítás G'-ben}{}
-		content...
+		M vetülete G-ben felvételi séma, ahol M vetülete $P(M)={j_s : \exists j_s \in M}$ \\
+		$P(M) \forall j \in J \leq 1$ élt, $\forall s \in S$-ből [valami]
 	\end{statement}
+	
+	\begin{statement}{}{}
+		M G' stabil párosítás $\Leftrightarrow$ P(M) stabil felvételi séma
+	\end{statement}
+	Biz.: 
+	
+	Következmény: J jelentkező-optimális, szak-optimális stabil felvételi séma \\
+	$\forall$ 2 stabil felvételi sémában ugyanazok a jelentkezők lesznek felvéve és $\forall$ szak ugyanannyi jelentkezőt vesz fel a 2 sémában
+	
+	\begin{definition}{Vonalhúzási probléma}
+		content...
+	\end{definition}
+	
+	\begin{Ponthatárcsökkentő algoritmus}{}
+		...
+	\end{definition}
 	
 	\newpage
 	\section{Előadás}

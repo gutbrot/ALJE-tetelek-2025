@@ -960,76 +960,123 @@
 	
 	\newpage
 	\section{Előadás}
+	Egyetemi felvételi probléma, visszavezetése stabil párosításra, keretszámot fel nem töltő szakok helyzete. Vonalhúzási probléma, stabil ponthatár keresése monoton operátorral. Ponthatárnövelő és -csökkentő algoritmus, szak- és jelentkező-optimális stabil ponthatár. Ponthatár és felvett hallgatók száma közti összefüggés.\\
+	
 	
 	Láttuk: $M_1, M_2$ stabil párosítások G páros gráfban $\Rightarrow$ $V(M_1) = V(M_2)$
 	
 	\begin{theorem}{}{}
 		A fiúk számára a lánykérő algoritmus taktikázás biztos \\
-		Példa.: [ábra]
+		\begin{center}
+			\includegraphics[width=150mm]{res/fiu_opt_parositas.png}
+		\end{center}
 	\end{theorem}
 	
 	\begin{observation}{}{}
 		átrendezés, javítás, "törlés": megőrzik a konkrét stabil párosítást
 	\end{observation}
-	Biz.:
+	Biz.: 
+	\begin{center}
+		\includegraphics[width=150mm]{res/tabil_parositas_biz.png}
+	\end{center}
+	y-t mozgassuk előre $\Rightarrow$ előző eset, de itt f-et továbbra sem fogja stabil párosítás fedni.\\
+	Ellentmondás: f ugyanúgy hazudott, de egyik esetben van stabil párja, a másikban nincs
 	
 	\begin{theorem}{TTC csoportosan taktikázás biztos}{}
 		Tfh. $C_1, C_2, ...$ cserekörök jönnek létre az őszinte TTC-ben \\
 		Hazug TTC cserekörei $C'_1, C'_2,...$ legyen $C'_i$ az első olyan csereköre ebben a sorrendben, ami nem jelenik meg  az őszinte TTC cserekörei között \\
-		ábra \\
-		$C'_i$-ben kétféle lakás tulajdonos lehet \underline{őszinte} és \underline{hazug}. Őszinte játékos őszinte TTC szerinti cserekötésben szereplő [nem tudom elolvasni mert rózsaszínnel írtam :(] $\Rightarrow$ őszinte játékos nem jár rosszul $C'_i$-ben az őszinte TTC-hez képest. \\
+		
+		\begin{center}
+			\begin{minipage}{0.45\textwidth}
+				\includegraphics[width=\linewidth]{res/ttc_csop_takt_biz.png}
+			\end{minipage}\hfill
+			\begin{minipage}{0.45\textwidth}
+				$C'_i$\\
+				ő: őszinte\\
+				h: hazug
+			\end{minipage}
+		\end{center}
+		
+		$C'_i$-ben kétféle lakás tulajdonos lehet \underline{őszinte} és \underline{hazug}. Őszinte játékos őszinte TTC szerinti cserekörében szereplő játékosok még a piacon vannak $\Rightarrow$ őszinte játékos nem jár rosszul $C'_i$-ben az őszinte TTC-hez képest. \\
 		Tfh. egyetlen hazug játékos sem jár rosszul az őszinte TTC-hez képest. Legalább 1 játékos $C'_i$ másik lakást kap, mint az őszinte TTC szerint. Mivel senki sem jár rosszul $\rightarrow$ valaki jobban jár $\Rightarrow$ blokkoló koalíciót kapunk. \\
 		Őszinte TTC output-ja magbeli $\Rightarrow$ $\nexists$ blokkoló koalíció $\Rightarrow$ ellentmondás!
 		
 	\end{theorem}
 	
 	\begin{definition}{Egyetemi felvételi probléma}{}
-		Input: $G=(S \in J, E)$ páros gráf, ahol 
+		Input: $G=(S \cup J, E)$ páros gráf, ahol 
 		\begin{itemize}
 			\item S: szakok
-			\item J: jellemzők
-			\item $\forall s \in S$ szaknak van szigorúan preferált sorrendje a hozzá érkezett jelentkezésekben  $\forall j \in J$ jelentkező sorba rendezve
-			\item $\forall s \in S$ szakhoz adott $q_s$
+			\item J: jelentkezők
+			\item E: jelentkezések
+			\item $\forall s \in S$ szaknak van szigorúan preferált sorrendje a hozzá érkezett jelentkezésekben  
+			\item $\forall j \in J$ jelentkező sorba rendezve
+			\item $\forall s \in S$ szakhoz adott $q_s$ keretszám
 		\end{itemize}
 	\end{definition}
 	
 	\begin{definition}{Felvételi séma}{}
-		$F \leq E$, amire $\forall i \in J$-ből $\leq 1$ F-beli él indul. $\forall s \in S$ szakból $\leq q_s$ indul \\
-		$e = j_s$ él blokkolja felvéltelek számát, ha
+		$F \subseteq E$, amire $\forall j \in J$-ből $\leq 1$ F-beli él indul. $\forall s \in S$ szakból $\leq q_s$ él indul \\
+		$e = j_s$ él blokkolja az F felvéltelek számát, ha
 		\begin{itemize}
 			\item j fedetlen vagy j-t egy e-nél rosszabb él fedi
-			\item s nem töltötte fel a $q_s$ keretszámát vagy s-ből indul e-nél rosszabb él
+			\item s nem töltötte fel a $q_s$ keretszámát vagy S-ből indul e-nél rosszabb él
 		\end{itemize}
 	\end{definition}
 	
 	\begin{statement}{}{}
+		Felvételi séma stabil, ha $\nexists$ blokkoló él.
+	\end{statement}
+	
+	\begin{statement}{}{}
 		Egyetemi felvételi probléma visszavezethető páros gráf stabil párosításának keresésére
 	\end{statement}
-	Biz.:
+	Biz.: \\
+	$S':=\{s_i: s \in S 1 \leq i\leq q_s\}$ \\
+	$E':=\{j_{s_i}: j_S \in E 1 \leq i\leq q_s\}$ \\
+	$\preceq_{s_i}: \preceq_s$-ből öröklődik \\
+	$˛\preceq_j: j_{s_i} \preceq j_{sk}, ha j_s < j_s' ha s \ngeq s'$ és $i < k$, ha $s=s'$ \\
+	$G'=(J \cup S',E')$
 	
 	\begin{statement}{M párosítás G'-ben}{}
-		M vetülete G-ben felvételi séma, ahol M vetülete $P(M)={j_s : \exists j_s \in M}$ \\
-		$P(M) \forall j \in J \leq 1$ élt, $\forall s \in S$-ből [valami]
+		M vetülete G-ben felvételi séma, ahol M vetülete $P(M)={j_s : \exists i j_{s_i} \in M}$ \\
+		$P(M) \forall j \in J$-ből $\leq 1$ élt, $\forall s \in S$-ből legfeljebb $q_s$ élt tart
 	\end{statement}
 	
 	\begin{statement}{}{}
 		M G' stabil párosítás $\Leftrightarrow$ P(M) stabil felvételi séma
 	\end{statement}
 	Biz.: 
+	Tfh: M stabil párosítás G'-ben. P(M)-nél láttuk, hogy felvételi séma \\
+	Tfh. $j_s$ él blokkolja P(M)-et $\Rightarrow$ s (1) vagy nem tölttöte fel $q_s$-t vagy (2) felvett j-nél rosszabb jelentkezőt \\
+	(1) $s_i$ fedetlen, $j_{s_i}$ blokkol M-ben  \\
+	(2) $s_i$ blokkolja M-et \\
+	Tfh.: F stabil felvételi séma $\rightarrow$ cél: $\exists G'$-ben olyan M stabil párosítás, amin P(M)=F\\
+	M' konstukciója: az s szak által felvett jelentkezőket az s preferenciája szerint ültetjük az 1., 2., ... stb. helyekre. Könnyen látható, hogy M stabil párosítás G-ben.
+	\\
 	
 	Következmény: J jelentkező-optimális, szak-optimális stabil felvételi séma \\
 	$\forall$ 2 stabil felvételi sémában ugyanazok a jelentkezők lesznek felvéve és $\forall$ szak ugyanannyi jelentkezőt vesz fel a 2 sémában
 	
-	\begin{definition}{Vonalhúzási probléma}
-		content...
+	\begin{definition}{Vonalhúzási probléma}{}
+		$S,J,E \quad \forall j \in J \prec_j \quad \forall j_s \in E \quad r_{j_s}$ pontszám \\
+		ponthatár: $l: S \rightarrow N$ rögzített $l$ mellett, $j_s \in E \quad \underline{eredményes} : r_{j_s} \geq l(s) \quad $, $ \underline{sikeres}$: (1) eredményes (2) j számára nincs ennél jobb eredményes jelentkezés \\
+		$l \quad \underline{megengedett}$, ha F(l) felvételi séma \\
+		$l \quad \underline{kritikus}$, ha $\forall s \in S$ igaz, hogy vagy $l(s) = 0$ vagy $l(s)$-et 1-gyel csökkentjük és a többi $l(s')$ változatlan maradna $\Rightarrow$ az így kapott ponthatár már nem volna megengedett. \\
+		$l \quad \underline{stabil}$, ha megengedett és kritikus
 	\end{definition}
 	
-	\begin{Ponthatárcsökkentő algoritmus}{}
-		...
+	\begin{definition}{Ponthatárcsökkentő algoritmus}{}
+		Tfh.: $r_{j_s} \leq 500$ \\
+		$l = 500 \quad \varphi(l) = l'$, ahol $l'(s)$-t úgy határozzuk meg, hogy a legkisebb olyan pontszám legyen, amire s még nem tölti túl a keretszámát, akkor, ha $\forall$ más szak ponthatára az l által meghatározott ponthatár. \\
+		$500 \geq \varphi(500) \geq \varphi(\varphi(500)) \geq ... \Rightarrow \exists i : \varphi^{(i)}(500) = \varphi^{(i+1)}(500) \geq l \rightarrow$ stabil \\
+		$\Rightarrow$ szak optimális felvételi séma \\
+		$0 \leq \varphi(0) \leq \varphi(\varphi(0)) \leq ... \Rightarrow$ jelentkező optimális séma
 	\end{definition}
 	
 	\newpage
 	\section{Előadás}
+	Népszerű párosítások, stabil párosítások népszerűsége, maximális élszámú népszerű párosítás keresése Kavitha algoritmusával.
 	
 	\newpage
 	\section{Források}

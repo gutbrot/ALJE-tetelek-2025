@@ -840,8 +840,33 @@
 			\item $\forall$ játékos a saját részét i egyforma részre osztja szét
 			\item $P_i \quad \forall$ játékostól választ 1-1 részt 
 		\end{itemize}
-		[ábra]
 	\end{definition}
+	\begin{comment}
+		
+	\begin{tikzpicture}[
+		node distance=18mm,
+		every node/.style={draw, rectangle, rounded corners, align=center},
+		arrow/.style={->, thick}
+		]
+		
+		\node (start) {Bemenet:\\ követelések $d_i$, vagyon $E$};
+		\node (init)  [below=of start] {Inicializálás:\\ $N_0=N$, $E_0=E$};
+		\node (step)  [below=of init] {Egyenlő lépés\\ az aktív játékosokon};
+		\node (check) [below=of step] {Vizsgálat:\\ $d_i=0$ vagy\\ $\sum d_i = E_k$?};
+		\node (fix)   [below left=of check, xshift=-8mm] {Kifizetés rögzítése};
+		\node (red)   [left=of step, xshift=8mm] {Redukció:\\ $N_{k+1},E_{k+1}$};
+		\node (end)   [below=of check] {Megállás:\\ Fink-elosztás};
+		
+		\draw[arrow] (start) -- (init);
+		\draw[arrow] (init) -- (step);
+		\draw[arrow] (step) -- (check);
+		\draw[arrow] (check) -- node[right]{igen} (fix);
+		\draw[arrow] (fix) -- (red);
+		\draw[arrow] (red) -- (step);
+		\draw[arrow] (check) -- node[right]{nem} (end);
+		
+	\end{tikzpicture}
+	\end{comment}
 	
 	\begin{definition}{Tasnádi rekurzív módszere}{}
 		\begin{itemize}

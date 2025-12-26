@@ -635,7 +635,10 @@
 	\end{figure}
 	
 	\newpage
+	\newpage
 	\section{Előadás}
+	0-összegű kétszemélyes játékok kevert Nash-egyensúlya lineáris programozási feladatként, Neumann-tétel. (VKP 2.7)
+	Csődjáték, kelmeszabály-konzisztens szétosztás, Kaminski-féle közlekedőedény-rendszer, a csődjáték nukleolusza (T 9.3, (VKP 4.1))
 	\begin{definition}{Maximin stratégia}{}
 		Strat. játék esetén az i-dik játékos maximin stratégiája egy olyan $\sigma_1 \in \Delta$ kevert stratégiája, amire $min u_i(\sigma_i, s_{-i}) \geq min u_i (\sigma_i, \sigma_{-i}) \quad \forall \sigma_i \in \Delta_i$
 	\end{definition}
@@ -684,9 +687,109 @@
 	%\end{center}
 	
 	Köv.: 2 személyes 0-összegű játék esetén a c maximin stratégiák kNE-t adnak 
-	\begin{definition}{Csődprobléma a Talmudban}{}
-		lásd ppt
+	
+	
+	\begin{definition}{Csődprobléma}{}
+		Adott egy $0 \leq E$ vagyon és n hitelező $0 \leq d_1 \leq ... \leq d_n$ követelésekkel úgy, hogy $E < \sum_i d_i$. Keressük a vagyon egy lehetséges szétosztását, vagyis olyan $x_1, ...m x_n$ kifizetéseket, amelyekre $0 \leq x_1, ..., x_n$ és $\sum_i x_i = E$ teljesülnek.
 	\end{definition}
+	
+	\begin{definition}{Arányos szétosztás}{}
+		A hitelezők a követeléseik arányában részesednek a vagyonból: $x_i = E \frac{d_i}{E_j d_j}$
+	\end{definition}
+	
+	\begin{definition}{Egyenletes nyereségű szétosztás}{}
+		Keressük azt a $\lambda$ nyereségértéket, amelyre ha a $\lambda$-nál kisebb követelésűek a saját követelésüket, a többiek pedig $\lambda$-t kapnak akkor éppen E lesz a kifizetések összege.
+	\end{definition}
+	
+	\begin{definition}{Egyenletes veszteségű szétosztás}{}
+		Keressük azt a $\mu$ veszteségértéket, amelyre ha a $\mu$-nél kisebb követelésűek semmit, a többiek pedig a követelésüknél $\mu$-vel kevesebbet kapnak, akkor éppen E lesz a
+		kifizetések összege.
+	\end{definition}
+	
+	\begin{definition}{Sorban állásos szétosztás}{}
+		A hitelezőket egy meghatározott sorrendben szolgáljuk ki, az aktuálisan kiszolgált hitelező a még rendelkezésre álló vagyonból a követelése erejéig részesül.
+	\end{definition}
+	
+	\begin{definition}{Kelmeszabály}{}
+		Két hitelező között a kelmeszabály szerinti szétosztás a következőképpen történik: mindkét hitelező megkapja a saját követelésének a másik által nem követelt részét, a vitatott részen
+		pedig fele-fele arányban osztoznak.
+		\begin{center}
+			\includegraphics[width=150mm]{res/kelmeszabaly.png}
+		\end{center}
+		Ha van E-nél nagyobb követelés, azt E méretűként kezeljük.
+	\end{definition}
+	
+	\begin{definition}{Kelmeszabály-konzisztens szétosztás}{}
+		Egy $(x_1, ..., x_n)$ szétosztás kelmeszabály-konzisztens, ha
+		bármely $i \neq j$ hitelezőpár a nekik összesen kiosztott $x_i + x_j$ vagyonból a $d_i$ és $d_j$ követeléseik alapján
+		a kelmeszabály szerint éppen $x_i$ és $x_j$ részt kapna.
+	\end{definition}
+	
+	\begin{definition}{Kaminski-féle közlekedőedény-rendszer}{}
+		Tfh. mindkét hitelezőhöz tartozik egy-egy azonos keresztmetszetű, $d_1$ ill. $d_2$ térfogatú, hengeres tartály. Vágjuk félbe a tartályokat, kössük össze ezeket vékony csövekkel, és töltsük fel E (vagyonnagysággal) mennyiségű folyadékkal az így kapott közlekedőedény-rendszert. "Könnyen" látható, hogy folyadék épp a ksz szerint oszlik meg az egyes tartályokban. \\
+		Így már nem nehéz ksz-konzisztens szétosztást találni: minden hitelezőhöz tartozzon egy-egy követelésnyi térfogatú tartály, kössük össze ezeket vékony csövekkel, és töltsük fel E mennyiségű folyadékkal a kapott rendszert.
+		\begin{center}
+			\includegraphics[width=100mm]{res/ksz_konzisztencia.png}
+		\end{center}
+	\end{definition}
+	
+	\begin{definition}{Öndualitás}{}
+		Az összveszteség is ksz-konzisztensen van szétosztva.  
+		A ksz-konzisztens szétosztás a csődjáték \textbf{nukleolusza}.  
+		
+		A nukleoluszt a \textbf{koalícióérték}, ill.\ a \textbf{többletvektor} definiálja.
+	\end{definition}
+	\paragraph{Példa}
+	Legyen $E = 400$, $d_1 = 100$, $d_2 = 200$, $d_3 = 300$.  
+	
+	Egy koalíció értéke annyi, amennyi a többiek teljes kifizetése után marad:
+	
+	\[
+	\begin{array}{c|cccccc}
+		S      & \{1\} & \{2\} & \{3\} & \{1,2\} & \{2,3\} & \{1,3\} \\
+		\hline
+		v(S)   & 0     & 0     & 100   & 100     & 300     & 200
+	\end{array}
+	\]
+	
+	Egy $S$ koalíció \textbf{többlete} annyi, amennyit az értékén felül kap:
+	\[
+	e(x,S) = x(S) - v(S).
+	\]
+	
+	\[
+	\begin{array}{c|cccccc}
+		\text{Koalíció} & \{1\} & \{2\} & \{3\} & \{1,2\} & \{2,3\} & \{1,3\} \\
+		\hline
+		v(S) & 0 & 0 & 100 & 100 & 300 & 200 \\
+		x \text{ (arányos)} 
+		& \frac{200}{3} & \frac{400}{3} & 200 & 200 & \frac{1000}{3} & \frac{800}{3} \\
+		e(x,S) 
+		& \frac{200}{3} & \frac{400}{3} & 100 & 100 & \frac{100}{3} & \frac{200}{3} \\
+		y \text{ (ksz-konzisztens)} 
+		& 50 & 125 & 225 & 175 & 350 & 275 \\
+		e(y,S) 
+		& 50 & 125 & 125 & 75 & 50 & 75
+	\end{array}
+	\]
+	
+	
+	\begin{definition}{Többletvektor}
+		A többletekből áll, növekvő sorrendben.
+	\end{definition}
+	\paragraph{Példa}\mbox{}\\
+	$\Theta(x)$ = (33.3, 66.6, 66.6, 100, 100, 133.3) ill.\\
+	$\Theta(y)$ = (50, 50, 75, 75, 125, 125) \\
+	(a fenti táblázat alapján)
+	
+	\begin{definition}{Csődjáték nukleolusza}{}
+		A nukleolusz az a szétosztás, ami lexikografikusan maximalizálja a többletvektort. Azaz: az első koordináta maximális, ezen belül a második koordináta is maximális stb.
+	\end{definition}
+	
+	\begin{theorem}{Aumann-Maschler}{}
+		A ksz-konzisztens szétosztás a csődjáték nukleolusza.
+	\end{theorem}
+	Biz.: *
 	
 	\newpage
 	\section{Előadás}

@@ -13,6 +13,7 @@
 	
 	
 	\section{Előadás}
+	Kombinatorikus játék fogalma, éles játék, betli játék, nyerő stratégia.  Irányított gráf magja, mag egyértelműsége DAG-ban (VKP 1.1). I-es és II-es típusú játékok ill. pozíciók, játékok összege, az összeg típusa. Grundy-számozás definíciója magokkal ill. a mex operátorral. NIM-összeadás és tulajdonságai (VKP 1.3.1).
 	\begin{definition}{Kombinatorikus játék}{}
 		$ J=(G,N_W,N_L,N_T,V_0) $, ahol $ G DAG, N_W,N_L,N_T$ nyelők partíciója és $v_0 \in V(G)$ kiinduló állapot
 	\end{definition}
@@ -145,13 +146,15 @@
 	
 	 
 	\section{Előadás}
+	Sprague-Grundy-tétel, Bouton tétele a NIM nyerő stratégiájáról. Játékok izomorfiája és ekvivalenciája (VKP 1.3.1). Stratégialopás (VKP 1.2), hex (VKP 1.55, 1.56).
 	\begin{theorem}{Sprague–Grundy}{}
 		Ha u és v $J_1 és J_2$ kombinatorikus játékokban állások, akkor $g_{J_1,J_2}(u, v) = g_{J_1}(u) \oplus g_{J_2}(v)$
 	\end{theorem}
 	\begin{center}
 		\includegraphics[width=120mm]{res/sprague-grundy_biz}
 	\end{center}
-	Biz. Teljes indukcióval:
+	Biz.: * \\
+	Teljes indukcióval:
 	\begin{enumerate}
 		\item $ g(w_{n,m})=g(u_n) \oplus g(v_m)$, mivel mindkettő nyelő $\Rightarrow0 = 0 \oplus 0$
 		\item Tfh.: $w_{i,j}$-től jobbra és lefelé $\forall$ csúcsra teljesül (topologikus sorrend szerint)
@@ -224,6 +227,7 @@
 	
 	\newpage
 	\section{Előadás}
+	Stratégiai játékok, játékosok racionalitása, Pareto-optimális stratégiaválasztás. Domináns stratégiák, stratégiák (iterált) eliminálása. Tiszta Nash-egyensúly. (VKP 2, 2.1, 2.2, 2.3)
 	\begin{definition}{Stratégiai játékok}{}
 		n játékos van, $1\leq i \leq n$ esetén $S_i$ az i-edik játékos lehetséges stratégiája $S = S_1 \times S_2 \times ...  \times S_n$ stratégiaválasztások (kimenetelek) halmaza.\\
 		$u_i : S \longrightarrow \mathbb{R}$ i-edik játékos nyereség függvénye.
@@ -351,6 +355,7 @@
 	
 	\newpage
 	\section{Előadás}
+	Kevert Nash-egyensúly, maximin stratégia és Nash-egyensúly kapcsolata.(VKP 2.4, 2.6)
 	\begin{definition}{Kevert stratégia}{}
 		$\sigma_i : S_i \rightarrow \mathbb{R}_+$ kevert stratégia, ha $\sum_{s_i \in S_i} \sigma_i(s_i) = 1$ \\
 		$\Delta_i$: ezek halmaza $\rightarrow$ i-dik játékos kevert stratégiái 
@@ -793,6 +798,8 @@
 	
 	\newpage
 	\section{Előadás}
+	Osztozkodási játék, arányos szétosztást garantáló eljárások: oszt-választ, Fink, Tasnádi, Banach-Knaster, (diszkrét) mozgó késes, Even-Paz  (T 9.1, 9.2 (VKP 4.1))
+	Irigységmentes szétosztások, Conway-Selfridge-eljárás.
 	\begin{definition}{Osztozkodási probléma}{}
 		A $[0,1)$ egy elosztása: \\
 		$[0,1) = A_1 \cup A_2 \cup ... \cup A_n$, ahol $\forall A_i$ balról zárt, jobbról nyílt páronként diszjunkt intervallumok uniója, és $A_i$ véges sok.
@@ -929,10 +936,61 @@
 	
 	\newpage
 	\section{Előadás}
-	Lásd "Szavazási eljárások diasor"
+	Elosztás meghatározása szavazással, szavazási modell (alternatívák, szavazók, preferenciák, TVSZ és TVF), konkrét mechanizmusok (jóváhagyásos, többségi, Borda- és Copeland-szavazás) Condorcet-győztes. Mechanizmusok tulajdonságai (szimmetrikus, semleges, egyhangú, FLA, manipulálható, taktikázásbiztos, diktatórikus) és Arrow tétele. )T 6.1, 6.3, VKP 4.2) A Gibbard-Satterthwaite-tétel.
+	
+	\begin{definition}{Szavazási modell}{}
+		Legyen $N={1, ..., n}$ a szavazók halmaza és $A = \{a_1, ..., 1_k\}$ az alternatívák halmaza. Az $i.$ szavazó szavazata az alternatívák egy lehetséges sorrendje (permutációja), az ehhez tartozó rendezési reláció jele a $\prec_i$. Az $n$ szavazó egy lehetséges választási profilja a $\Pi = (\prec_1, ..., \prec_n)$. A szavazási mechanizmus egy $F(\Pi)$ társadalmi választási szabályt (TVSZ) határoz meg, mely egy választási profilhoz hozzárendeli a szavazás eredményét, azaz az alternatíváknak a közös döntés szerinti sorrendjét. A nyerte alternatíva a TVSZ sorrendjében az első, az $f(\Pi)$ társadalmi választási függvény (TVF) ezt a nyertes alternatívát rendeli hozzá a $\Pi$-hez.
+	\end{definition}
+	
+	\begin{definition}{Többségi szavazás}{}
+		A többségi szavazás TVZS-e megszámolja, hogy egy adott alternatíva hányszor fordul elő első helyen a szavazatokban és az alternatívákat ezen előfordulási darabszám szerinti csökkenő sorrendbe teszi. Egyenlőség esetén az első szavazó szavazata dönt.
+	\end{definition}
+	
+	\begin{definition}{Borda-szavazás}{}
+		Az $i.$ szavazó $a \in A$ alternatívához rendelt Borda-pontszáma $B_i(a) = k - l$, ahol $l$ az $a$ alternatíva sorszáma az $i.$ szavazó sorrendjében. Az $a$ Borda-pontszáma $B(a)$, a szavazók Bordapontszámainak az összege. A Borda-szavazás TVSZ-e a Borda-pontszám szerinti csökkenő sorrendbe rendezi az alternatívákat. Egyenlőség esetén az első szavazó szavazata dönt.
+	\end{definition}
+	
+	\begin{definition}{Condorcet-konzisztencia}{}
+		Az $a$ alternatíva legyőz egy tőle különböző $b$ alternatívát, ha szigorúan több szavazó sorolta $a$-t a $b$ elé a sorrendjében. Az $a$ alternatíva Condorcet-győztes, ha legyőzött
+		minden más alternatívát (ilyen nem mindig van). Egy szavazási mechanizmus Condorcet-konzisztens, ha a Condorcet-győztest választja nyertesnek, amennyiben az létezik.
+	\end{definition}
+	
+	\begin{definition}{Copeland-szavazás}{}
+		Az $a \in A$ alternatíva Copeland-pontszáma $C(a) = w(a) - l(a)$, ahol $w(a)$ jelöli azon alternatívák darabszámát, melyeket a legyőzött, $l(a)$ pedig azok darabszámát, melyek legyőzték $a$-t. A Copeland-szavazás TVSZ-e a Copeland-pontszám szerinti csökkenő sorrendbe rendezi
+		az alternatívákat. Egyenlőség esetén az első szavazó szavazata dönt.
+	\end{definition}
+	
+	\begin{theorem}{}{}
+		A Copeland-szavazás Condorcet-konzisztens
+	\end{theorem}
+	
+	\begin{observation}{Szavazási mechanizmusok tulajdonságai}{}
+		\begin{itemize}
+			\item \textbf{Szimmetrikus / anonim}: A TVSZ által adott eredmény nem változik, ha a szavazók tetszőleges permutáció szerint helyet cserélnek egymással.
+			\item \textbf{Semleges / pártatlan}: A TVSZ által adott eredmény nem változik, ha a szavazók tetszőleges permutáció szerint átcímkézik az alternatívákat és az eredeti preferenciasorrendjük szerint
+			szavaznak, de az alternatívák új címkéit írják a szavazólapra, a kapott eredményt pedig visszakódolják az eredeti címkézésre.
+			\item \textbf{Egyhangú}: Ha $a, b \in A$ különböző alternatívákra minden szavazó a-t előrébb sorolja b-nél a
+			szavazatában, akkor a TVSZ eredményében is a előrébb lesz mint b.
+			\item \textbf{Független a lényegtelen alternatíváktól (FLA)}: Ha a szavazók úgy módosítják a szavazatukat, hogy egy adott alternatívahalmaz elemeinek az egymáshoz viszonyított sorrendje mindenkinél változatlan marad, akkor ugyanezen alternatívák egymáshoz viszonyított sorrendje a
+			TVSZ eredményében sem változhat meg.
+			\item \textbf{Taktikázásbiztos / nem manipulálható}: Egy szavazó nem tud úgy hazudni a saját preferenciasorrendjéről, hogy számára jobb alternatíva jöjjön ki nyertesként, mintha őszintén szavazott
+			volna.
+		\end{itemize}
+	\end{observation}
+	
+	\begin{theorem}{Gibbard-Satterthwaite tétel}{}
+		Ha van legalább 3 alternatíva, továbbá $f$ szürjektív (mindegyik
+		alternatíva előáll nyertesként valamilyen $\Pi$-re) és taktikázásbiztos, akkor $f$ diktatórikus.
+	\end{theorem}
+	
+	\begin{theorem}{Arrow tétel}{}
+		Ha van legalább 3 alternatíva, továbbá $F$ egyhangú és független a lényegtelen alternatíváktól, akkor $F$ diktatórikus.
+	\end{theorem}
 	
 	\newpage
 	\section{Előadás}
+	A Vickrey-árverés taktikázásbiztossága. (VKP 4.2, 4.3)
+	A VCG-árverési mechanizmus taktikázásbiztossága. Veszteség- és szubvenciómentesség a Clarke-szabály használata esetén nemnegatív hasznosságok mellett.
 	\begin{definition}{Árverési model}{}
 		$N = \{1, 2, ..., n\}$ licitálók\\ 
 		$A = \{a_1, ..., a_k\}$ alternatívák \\
@@ -989,6 +1047,7 @@
 	
 	\newpage
 	\section{Előadás}
+	Újraosztási feladat, gyengén blokkoló koalíció, erős mag, felső körcsere (TTC) algoritmus. (VKP 4.3, 4.4) A TTC taktikázásbiztos tulajdonsága, piaci egyensúly és erős mag kapcsolata a lakáspiac esetén, piaci egyensúly keresése felső körcserével.
 	\begin{remark}{Terminológia}{}
 		Egyenértékűnek számít a jegyzetben a szendvics, jószág és a lakás.
 	\end{remark}
@@ -1021,7 +1080,7 @@
 		Innentől $\sigma$ a TTC outputja
 	\end{remark}
 	
-	Példa a működésre: \url{https://blockchain-academy.hs-mittweida.de/courses/game-theory-blockchain/lessons/cooperative-game-theory/topic/top-trading-cycle-algorithm/}
+	Példa a működésre: \href{https://blockchain-academy.hs-mittweida.de/courses/game-theory-blockchain/lessons/cooperative-game-theory/topic/top-trading-cycle-algorithm/}{videó}
 	
 	\begin{theorem}{Lemma}{}
 		Ha $S \neq \emptyset$ $\Rightarrow D(S)$ tartalmaz irányított kört %%[diszjunkt körök] %%
@@ -1213,10 +1272,12 @@
 	\section{Források}
 	\begin{itemize}
 		\item Dr. Fleiner Tamás és Nemkin Viktória előadásán elhangzottak
-		\item Algoritmikus játékelmélet szóbeli tematika 2024 \url{https://www.cs.bme.hu/\%7Efleiner/alje2024/tematika.pdf}
-		\item Nemkin Viktória feladat megoldások \url{https://cs.bme.hu/~nemkin/jatek/}
-		\item Végh László, Király Tamás, Pap Júlia: Játékelmélet jegyzet \url{http://tkiraly.web.elte.hu/students/jatekelmelet_jegyzet.pdf}
-		\item Bernhard von Stengel: Game Theory Basics \url{http://www.maths.lse.ac.uk/personal/stengel/lectnotes1-7.pdf}     
+		\item A \url{https://www.cs.bme.hu/alje/} oldalon elérhető anyagok
+		\item \href{https://www.cs.bme.hu/\%7Efleiner/alje2024/tematika.pdf}{Algoritmikus játékelmélet szóbeli tematika 2024}
+		\item \href{https://www.cs.bme.hu/%7Efleiner/alje2025/tematika.pdf}{Algoritmikus játékelmélet szóbeli tematika 2025}
+		\item \href{https://cs.bme.hu/~nemkin/jatek/}{Nemkin Viktória feladat megoldások}
+		\item \href{http://tkiraly.web.elte.hu/students/jatekelmelet_jegyzet.pdf}{Végh László, Király Tamás, Pap Júlia: Játékelmélet jegyzet}
+		\item \href{http://www.maths.lse.ac.uk/personal/stengel/lectnotes1-7.pdf}{Bernhard von Stengel: Game Theory Basics}   
 	\end{itemize}
 	
 \end{document}

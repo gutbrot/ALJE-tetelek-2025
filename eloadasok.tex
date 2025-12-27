@@ -229,9 +229,16 @@
 	\section{Előadás}
 	Stratégiai játékok, játékosok racionalitása, Pareto-optimális stratégiaválasztás. Domináns stratégiák, stratégiák (iterált) eliminálása. Tiszta Nash-egyensúly. (VKP 2, 2.1, 2.2, 2.3)
 	\begin{definition}{Stratégiai játékok}{}
-		n játékos van, $1\leq i \leq n$ esetén $S_i$ az i-edik játékos lehetséges stratégiája $S = S_1 \times S_2 \times ...  \times S_n$ stratégiaválasztások (kimenetelek) halmaza.\\
+		$n$ játékos van, $1\leq i \leq n$ esetén $S_i$ az $i$-edik játékos lehetséges stratégiája $S = S_1 \times S_2 \times ...  \times S_n$ stratégiaválasztások (kimenetelek) halmaza.\\
 		$u_i : S \longrightarrow \mathbb{R}$ i-edik játékos nyereség függvénye.
 	\end{definition}
+	
+	\begin{remark}{Kicsit máshogy}{}
+		Adott $n \in \mathbb{N}+$ játékos, és tetszőleges $i \in {1, . . . , n}$ esetén adott az $i$-edik játékoshoz
+		a lehetséges stratégiáinak egy Si halmaza, valamint egy $u_i : S = S_1 \times S_2 \times ...  \times S_n \rightarrow R$ nyereségfüggvény. Minden játékos ismeri a többiek lehetséges stratégiáit és nyereségfüggvényeit. A játék egy körből
+		áll, amiben a játékosok egymástól függetlenül választanak egy-egy stratégiát azzal a céllal, hogy
+		maximalizálják a saját nyereségüket.
+	\end{remark}
 	
 	$\forall$ stratégiai játékra teljesül
 	\begin{itemize}
@@ -294,6 +301,20 @@
 		 \end{itemize}
 	\end{definition}
 	
+	\begin{definition}{Gyenge dominálás}{}
+		Az $i.$ játékos $z \in S_i$ stratégiája gyengén dominálja a $z' \in S_i$ stratégiáját, ha a többi játékos tetszőleges $s_1 \in S_1, ..., s_{i-1} \in S_{i-1}, s_{i+1} \in S_{i+1}, ..., s_n \in S_n$ stratégiaválasztás esetén  
+		\begin{center}
+			$u_i(s_1, ..., s_{i-1}, z, s_{i+1}, ..., s_n) \geq u_i(s_1, ..., s_{i-1}, z', s_{i+1}, ..., s_n)$.
+		\end{center}
+	\end{definition}
+	
+	\begin{definition}{Erős dominálás}{}
+		Az $i.$ játékos $z \in S_i$ stratégiája gyengén dominálja a $z' \in S_i$ stratégiáját, ha a többi játékos tetszőleges $s_1 \in S_1, ..., s_{i-1} \in S_{i-1}, s_{i+1} \in S_{i+1}, ..., s_n \in S_n$ stratégiaválasztás esetén  
+		\begin{center}
+			$u_i(s_1, ..., s_{i-1}, z, s_{i+1}, ..., s_n) > u_i(s_1, ..., s_{i-1}, z', s_{i+1}, ..., s_n)$.
+		\end{center}
+	\end{definition}
+	
 	\begin{definition}{Százlábú játék}{}
 		\begin{itemize}
 			\item 2 játékos
@@ -307,11 +328,13 @@
 	\end{center}
 	
 	\begin{definition}{Iterált szigorú eliminálás}{}
-		A dominált stratégiát töröljük, és ezt a lépést iteráljuk.
+		A játékban részt vevő bármely játékos erősen dominált stratégiáját töröljük, és ezt ismételjük mindaddig, amíg van olyan játékos, akinek maradt még erősen dominált
+		stratégiája.
 	\end{definition}
 	
 	\begin{definition}{Iterált laza eliminálás}{}
-		Ha gyengén dominált stratégiát törlünk.
+		A játékban részt vevő bármely játékos gyengén dominált stratégiáját töröljük, és ezt ismételjük mindaddig, amíg van olyan játékos, akinek maradt még gyengén dominált
+		stratégiája.
 	\end{definition}
 	
 	\begin{theorem}{}{}
@@ -326,17 +349,29 @@
 	\begin{definition}{Pareto dominálás}{}
 		$s, s' \in S, \quad s \quad$Pareto-dominálja s'-t, ha $u_i(s) \geq u_i(s') \quad \forall i \in [n]$ és $\exists j \in [n] : u_j(s) > u_j(s')$.
 	\end{definition}
-	pl. Fogoly dilemmában: önő + önző P-dominálva van
+	pl. Fogoly dilemmában
 	
 	\begin{definition}{Pareto-optimális stratégiaválasztás}{}
 		$s \in S$ strat. választás Pareto-optimális, ha semelyik más strat. választás sem Pareto-dominálja.
 	\end{definition}
+	
+	\begin{remark}{Kicsit másképp}{}
+		Az $(s_1, ..., s_n) \in S_1 \times ... \times S_n$ stratégiaválasztás Pareto-optimális, ha nem létezik olyan $(s'_1, ..., s'_n) \in S_1 \times ... \times S_n$ stratégiaválasztás, melyre a következők teljesülnek:
+		\begin{itemize}
+			\item minden $i \in \{1, ..., n\}$ esetén $u_i(s_1, ..., s_n) \leq u_i(s'_1, ..., s'_n)$, és
+			\item létezik olyan $j \in \{1, ..., n\}$ esetén $u_j(s_1, ..., s_n) \leq u_j(s'_1, ..., s'_n)$
+		\end{itemize}
+	\end{remark}
 	pl. Kő - Papír - Olló lépései
 	
 	[diagram]
 	
 	\begin{definition}{Nash-egyensúly (NE)}{}
-		$s \in S$ tiszta Nash-egyensúly, ha egyetlen játékosnak sem érdeke más stratégiát választani azaz $u_i(s) \geq u_i(s',s_{-i}) \quad \forall \; 1 \leq i \leq n \quad \forall s' \in S_i$
+		$s \in S$ tiszta Nash-egyensúly, ha egyetlen játékosnak sem érdeke más stratégiát választani azaz $u_i(s) \geq u_i(s',s_{-i}) \quad \forall \; 1 \leq i \leq n \quad \forall s' \in S_i$ \\
+		Az $(s_1, ..., s_n) \in S_1 \times ... \times S_n$ stratégiaválasztás tiszta Nash-egyensúly, ha minden $i \in \{1, ..., n\}$ és $s'_i \in S_i$ esetén
+		\begin{center}
+			$u_i(s_1, ..., s_{i-1}, s_i, s_{i+1}, ..., s_n) \geq u_i(s_1, ..., s_{s-1}, s'_i, s_{i+1}, ..., s_n)$
+		\end{center}
 	\end{definition}
 	Példa: fogoly-dillemmában van ilyen, kő-papír-ollóban nincs
 	
@@ -344,7 +379,7 @@
 			hatása a Nash-egyensúlyokra}{}
 		Szig. elim. hatására a tiszta NE-k (tNE) halmaza nem változik
 	\end{theorem}
-	Biz.: [...] 
+	Biz.: [...] \\
 	Tfh.: $s \in S_i$ dominálja $s' \in S_i$-t és $s'$-t töröljük
 	
 	\begin{observation}{}{}

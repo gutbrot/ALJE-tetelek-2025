@@ -1,14 +1,14 @@
 \select@language {magyar} \contentsline {section}{\numberline {1}Előadás}{2}{section.1}%
 \select@language {magyar} \contentsline {section}{\numberline {2}Előadás}{5}{section.2}%
 \select@language {magyar} \contentsline {section}{\numberline {3}Előadás}{8}{section.3}%
-\select@language {magyar} \contentsline {section}{\numberline {4}Előadás}{11}{section.4}%
-\select@language {magyar} \contentsline {section}{\numberline {5}Előadás}{14}{section.5}%
-\select@language {magyar} \contentsline {paragraph}{Példa}{17}{Item.5}%
+\select@language {magyar} \contentsline {section}{\numberline {4}Előadás}{12}{section.4}%
+\select@language {magyar} \contentsline {section}{\numberline {5}Előadás}{15}{section.5}%
 \select@language {magyar} \contentsline {paragraph}{Példa}{18}{Item.5}%
-\select@language {magyar} \contentsline {section}{\numberline {6}Előadás}{19}{section.6}%
-\select@language {magyar} \contentsline {section}{\numberline {7}Előadás}{22}{section.7}%
-\select@language {magyar} \contentsline {section}{\numberline {8}Előadás}{24}{section.8}%
-\select@language {magyar} \contentsline {section}{\numberline {9}Előadás}{26}{section.9}%
-\select@language {magyar} \contentsline {section}{\numberline {10}Előadás}{29}{section.10}%
-\select@language {magyar} \contentsline {section}{\numberline {11}Előadás}{33}{section.11}%
-\select@language {magyar} \contentsline {section}{\numberline {12}Források}{34}{section.12}%
+\select@language {magyar} \contentsline {paragraph}{Példa}{19}{Item.5}%
+\select@language {magyar} \contentsline {section}{\numberline {6}Előadás}{20}{section.6}%
+\select@language {magyar} \contentsline {section}{\numberline {7}Előadás}{23}{section.7}%
+\select@language {magyar} \contentsline {section}{\numberline {8}Előadás}{25}{section.8}%
+\select@language {magyar} \contentsline {section}{\numberline {9}Előadás}{27}{section.9}%
+\select@language {magyar} \contentsline {section}{\numberline {10}Előadás}{30}{section.10}%
+\select@language {magyar} \contentsline {section}{\numberline {11}Előadás}{34}{section.11}%
+\select@language {magyar} \contentsline {section}{\numberline {12}Források}{35}{section.12}%

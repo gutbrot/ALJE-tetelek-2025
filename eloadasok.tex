@@ -15,12 +15,13 @@
 	\section{Előadás}
 	Kombinatorikus játék fogalma, éles játék, betli játék, nyerő stratégia.  Irányított gráf magja, mag egyértelműsége DAG-ban (VKP 1.1). I-es és II-es típusú játékok ill. pozíciók, játékok összege, az összeg típusa. Grundy-számozás definíciója magokkal ill. a mex operátorral. NIM-összeadás és tulajdonságai (VKP 1.3.1).
 	\begin{definition}{Kombinatorikus játék}{}
-		$ J=(G,N_W,N_L,N_T,V_0) $, ahol $ G DAG, N_W,N_L,N_T$ nyelők partíciója és $v_0 \in V(G)$ kiinduló állapot
+		$ J=(G,N_W,N_L,N_T,v_0) $, ahol $ G (véges) DAG (Directed Acyclic Graph), N_W,N_L,N_T$ nyelők partíciója és $v_0 \in V(G)$ kiinduló állapot
 	\end{definition}
 	Tulajdonságai:
 	\begin{itemize}
 		\item Kétszemélyes és szekvenciális: a két játékos felváltva lép
 		\item A játéknak kétféle kimenetele van: vagy az egyik játékos nyer és a másik veszt, vagy pedig döntetlen.
+		\item Teljes információs játék: A két játékos a játék során végig tisztában van azzal, hogy mi is pontosan a G gráf és annak melyik csúcsa aktív.
 	\end{itemize}
 	Példák:
 	\begin{itemize}
@@ -30,18 +31,19 @@
 	\end{itemize}
 	
 	\begin{definition}{Éles játék}{}
-		Éles játék: $N_L \cup N_T=\varnothing$
+		$N=N_W, \quad N_L \cup N_T=\varnothing$azaz ha minden nyelőcsúcs NW-beli, akkor a nyelőbe lépő játékos minden esetben nyer.
 	\end{definition}
 	
 	\begin{definition}{Betli játék}{}
-		Betli játék: $N_W \cup N_T = \varnothing$
+		$N=N_L, \quad N_W \cup N_T = \varnothing$, azaz ha minden nyelőcsúcs NL-beli, akkor a nyelőbe lépő játékos minden esetben veszít.
 	\end{definition}
 	
 	\begin{observation}{}{}
-		Ha $N_T = \varnothing \Rightarrow \forall$ kombinatorikai játék v.vhető éles játékra.
+		Ha $N_T = \varnothing \Rightarrow \forall$ kombinatorikai játék visszavezethető éles játékra, amelyikben $N_L = \varnothing$
 	\end{observation}
 	
-	Biz.: Bevezetünk egy extra csúcsot és $\forall N_L$-beli csúcsból 1-l ir. élt ide \\
+	Biz.: Ehhez csupán annyit kell tenni, hogy ha $N_L \neq \varnothing$
+	egy konkrét kombinatorikus játék G gráfja esetén, akkor bevezetünk G-be egy új x csúcsot, amit NW -beli nyelőnek deklarálunk. Ennek megfelelően x-ből nem lép ki és, azonban minden NL-beli nyelőből irányított élt vezetünk x-be. Ezáltal az NL-beli csúcsok nem lesznek	nyelők többé, azonban minden ilyen csúcsból kizárólag x-be lehet lépni, tehát az NL-beli nyelőbe lépéskor nem azonnal ér véget a játék, hanem az NL-be lépő játékos ellenfele x-be lép, és így nyer. Az eredeti játék játékmenetei tehát úgy felelnek meg kölcsönösen egyértelműen az új játék játékmeneteinek, hogy a játék győztese ugyanaz marad az egymásnak megfelelő játékmenetekben.
 	\begin{theorem}{Gráf csúcsok típusa}{}
 		Tetszőleges éles kombinatorikus játékban $\forall$ csúcshoz egyértelműen eldönthető, hogy I vagy II típusú.
 	\end{theorem}
@@ -85,9 +87,18 @@
 		\includegraphics[width=90mm]{res/mag_abra}
 	\end{center}
 	
+	\begin{theorem}{Mag egyértelműsége DAG-ban}{}
+		Ha G véges DAG akkor G-nek pontosan egy magja van, azaz egyértelmű.
+	\end{theorem}
+	
+	\begin{center}
+		\includegraphics[width=160mm]{res/magba_tartozas.jpg}
+	\end{center}
+	
 	\begin{definition}{Játék típusa}{}
 		A $J = (v, N_W, v_0)$ éles játék típusa $v_0$.
 	\end{definition}
+	Ha ugyanis $v_0 \notin M$, akkor az I. játékosnak, ha pedig $v_0 \in M$, akkor viszont a II. játékosnak van nyerő stratégiája.
 	
 	
 	\begin{definition}{Játékok összege}{}
@@ -144,7 +155,7 @@
 	\end{observation}
 	Biz: \\
 	
-	 
+	\newpage 
 	\section{Előadás}
 	Sprague-Grundy-tétel, Bouton tétele a NIM nyerő stratégiájáról. Játékok izomorfiája és ekvivalenciája (VKP 1.3.1). Stratégialopás (VKP 1.2), hex (VKP 1.55, 1.56).
 	\begin{theorem}{Sprague–Grundy}{}

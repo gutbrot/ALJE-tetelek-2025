@@ -216,6 +216,10 @@
 	Biz.: nincs döntetlen\\
 	Tegyük fel indirekt: a második játékosnak van nyerő stratégiája. Ekkor van jó válasza arra, ha a kezdő a jobb felső (n, m) kockát eszi meg. Legyen az (i, j). Lépjük ezt az (i, j) kockát első játékosként. Ezután játssza az első játékos az eredeti második nyerő stratégiája szerint.
 	
+	\begin{statement}{Állítás}{}
+		Az 1 × 1-es kivételével minden mérgezett csoki játék I-es típusú.
+	\end{statement}
+	
 	\begin{theorem}{Hex}{}
 		Az első játékosnak van nyerő stratégiája
 	\end{theorem}
@@ -227,6 +231,9 @@
 		\includegraphics[width=120mm]{res/hex_biz}
 	\end{center}
 	
+	\begin{statement}{Állítás}{}
+		Tetszőleges hex játék I-es típusú
+	\end{statement}
 	
 	\begin{theorem}{Véges amőba}{}
 		Az elsőnek van nem vesztő stratégiája
@@ -253,6 +260,7 @@
 	
 	$\forall$ stratégiai játékra teljesül
 	\begin{itemize}
+		\item véges sok, n játékos van
 		\item 1 lépéses, szinkron ($\forall$ játékos lépése független)
 		\item teljes információs ($\forall$ játékos tisztában van  $\forall$ másik játékos stratégiájával)
 		\item $\forall$ játékos racionális ($\forall$ játékos a nyereségét akarja maximalizálni)
@@ -268,6 +276,12 @@
 		\begin{itemize}
 			\item 0 összegű (minden cella összege 0)
 			\item szimmetrikus
+			\item véges
+			\item determinisztikus
+			\item kétszemélyes,
+			\item teljes információs
+			\item egylépéses
+			\item szinkron
 		\end{itemize}
 	\end{definition}
 	
@@ -460,8 +474,8 @@
 	\[\text{legjobb tiszta válaszok}
 	\begin{cases}
 		u_1(k, \sigma_2) = 1/3(0+1-1)=0 \\
-		u_1(k, \sigma_2) = 1/3(1+0-1)=0 \\
-		u_1(k, \sigma_2) = 1/3(-1+1+0)=0
+		u_1(p, \sigma_2) = 1/3(1+0-1)=0 \\
+		u_1(o, \sigma_2) = 1/3(-1+1+0)=0
 	\end{cases}
 	\]
 	
@@ -537,7 +551,7 @@
 				\draw[->] (0,-0.5) -- (0,4.5);
 				
 				% rácsvonalak (opcionális)
-				\draw[step=1cm,gray,very thin] (0,0) grid (2,4);
+				\draw[dotted,step=1cm,gray,very thin] (0,0) grid (2,4);
 				
 				% pont és felirat
 				\fill (0.5,0) circle (2pt) node[below] {$0.5$};
@@ -548,9 +562,9 @@
 				\draw (1,0) node[above right] {\texttt{b}};
 				
 				%line
-				\draw (0,0) -- (1,3);
-				\draw (0,3) -- (1,0);
-				\draw (0.5,0) -- (0.5,1.5);
+				\draw [very thick](0,0) -- (1,3);
+				\draw [very thick](0,3) -- (1,0);
+				\draw [green,very thick](0.5,0) -- (0.5,1.5);
 				
 			\end{tikzpicture}
 			\caption{Oszlopjátékos}
@@ -560,13 +574,13 @@
 			\centering
 			% második ábra
 			
-			\begin{tikzpicture}[scale=1.5]
+			\begin{tikzpicture}[scale=3]
 				% tengelyek
-				\draw[->] (-0.5,0) -- (2.5,0);
-				\draw[->] (0,-0.5) -- (0,2.5);
+				\draw[->] (-0.5,0) -- (1.5,0);
+				\draw[->] (0,-0.5) -- (0,1.5);
 				
 				% rácsvonalak (opcionális)
-				\draw[step=1cm,gray,very thin] (0,0) grid (2,2);
+				\draw[dotted,step=1cm,gray,very thin] (0,0) grid (1,1);
 				
 				% pont és felirat
 				\fill (0.5,0)  node[below] {$0.5$};
@@ -574,9 +588,9 @@
 				\fill (1,0) node[below right] {$y$};
 				
 				%line
-				\draw[very thick] (0,1) -- (0.5,1);
-				\draw[very thick] (0.5,1) -- (0.5,0);
-				\draw[very thick] (0.5,0) -- (1,0);
+				\draw[green,very thick] (0,1) -- (0.5,1);
+				\draw[green,very thick] (0.5,1) -- (0.5,0);
+				\draw[green,very thick] (0.5,0) -- (1,0);
 				
 			\end{tikzpicture}
 		\end{minipage}
@@ -594,7 +608,7 @@
 				\draw[->] (0,-0.5) -- (0,5.5);
 				
 				% rácsvonalak (opcionális)
-				\draw[step=1cm,gray,very thin] (0,0) grid (2,5);
+				\draw[dotted,step=1cm,gray,very thin] (0,0) grid (2,5);
 				
 				% pont és felirat
 				\fill (0,0) circle (2pt) node[below left] {$a$};
@@ -607,9 +621,9 @@
 				\draw (1,0) node[above right] {\texttt{x}};
 				
 				%line
-				\draw (0,0) -- (1,4);
-				\draw (0,2) -- (1,0);
-				\draw (0.333,0) -- (0.333,1.333);
+				\draw [very thick](0,0) -- (1,4);
+				\draw [very thick](0,2) -- (1,0);
+				\draw [green,very thick](0.333,0) -- (0.333,1.333);
 				
 			\end{tikzpicture}
 			\caption{Sorjátékos}
@@ -619,13 +633,13 @@
 			\centering
 			% második ábra
 			
-			\begin{tikzpicture}[scale=1.5]
+			\begin{tikzpicture}[scale=3]
 				% tengelyek
-				\draw[->] (-0.5,0) -- (2.5,0);
-				\draw[->] (0,-0.5) -- (0,2.5);
+				\draw[->] (-0.5,0) -- (1.5,0);
+				\draw[->] (0,-0.5) -- (0,1.5);
 				
 				% rácsvonalak (opcionális)
-				\draw[step=1cm,gray,very thin] (0,0) grid (2,2);
+				\draw[dotted,step=1cm,gray,very thin] (0,0) grid (1,1);
 				
 				% pont és felirat
 				\fill (0,0) node[below left] {$a(0)$};
@@ -634,9 +648,9 @@
 				
 				
 				%line
-				\draw[very thick] (0,0) -- (0.333,0);
-				\draw[very thick] (0.333,0) -- (0.333,1);
-				\draw[very thick] (0.333,1) -- (1,1);
+				\draw[green,very thick] (0,0) -- (0.333,0);
+				\draw[green,very thick] (0.333,0) -- (0.333,1);
+				\draw[green,very thick] (0.333,1) -- (1,1);
 				
 			\end{tikzpicture}
 		\end{minipage}
@@ -652,7 +666,7 @@
 				\draw[->] (0,-0.5) -- (0,1.5);
 				
 				% rácsvonalak (opcionális)
-				\draw[step=1cm,gray,very thin] (0,0) grid (1,1);
+				\draw[dotted,step=1cm,gray,very thin] (0,0) grid (1,1);
 				
 				% pont és felirat
 				\fill (0,0) node[below left] {$a$};
@@ -665,13 +679,13 @@
 				\fill (0,0.5) node[left] {$1/2$};
 				
 				%line
-				\draw[very thick] (0,0) -- (0.333,0);
-				\draw[very thick] (0.333,0) -- (0.333,1);
-				\draw[very thick] (0.333,1) -- (1,1);
+				\draw[green,very thick] (0,0) -- (0.333,0);
+				\draw[green,very thick] (0.333,0) -- (0.333,1);
+				\draw[green,very thick] (0.333,1) -- (1,1);
 				
-				\draw[very thick] (0,1) -- (0,0.5);
-				\draw[very thick] (0,0.5) -- (1,0.5);
-				\draw[very thick] (1,0.5) -- (1,0);
+				\draw[green,very thick] (0,1) -- (0,0.5);
+				\draw[green,,very thick] (0,0.5) -- (1,0.5);
+				\draw[green,very thick] (1,0.5) -- (1,0);
 				
 				%
 				\draw (0.333,0.5) circle (2pt);
@@ -778,7 +792,8 @@
 	
 	\begin{definition}{Kaminski-féle közlekedőedény-rendszer}{}
 		Tfh. mindkét hitelezőhöz tartozik egy-egy azonos keresztmetszetű, $d_1$ ill. $d_2$ térfogatú, hengeres tartály. Vágjuk félbe a tartályokat, kössük össze ezeket vékony csövekkel, és töltsük fel E (vagyonnagysággal) mennyiségű folyadékkal az így kapott közlekedőedény-rendszert. "Könnyen" látható, hogy folyadék épp a ksz szerint oszlik meg az egyes tartályokban. \\
-		Így már nem nehéz ksz-konzisztens szétosztást találni: minden hitelezőhöz tartozzon egy-egy követelésnyi térfogatú tartály, kössük össze ezeket vékony csövekkel, és töltsük fel E mennyiségű folyadékkal a kapott rendszert.
+		Így már nem nehéz ksz-konzisztens szétosztást találni: minden hitelezőhöz tartozzon egy-egy követelésnyi térfogatú tartály, kössük össze ezeket vékony csövekkel, és töltsük fel E mennyiségű folyadékkal a kapott rendszert. \\
+		\href{https://cs.bme.hu/~nemkin/jatek/hydra/}{Hidraulikus közlekedőedények}
 		\begin{center}
 			\includegraphics[width=100mm]{res/ksz_konzisztencia.png}
 		\end{center}
@@ -824,6 +839,9 @@
 	\end{array}
 	\]
 	
+	\begin{center}
+		\includegraphics{res/nukleusz.png}
+	\end{center}
 	
 	\begin{definition}{Többletvektor}
 		A többletekből áll, növekvő sorrendben.
@@ -885,6 +903,13 @@
 		\end{itemize}
 	\end{definition}
 	
+	\begin{definition}{Igazságos felosztás}{}
+		Akkor definiáljuk igazságosnak a mechanizmust, ha mindegyik
+		játékos számára garantálható, hogy a végén neki jutó $A_i$ darabra $\mu_i(A_i) \geq \mu_i(P)/n$, vagyis a saját
+		mértéke szerint legalább az n-ed részt kapja, még akkor is, ha az összes többi játékos összefogna
+		ellene. 
+	\end{definition}
+	
 	\begin{definition}{Fink eljárás}{}
 		Egyesével érkező n db játékos
 		\begin{itemize}
@@ -892,6 +917,7 @@
 			\item Az i-dik lépésben $P_i$ megérkezik. Ekkor $P_1, ..., P_j,..., P_{i-1}$ már arányosan osztozkodott 
 			\item $\forall$ játékos a saját részét i egyforma részre osztja szét
 			\item $P_i \quad \forall$ játékostól választ 1-1 részt 
+			\item Tehát az eljárás igazmondásra ösztönöz, igazságos, arányos és véges
 		\end{itemize}
 	\end{definition}
 	\begin{comment}
@@ -927,6 +953,7 @@
 			\item Minden játékos ($P_2, ..., P_n$) a számára legjobb $n-1$ részhez húz 1-1 jegyet
 			\item Ezek után mindenkinek $n-1$ jegye lesz
 			\item Minden részt arányosan kiosztanak a jeggyel rendelkező játékosok között Tasnádi-eljárással
+			\item igazmondásra ösztönöz, igazságos
 		\end{itemize}
 	\end{definition}
 	
@@ -936,7 +963,8 @@
 			\item Aki legbalrább jelöl, az vág és távozik
 			\item Ismételjük a maradék intervallumon, amíg el nem fogy
 		\end{itemize}
-		Művelet igény $n+(n-1)+(n-2)+...+1 =\binom{n+1}{2}$
+		Művelet igény $n+(n-1)+(n-2)+...+1 =\binom{n+1}{2}$\\
+		A mozgó késes eljárás igazságos
 	\end{definition}
 	\href{https://youtu.be/GeEghYnuVps?si=soXOO_Iw5EsowTf3}{Videó}
 	
@@ -949,12 +977,17 @@
 			\item Az $\lfloor n/2 \rfloor$-dik jel mentén vágunk
 			\item A bal oldali részt az $\lfloor n/2 \rfloor$ legkisebb jelet lerakó játékos, a jobb oldalit pedig az $\lceil n/2 \rceil$ legmagasabb jelet lerakó játékos közt osztjuk szét
 			\item Így a baloldalon $\lfloor n/2 \rfloor$, a jobboldalon $\lceil n/2 \rceil$ játékos osztozik arányosan az Even-Paz eljárást követve
+			\item Irigységmentes
 		\end{itemize}
 		Művelet igény: $O(n\cdot logn)$ \\
+		 igazmondásra ösztönöz és arányos.
 	\end{definition}
 
 	\begin{definition}{Irigységmentesség}{}
-		$A_1, A_2, ..., A_n$ eloszlás irigységmentes, ha $\mu_i(A_i) \geq \mu_i(A_j) \quad \forall i\neq j$.
+		$A_1, A_2, ..., A_n$ eloszlás irigységmentes, ha $\mu_i(A_i) \geq \mu_i(A_j) \quad \forall i\neq j$.\\
+		egy irigységmentes mechanizmus automatikusan igazságos\\
+		mindig van irigységmentes felosztás, ami ráadásul összefüggő
+		szeletekből áll
 	\end{definition}
 	
 	\begin{observation}{}{}
@@ -988,8 +1021,19 @@
 		Legyen $N={1, ..., n}$ a szavazók halmaza és $A = \{a_1, ..., 1_k\}$ az alternatívák halmaza. Az $i.$ szavazó szavazata az alternatívák egy lehetséges sorrendje (permutációja), az ehhez tartozó rendezési reláció jele a $\prec_i$. Az $n$ szavazó egy lehetséges választási profilja a $\Pi = (\prec_1, ..., \prec_n)$. A szavazási mechanizmus egy $F(\Pi)$ társadalmi választási szabályt (TVSZ) határoz meg, mely egy választási profilhoz hozzárendeli a szavazás eredményét, azaz az alternatíváknak a közös döntés szerinti sorrendjét. A nyerte alternatíva a TVSZ sorrendjében az első, az $f(\Pi)$ társadalmi választási függvény (TVF) ezt a nyertes alternatívát rendeli hozzá a $\Pi$-hez.
 	\end{definition}
 	
+	\begin{definition}{Jóváhagyásos szavazás}{}
+		A jóváhagyásos szavazás az az eljárás, amelyikben minden szavazó tetszőleges	számú alternatívát jelölhet meg, és a nyertes alternatíva az, amelyiket a legtöbben megjelölték.
+		(Döntetlen esetén az a legtöbb szavazatot kapó alternatívák közül a $\preceq_1$ szerinti legjobb.) \\
+		A jóváhagyásos szavazás nem TVF, mert nem kizárólag a szavazók preferenciarendezéseitől
+		függ a kimenetel. A jóváhagyásos szavazás tehát nem fér bele a fenti modellbe.
+	\end{definition}
+	
 	\begin{definition}{Többségi szavazás}{}
 		A többségi szavazás TVZS-e megszámolja, hogy egy adott alternatíva hányszor fordul elő első helyen a szavazatokban és az alternatívákat ezen előfordulási darabszám szerinti csökkenő sorrendbe teszi. Egyenlőség esetén az első szavazó szavazata dönt.
+	\end{definition}
+	
+	\begin{definition}{Diktatórikus szavazás}{}
+		...
 	\end{definition}
 	
 	\begin{definition}{Borda-szavazás}{}
@@ -997,8 +1041,7 @@
 	\end{definition}
 	
 	\begin{definition}{Condorcet-konzisztencia}{}
-		Az $a$ alternatíva legyőz egy tőle különböző $b$ alternatívát, ha szigorúan több szavazó sorolta $a$-t a $b$ elé a sorrendjében. Az $a$ alternatíva Condorcet-győztes, ha legyőzött
-		minden más alternatívát (ilyen nem mindig van). Egy szavazási mechanizmus Condorcet-konzisztens, ha a Condorcet-győztest választja nyertesnek, amennyiben az létezik.
+		Az $a$ alternatíva legyőz egy tőle különböző $b$ alternatívát, ha szigorúan több szavazó sorolta $a$-t a $b$ elé a sorrendjében. Az $a$ alternatíva \textbf{Condorcet-győztes} , ha legyőzött minden más alternatívát (ilyen nem mindig van). Egy szavazási mechanizmus Condorcet-konzisztens, ha a Condorcet-győztest választja nyertesnek, amennyiben az létezik.
 	\end{definition}
 	
 	\begin{definition}{Copeland-szavazás}{}
@@ -1024,14 +1067,44 @@
 		\end{itemize}
 	\end{observation}
 	
+	\begin{definition}{Diktatórikus}{}
+		Az a „szavazási” mechanizmus, amelyikben mindig ugyanaz a szavazó (a diktátor) határozza meg a közös döntést nyilvánvalóan taktikázásbiztos: aki nem diktátor, bármit is szavaz, nem tudja elérni, hogy megváltozzon a „közös” döntés, míg a diktátor szintén csak rosszul járhat azzal, ha nem őszintén szavaz
+	\end{definition}
+	
+
 	\begin{theorem}{Gibbard-Satterthwaite tétel}{}
 		Ha van legalább 3 alternatíva, továbbá $f$ szürjektív (mindegyik
 		alternatíva előáll nyertesként valamilyen $\Pi$-re) és taktikázásbiztos, akkor $f$ diktatórikus.
 	\end{theorem}
 	
+	\begin{definition}{Elérhető}{}
+		...
+	\end{definition}
+	
+		\begin{definition}{Háromféle szavazatmanipuláció}{}
+		\begin{itemize}
+			\item Átrendezés ($\preceq_i^A$): A szavazó úgy rendezi át a listáját, hogy a közös döntést ($f(\Pi)$) pontosan azok az alternatívák előzzék meg, amik az eredeti listáján is előrébb voltak, de ezek belső sorrendje tetszőlegesen változhat.
+			\item Feljavítás ($\preceq_i^F$): A szavazó a közös döntést ($f(\Pi)$) "előrébb sorolja" a listáján, miközben az összes többi alternatíva egymáshoz képesti sorrendje változatlan marad.
+			\item Jobbra shiftelés ($\preceq_i^J$): Egy olyan alternatívát ($a$), amely a szavazó számára rosszabb, mint a közös döntés, és amit egyedül nem is tudna győztessé tenni ($a \notin A(\Pi, i)$), szándékosan a közös döntés elé helyez.
+		\end{itemize}
+	\end{definition}
+	
+	Következmény. Ha az $f$ TVF taktikázásbiztos és a $\Pi$ választási profilt átrendezések,feljavítások és jobbra shiftelések tetszőleges sorozata $\Pi'$-re módosítja, akkor $f(\Pi) = f(\Pi')$.
+	
+	\begin{definition}{jobbra shiftelt profil}{}
+		A $\Pi$ választási profilt jobbra shiftelt profilnak nevezzük, ha egyetlen szavazó sem tud a $\Pi$-beli szavazatán jobbra shiftelni.	A $\Pi$ választási profilt akkor mondjuk teljesen jobbra shiftelt profilnak, ha minden, a$\Pi$-ből átrendezések sorozatával kapható $\Pi'$ profil jobbra shiftelt
+	\end{definition}
+	Egy jobbra shiftelt $\Pi$ profilban tehát minden szavazat az adott szavazó számára elérhetetlen
+	alternatívákkal kezdődik, ezt követi az $f(\Pi)$ közös döntés, majd az adott szavazó számára $\Pi$ elérhető alternatívák zárják a sort. Megtörténhet, hogy egy jobbra shiftelt profilban az i szavazó
+	szavazatának átrendezése nyomán egy j szavazó számára egy korábban elérhető a alternatíva
+	elérhetetlenné válik. Mivel ez az a alternatíva a j szavazó szavazatában a közös döntést követi,
+	ezért j képes a szavazatát az említett átrendezés után jobbra shiftelni. Átrendezések és jobbra
+	shiftelések egymásutánjával azonban tetszőleges $\Pi$ profil teljesen jobbra shifteltté tehető
+	
 	\begin{theorem}{Arrow tétel}{}
 		Ha van legalább 3 alternatíva, továbbá $F$ egyhangú és független a lényegtelen alternatíváktól, akkor $F$ diktatórikus.
 	\end{theorem}
+	
 	
 	\newpage
 	\section{Előadás}
@@ -1321,6 +1394,7 @@
 		\item A \url{https://www.cs.bme.hu/alje/} oldalon elérhető anyagok
 		\item \href{https://www.cs.bme.hu/\%7Efleiner/alje2024/tematika.pdf}{Algoritmikus játékelmélet szóbeli tematika 2024}
 		\item \href{https://www.cs.bme.hu/%7Efleiner/alje2025/tematika.pdf}{Algoritmikus játékelmélet szóbeli tematika 2025}
+		\item \href{https://www.cs.bme.hu/~fleiner/alje2025/segedanyag.pdf}{Dr. Fleiner Tamás Online segédanyag}
 		\item \href{https://cs.bme.hu/~nemkin/jatek/}{Nemkin Viktória feladat megoldások}
 		\item \href{http://tkiraly.web.elte.hu/students/jatekelmelet_jegyzet.pdf}{Végh László, Király Tamás, Pap Júlia: Játékelmélet jegyzet}
 		\item \href{http://www.maths.lse.ac.uk/personal/stengel/lectnotes1-7.pdf}{Bernhard von Stengel: Game Theory Basics}   

@@ -12,7 +12,7 @@
 	
 	
 	
-	\section{Előadás}
+	\section{Előadás [Kombinatorikus játék]}
 	Kombinatorikus játék fogalma, éles játék, betli játék, nyerő stratégia.  Irányított gráf magja, mag egyértelműsége DAG-ban (VKP 1.1). I-es és II-es típusú játékok ill. pozíciók, játékok összege, az összeg típusa. Grundy-számozás definíciója magokkal ill. a mex operátorral. NIM-összeadás és tulajdonságai (VKP 1.3.1).
 	\begin{definition}{Kombinatorikus játék}{}
 		$ J=(G,N_W,N_L,N_T,v_0) $, ahol $ G (véges) DAG (Directed Acyclic Graph), N_W,N_L,N_T$ nyelők partíciója és $v_0 \in V(G)$ kiinduló állapot
@@ -156,7 +156,7 @@
 	Biz: \\
 	
 	\newpage 
-	\section{Előadás}
+	\section{Előadás [Sprague-Grundy, izomorfia, ekvivalencia]}
 	Sprague-Grundy-tétel, Bouton tétele a NIM nyerő stratégiájáról. Játékok izomorfiája és ekvivalenciája (VKP 1.3.1). Stratégialopás (VKP 1.2), hex (VKP 1.55, 1.56).
 	\begin{theorem}{Sprague–Grundy}{}
 		Ha u és v $J_1 és J_2$ kombinatorikus játékokban állások, akkor $g_{J_1,J_2}(u, v) = g_{J_1}(u) \oplus g_{J_2}(v)$
@@ -244,7 +244,7 @@
 	A játék végén: a képzelt táblán az első nem fog veszíteni, tehát a valódin sem.
 	
 	\newpage
-	\section{Előadás}
+	\section{Előadás [Tiszta Nash-egyensúly]}
 	Stratégiai játékok, játékosok racionalitása, Pareto-optimális stratégiaválasztás. Domináns stratégiák, stratégiák (iterált) eliminálása. Tiszta Nash-egyensúly. (VKP 2, 2.1, 2.2, 2.3)
 	\begin{definition}{Stratégiai játékok}{}
 		$n$ játékos van, $1\leq i \leq n$ esetén $S_i$ az $i$-edik játékos lehetséges stratégiája $S = S_1 \times S_2 \times ...  \times S_n$ stratégiaválasztások (kimenetelek) halmaza.\\
@@ -414,7 +414,7 @@
 	Tfh.: z tNE a törlés után. Ha z nem tNE a törlés előtt $u_i(s', z_{-i}) > u_i(z)$
 	
 	\newpage
-	\section{Előadás}
+	\section{Előadás [kNE, maximin]}
 	Kevert Nash-egyensúly, maximin stratégia és Nash-egyensúly kapcsolata.(VKP 2.4, 2.6)
 	\begin{definition}{Kevert stratégia}{}
 		$\sigma_i : S_i \rightarrow \mathbb{R}_+$ kevert stratégia, ha $\sum_{s_i \in S_i} \sigma_i(s_i) = 1$ \\
@@ -701,7 +701,7 @@
 	
 	\newpage
 	\newpage
-	\section{Előadás}
+	\section{Előadás [Lineáris programozási feladat, csődjáték, kelmeszabály]}
 	0-összegű kétszemélyes játékok kevert Nash-egyensúlya lineáris programozási feladatként, Neumann-tétel. (VKP 2.7)
 	Csődjáték, kelmeszabály-konzisztens szétosztás, Kaminski-féle közlekedőedény-rendszer, a csődjáték nukleolusza (T 9.3, (VKP 4.1))
 	\begin{definition}{Maximin stratégia}{}
@@ -861,7 +861,7 @@
 	Biz.: *
 	
 	\newpage
-	\section{Előadás}
+	\section{Előadás [Osztozkodási játék]}
 	Osztozkodási játék, arányos szétosztást garantáló eljárások: oszt-választ, Fink, Tasnádi, Banach-Knaster, (diszkrét) mozgó késes, Even-Paz  (T 9.1, 9.2 (VKP 4.1))
 	Irigységmentes szétosztások, Conway-Selfridge-eljárás.
 	\begin{definition}{Osztozkodási probléma}{}
@@ -1014,7 +1014,7 @@
 	Biz.: ppt
 	
 	\newpage
-	\section{Előadás}
+	\section{Előadás [Szavazási modell(TVSZ, TVT)]}
 	Elosztás meghatározása szavazással, szavazási modell (alternatívák, szavazók, preferenciák, TVSZ és TVF), konkrét mechanizmusok (jóváhagyásos, többségi, Borda- és Copeland-szavazás) Condorcet-győztes. Mechanizmusok tulajdonságai (szimmetrikus, semleges, egyhangú, FLA, manipulálható, taktikázásbiztos, diktatórikus) és Arrow tétele. )T 6.1, 6.3, VKP 4.2) A Gibbard-Satterthwaite-tétel.
 	
 	\begin{definition}{Szavazási modell}{}
@@ -1107,7 +1107,7 @@
 	
 	
 	\newpage
-	\section{Előadás}
+	\section{Előadás [Vickrey-árverés]}
 	A Vickrey-árverés taktikázásbiztossága. (VKP 4.2, 4.3)
 	A VCG-árverési mechanizmus taktikázásbiztossága. Veszteség- és szubvenciómentesség a Clarke-szabály használata esetén nemnegatív hasznosságok mellett.
 	\begin{definition}{Árverési model}{}
@@ -1132,23 +1132,23 @@
 		Ha $u_i(\underline{v}) \leq u_i(v_{-i},\hat{v}_i) \quad \forall \underline{v} \in S \quad \forall i \in N$
 	\end{definition}
 	
-	\begin{definition}{Vickrey-Clarke-Groves (VCG)}{}
+	\begin{definition}{Vickrey-Clarke-Groves (VCG) mechanizmus osztály}{}
 		\begin{itemize}
 			\item $f(\underline{v}) maximalizálja \sum_{i=1}^{n} v_i (a) \quad a\in A$-ra, azaz $\sum_{i=1}^{n} v_i (f(\underline{v})) \geq \sum_{i=1}^{n} v_i(a) \\ 
-			\forall a \forall \underline{v} \in S$
-			\item $p_i(\underline{v}) = h_i(\underline{v}_{-i}) - \sum_{j \neq i} v_j (f(\underline{v})) $ teljesül, ahol tetszőleges $h_i: S_{-i} \rightarrow \mathbb{R}$
-			%% $\forall \underline(v) $\forall$ i$
-			%% ezt se tudom hova jön
+			\forall a \forall \underline{v} \in S$ \\
+			$\rightarrow$ A mechanizmus olyan kimenetelt választ, amelynél a résztvevők által bemondott értékek összege a lehető legnagyobb.
+			\item $p_i(\underline{v}) = h_i(\underline{v}_{-i}) - \sum_{j \neq i} v_j (f(\underline{v})) $ teljesül, ahol tetszőleges $h_i: S_{-i} \rightarrow \mathbb{R}$ \\
+			$\rightarrow$ Minden résztvevő annyit fizet, amennyi "kárt" okoz a többi résztvevőnek a jelenlétével.
 		\end{itemize}
 	\end{definition}
 	
 	\begin{theorem}{}{}
 		VCG taktikázás biztos $\forall h$-ra
 	\end{theorem}
-	 Biz.:
+	 Biz.: *
 	 
 	\begin{definition}{M szubvenciómentes}{}
-		Ha $p_i \geq 0 \quad \forall i$
+		Ha $p_i \geq 0 \quad \forall i \rightarrow$  ha egy licitáló őszintén licitál, akkor nem érheti veszteség.
 	\end{definition}
 	
 	\begin{definition}{M veszteségmentes}{}
@@ -1156,7 +1156,7 @@
 	\end{definition}
 	
 	\begin{definition}{Clarke-szabály}{}
-		$h_i(\underline{v}_{-i}) = max\{ \sum_{i \neq j} v_j(a): a \in A\}$
+		 i alapkifizetése $h_i(\underline{v}_{-i}) = max\{ \sum_{i \neq j} v_j(a): a \in A\}$
 	\end{definition}
 	
 	\begin{theorem}{}{}
@@ -1165,7 +1165,7 @@
 	Biz.:
 	
 	\newpage
-	\section{Előadás}
+	\section{Előadás [Újraosztási feladat]}
 	Újraosztási feladat, gyengén blokkoló koalíció, erős mag, felső körcsere (TTC) algoritmus. (VKP 4.3, 4.4) A TTC taktikázásbiztos tulajdonsága, piaci egyensúly és erős mag kapcsolata a lakáspiac esetén, piaci egyensúly keresése felső körcserével.
 	\begin{remark}{Terminológia}{}
 		Egyenértékűnek számít a jegyzetben a szendvics, jószág és a lakás.
@@ -1178,7 +1178,14 @@
 	
 	\begin{definition}{Gyengén blokkolás}{}
 		$\sigma \in S_N$-et a $B \subseteq N \quad$ gyengén blokkolja, ha $\exists \pi \in S_B$, amire a $\sigma(i) \prec_i \pi(i), \forall i \in B$ és $\exists j \in B :  \sigma(j) \preceq_j \pi(j) $\\
-		$\sigma$ erős mag, ha $\nexists$ gyengén blokkoló koalíció. 
+		$\sigma$ erős mag, ha $\nexists$ gyengén blokkoló koalíció. \\
+		Lakástulajdonosok egy $B \subseteq N$halmaza a $\sigma$ újraelosztást gyengén blokkoló koalíciót alkot,
+		ha a B-beli tulajdonosok el tudják osztani a saját lakásaikat egymás között úgy, hogy senki se
+		járjon rosszabbul, mint a $\sigma$ újraelosztás mellett, és legalább egy B-beli tulajdonos helyzete határozottan javuljon $\sigma$-hoz képest. 
+	\end{definition}
+	
+	\begin{definition}{Erős mag}{}
+		...
 	\end{definition}
 	
 	\begin{definition}{}{}
@@ -1268,7 +1275,60 @@
 	Biz.: legyen $p(i) = |N|-r(i) \leftarrowtail$ i rangja [$|N|: játékosok száma$]
 	
 	\newpage
-	\section{Előadás}
+	\section{Előadás [Stabil párosítások]}
+	Stabil párosítások, blokkoló koalíció, blokkoló él. Éltörlési lemma, lánykérő algoritmus, fiú/lány-optimális stabil párosítás. Stabil párosítás által fedett csúcshalmaz invarianciája.
+	
+	\begin{definition}{Stabil párosítás}{}
+		Adott a $G = (V, E)$ gráf és minden $v \in V$ csúcsához a $v$-re illeszkedő élek $E(v)$
+		halmazán a $v$ csúcs preferenciáját leíró $\preceq_v$ lineáris rendezés. Azt mondjuk, hogy $v$ számára az
+		$e$ él jobb az $f$ élnél, ha $f \preceq_v e$. A G gráf M párosítása mellett az $uv$ élt akkor nevezzük tehát
+		blokkoló élnek, ha $u$ és $v$ is jobban jár az $uv$ éllel, mint $M$-mel, azaz ha $M$ nem tartalmaz
+		olyan élt sem, ami $u$ számára és olyan élt sem, ami $v$ számára jobb az $uv$ élnél. Ha az $M$
+		párosítás mellett nincs blokkoló él, akkor $M$-et stabil párosításnak nevezzük
+	\end{definition}
+	
+	\begin{definition}{Blokkoló koalíció}{}
+		content...
+	\end{definition}
+	
+	\begin{definition}{Blokkoló él}{}
+		content...
+	\end{definition}
+	
+	\begin{definition}{Éltörlési lemma}{}
+		content...
+	\end{definition}
+	
+	\begin{definition}{Gale és Shapley alábbi lánykérő algoritmus}{}
+		Legyen $G = (V, E)$ irányítatlan gráf és legyen $w : E \rightarrow \mathbb{R}$ egy olyan
+		élsúlyozás, ahol nincs két egyforma súlyú él. A csúcsok $\preceq_v$ élpreferenciáit úgy definiáljuk, hogy
+		tetszőleges v-re illeszkedő e, f élek esetén $f \preceq_v e$ ha $w(e) < w(f)$.
+		\begin{enumerate}
+			\item Minden fiú megkéri a számára legszimpatikusabb lány kezét.
+			\item Minden lány a legjobb kivételével kikosarazza az összes kérőjét.
+			\item Ha nem volt kikosarazás, akkor STOP: a lánykérésekhez tartozó párosítás az output.
+			\item Ha volt kikosarazás akkor GoTo 1
+		\end{enumerate}
+		Fiú-optimális és a fiúk számára taktikázásbiztos.
+	\end{definition}
+	
+	\begin{theorem}{Gale–Shapley-tétel}{}
+	Ha $G$ páros gráf, és $\preceq_v$ lineáris rendezés $E(G)$-n minden
+	$v \in V$ esetén, akkor G-nek van stabil párosítása.
+	\end{theorem}
+	
+	\begin{theorem}
+		Ha $M_1$ és $M_2$ az élpreferenciákkal ellátott (nem feltétlenül páros) $G$ gráf két stabil
+		párosítása, akkor $V (M_1) = V (M_2)$, azaz a $G$ gráf bármelyik stabil párosítását is választjuk,
+		mindig ugyanazok a csúcsok lesznek kipárosítva, és ugyanazok a csúcsok maradnak fedetlenül.
+	\end{theorem}
+	
+	\begin{definition}{Stabil párosítás által fedett csúcshalmaz invarianciája}{}
+		content...
+	\end{definition}
+	
+	\newpage
+	\section{Előadás [Egyetemi felvételi probléma, vonalhúzási probléma]}
 	Egyetemi felvételi probléma, visszavezetése stabil párosításra, keretszámot fel nem töltő szakok helyzete. Vonalhúzási probléma, stabil ponthatár keresése monoton operátorral. Ponthatárnövelő és -csökkentő algoritmus, szak- és jelentkező-optimális stabil ponthatár. Ponthatár és felvett hallgatók száma közti összefüggés.\\
 	
 	
@@ -1384,7 +1444,7 @@
 	\end{definition}
 	
 	\newpage
-	\section{Előadás}
+	\section{Előadás [Népszerű párosítások]}
 	Népszerű párosítások, stabil párosítások népszerűsége, maximális élszámú népszerű párosítás keresése Kavitha algoritmusával.
 	
 	\newpage

@@ -1018,7 +1018,7 @@
 	Elosztás meghatározása szavazással, szavazási modell (alternatívák, szavazók, preferenciák, TVSZ és TVF), konkrét mechanizmusok (jóváhagyásos, többségi, Borda- és Copeland-szavazás) Condorcet-győztes. Mechanizmusok tulajdonságai (szimmetrikus, semleges, egyhangú, FLA, manipulálható, taktikázásbiztos, diktatórikus) és Arrow tétele. )T 6.1, 6.3, VKP 4.2) A Gibbard-Satterthwaite-tétel.
 	
 	\begin{definition}{Szavazási modell}{}
-		Legyen $N={1, ..., n}$ a szavazók halmaza és $A = \{a_1, ..., 1_k\}$ az alternatívák halmaza. Az $i.$ szavazó szavazata az alternatívák egy lehetséges sorrendje (permutációja), az ehhez tartozó rendezési reláció jele a $\prec_i$. Az $n$ szavazó egy lehetséges választási profilja a $\Pi = (\prec_1, ..., \prec_n)$. A szavazási mechanizmus egy $F(\Pi)$ társadalmi választási szabályt (TVSZ) határoz meg, mely egy választási profilhoz hozzárendeli a szavazás eredményét, azaz az alternatíváknak a közös döntés szerinti sorrendjét. A nyerte alternatíva a TVSZ sorrendjében az első, az $f(\Pi)$ társadalmi választási függvény (TVF) ezt a nyertes alternatívát rendeli hozzá a $\Pi$-hez.
+		Legyen $N={1, ..., n}$ a szavazók halmaza és $A = \{a_1, ..., 1_k\}$ az alternatívák halmaza. Az $i.$ szavazó szavazata az alternatívák egy lehetséges sorrendje (permutációja), az ehhez tartozó rendezési reláció jele a $\prec_i$. Az $n$ szavazó egy lehetséges választási profilja a $\Pi = (\prec_1, ..., \prec_n)$. A szavazási mechanizmus egy $F(\Pi)$ társadalmi választási szabályt (TVSZ) határoz meg, mely egy választási profilhoz hozzárendeli a szavazás eredményét, azaz az alternatíváknak a közös döntés szerinti sorrendjét. A nyertes alternatíva a TVSZ sorrendjében az első, az $f(\Pi)$ társadalmi választási függvény (TVF) ezt a nyertes alternatívát rendeli hozzá a $\Pi$-hez.
 	\end{definition}
 	
 	\begin{definition}{Jóváhagyásos szavazás}{}
@@ -1029,7 +1029,7 @@
 	\end{definition}
 	
 	\begin{definition}{Többségi szavazás}{}
-		A többségi szavazás TVZS-e megszámolja, hogy egy adott alternatíva hányszor fordul elő első helyen a szavazatokban és az alternatívákat ezen előfordulási darabszám szerinti csökkenő sorrendbe teszi. Egyenlőség esetén az első szavazó szavazata dönt.
+		A többségi szavazás TVSZ-e megszámolja, hogy egy adott alternatíva hányszor fordul elő első helyen a szavazatokban és az alternatívákat ezen előfordulási darabszám szerinti csökkenő sorrendbe teszi. Egyenlőség esetén az első szavazó szavazata dönt.
 	\end{definition}
 	
 	\begin{definition}{Diktatórikus szavazás}{}
@@ -1037,7 +1037,7 @@
 	\end{definition}
 	
 	\begin{definition}{Borda-szavazás}{}
-		Az $i.$ szavazó $a \in A$ alternatívához rendelt Borda-pontszáma $B_i(a) = k - l$, ahol $l$ az $a$ alternatíva sorszáma az $i.$ szavazó sorrendjében. Az $a$ Borda-pontszáma $B(a)$, a szavazók Bordapontszámainak az összege. A Borda-szavazás TVSZ-e a Borda-pontszám szerinti csökkenő sorrendbe rendezi az alternatívákat. Egyenlőség esetén az első szavazó szavazata dönt.
+		Az $i.$ szavazó $a \in A$ alternatívához rendelt Borda-pontszáma $B_i(a) = k - l$, ahol $l$ az $a$ alternatíva sorszáma az $i.$ szavazó sorrendjében, az alternatívák száma pedig $k$. Az $a$ Borda-pontszáma $B(a)$, a szavazók Bordapontszámainak az összege. A Borda-szavazás TVSZ-e a Borda-pontszám szerinti csökkenő sorrendbe rendezi az alternatívákat. Egyenlőség esetén az első szavazó szavazata dönt.
 	\end{definition}
 	
 	\begin{definition}{Condorcet-konzisztencia}{}
@@ -1129,7 +1129,7 @@
 	Az i-dik licitáló nyeresége $u_i(\underline{v}) = \hat{v}_i (f(\underline{v}))-p_i(\underline{v})$
 	
 	\begin{definition}{M mechanizmus taktikázás biztos}{}
-		Ha $u_i(\underline{v}) \leq u_i(v_{-i},\hat{v}_i) \quad \forall \underline{v} \in S \quad \forall i \in N$
+		Ha $u_i(\underline{v}) \leq u_i(\underline{v}_{-i},\hat{v}_i) \quad \forall \underline{v} \in S \quad \forall i \in N$
 	\end{definition}
 	
 	\begin{definition}{Vickrey-Clarke-Groves (VCG) mechanizmus osztály}{}
@@ -1171,13 +1171,13 @@
 		Egyenértékűnek számít a jegyzetben a szendvics, jószág és a lakás.
 	\end{remark}
 	\begin{definition}{Újraosztási feladat}{}
-		$N = \{1, 2, ..., n\} \preceq_i \in P = \{1, 2, ..., n\}$-en szigorú preferencia rendezések $\forall i \in N$ \\
+		$N = \{1, 2, ..., n\} \quad \preceq_i \in P = \{1, 2, ..., n\}$-en szigorú preferencia rendezések $\forall i \in N$ \\
 		$\Pi = (\preceq_1, ..., \preceq_n) \in P^n$ preferencia profil \\
 		$f: P^n \rightarrow S_N$ (= N.en a permutációk halmaza) mechanizmus, ahol $f(\Pi) = \sigma$ esetén $\sigma(i) = j$ jelenetése az, hogy i-dik játékos a j-dik játékos jószágát kapja meg
 	\end{definition}
 	
 	\begin{definition}{Gyengén blokkolás}{}
-		$\sigma \in S_N$-et a $B \subseteq N \quad$ gyengén blokkolja, ha $\exists \pi \in S_B$, amire a $\sigma(i) \prec_i \pi(i), \forall i \in B$ és $\exists j \in B :  \sigma(j) \preceq_j \pi(j) $\\
+		$\sigma \in S_N$-et a $B \subseteq N \quad$ gyengén blokkolja, ha $\exists \pi \in S_B$, amire a $\sigma(i) \preceq_i \pi(i), \forall i \in B$ és $\exists j \in B :  \sigma(j) \preceq_j \pi(j) $\\
 		$\sigma$ erős mag, ha $\nexists$ gyengén blokkoló koalíció. \\
 		Lakástulajdonosok egy $B \subseteq N$halmaza a $\sigma$ újraelosztást gyengén blokkoló koalíciót alkot,
 		ha a B-beli tulajdonosok el tudják osztani a saját lakásaikat egymás között úgy, hogy senki se
@@ -1189,8 +1189,17 @@
 	\end{definition}
 	
 	\begin{definition}{}{}
-		$S \subseteq N D(S)$ irányított segédgráf csúcsai: $S \forall i $ csúcsból 1-1 irányított él fut abba a csúcsba, amelyik lakását i a legjobban preferálja az S-beliek közül.
+		$S \subseteq N \quad D(S)$ irányított segédgráf csúcsai: $S \forall i $ csúcsból 1-1 irányított él fut abba a csúcsba, amelyik lakását i a legjobban preferálja az S-beliek közül.
 	\end{definition}
+	
+		
+	\begin{definition}{}{}
+		$C(D(S))$ := D(S)-beli körök csúcshalmaza
+	\end{definition}
+	
+	\begin{theorem}{Lemma}{}
+		Ha $S \neq \emptyset$ $\Rightarrow D(S)$ tartalmaz irányított kört (diszjunkt körök halmaza)
+	\end{theorem}
 	
 	\begin{definition}{Top Trading Cycles algoritmus}{}
 		\begin{enumerate}
@@ -1207,14 +1216,7 @@
 	\end{remark}
 	
 	Példa a működésre: \href{https://blockchain-academy.hs-mittweida.de/courses/game-theory-blockchain/lessons/cooperative-game-theory/topic/top-trading-cycle-algorithm/}{videó}
-	
-	\begin{theorem}{Lemma}{}
-		Ha $S \neq \emptyset$ $\Rightarrow D(S)$ tartalmaz irányított kört %%[diszjunkt körök] %%
-	\end{theorem}
-	
-	\begin{definition}{}{}
-		$C(D(S))$ := D(S)-beli körök csúcshalmaza
-	\end{definition}
+
 	
 	\begin{definition}{}{}
 		j játékos rangja i, ha $j \in N_i$
@@ -1237,17 +1239,17 @@
 	Biz.: \\
 	\url{https://www.sciencedirect.com/science/article/pii/S0304406824000296}
 	
-	\begin{definition}{}{}
+	\begin{definition}{Manipulálhatóság}{}
 		f újraosztási mechanizmus csoportosan manipulálható, ha $\exists M \subseteq N, \exists \pi \in P^N, \exists \pi_M \in P^{|M|} $\\
 		$f(\pi)(j) \preceq_j f(\pi_M , \pi_{-M})(j) \forall j \in M$ és $\exists m \in M : f(\pi)(m)\prec_m f(\pi_M, \pi_{-M})$
 	\end{definition}
 	
-	\begin{definition}{}{}
-		f csoportosan tagadásbiztos, ha nem csoportosan manipulálható.
+	\begin{definition}{Taktikázásbiztosság}{}
+		f csoportosan taktikázásbiztos, ha nem csoportosan manipulálható.
 	\end{definition}
 	
-	\begin{theorem}{}{}
-		TTC csoportosan tagadásbiztos
+	\begin{theorem}{TTC taktikázásbiztossága}{}
+		TTC csoportosan taktikázásbiztos
 	\end{theorem}
 	Biz*.: [előadáson nem fejeztük be]
 	
@@ -1255,13 +1257,15 @@
 		$p: N \rightarrow \mathbb{R}$ ár függvény és $\sigma \in S_N$ \\
 		a $(p, \sigma)$ piaci egyensúly, ha
 		\begin{itemize}
-			\item $p (\sigma(i)) \preceq p(i) \quad \forall i$
+			\item $p (\sigma(i)) \leq p(i) \quad \forall i$
 			\item $\sigma(i) \preceq_i j \Rightarrow p(i) < p(j)$
 		\end{itemize}
+		Minden lakáshoz hozzárendelek egy (pozitív) valós számot (árat) úgy, hogy
+		ha minden tulajdonosnak adok annyi pénzt, amennyit a saját lakása ér, majd mindenkit megkérek, hogy mutasson rá a neki legszimpatikusabb lakásra aminek az árát ki tudná fizetni, akkor minden lakásra pontosan egyvalaki mutatott rá (vagyis ez meghatároz egy újraosztást).
 	\end{definition}
 	
 	\begin{statement}{}{}
-		$(p, \sigma) PE \Rightarrow \sigma$ erős magbeli k.
+		$(p, \sigma)$ PE. $\Rightarrow \sigma$ erős magbeli k.
 	\end{statement}
 	Biz.:
 	

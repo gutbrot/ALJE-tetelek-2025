@@ -234,6 +234,8 @@
 	\begin{statement}{Állítás}{}
 		Tetszőleges hex játék I-es típusú
 	\end{statement}
+	Biz.: \\
+	Tdh. indirekten, hogy a 2. játékosnak van nyerő stratégiája. Ekkor az 1. játékos az első lépését kezelje úgy mintha nem lenne a táblán, és játsszon a II. játékos nyerő stratégiájával a saját irányába változtatva. Ha a strat. szerint rejtett mezőre lépne, tegyen egy másik tetszőleges mezőre, és onnatól kezelje azt rejtettként. A játék végén mindkét játékos nyertes stratégiát követett, tehát mindketten úgy látják nyertes. Ez nem lehetséges $\Rightarrow$ ellentmondás $\Rightarrow$ I-es típusú a hex.
 	
 	\begin{theorem}{Véges amőba}{}
 		Az elsőnek van nem vesztő stratégiája
@@ -1032,8 +1034,8 @@
 		A többségi szavazás TVZS-e megszámolja, hogy egy adott alternatíva hányszor fordul elő első helyen a szavazatokban és az alternatívákat ezen előfordulási darabszám szerinti csökkenő sorrendbe teszi. Egyenlőség esetén az első szavazó szavazata dönt.
 	\end{definition}
 	
-	\begin{definition}{Diktatórikus szavazás}{}
-		...
+	\begin{definition}{Diktatórikus}{}
+		Az a „szavazási” mechanizmus, amelyikben mindig ugyanaz a szavazó (a diktátor) határozza meg a közös döntést nyilvánvalóan taktikázásbiztos: aki nem diktátor, bármit is szavaz, nem tudja elérni, hogy megváltozzon a „közös” döntés, míg a diktátor szintén csak rosszul járhat azzal, ha nem őszintén szavaz
 	\end{definition}
 	
 	\begin{definition}{Borda-szavazás}{}
@@ -1066,11 +1068,6 @@
 			volna.
 		\end{itemize}
 	\end{observation}
-	
-	\begin{definition}{Diktatórikus}{}
-		Az a „szavazási” mechanizmus, amelyikben mindig ugyanaz a szavazó (a diktátor) határozza meg a közös döntést nyilvánvalóan taktikázásbiztos: aki nem diktátor, bármit is szavaz, nem tudja elérni, hogy megváltozzon a „közös” döntés, míg a diktátor szintén csak rosszul járhat azzal, ha nem őszintén szavaz
-	\end{definition}
-	
 
 	\begin{theorem}{Gibbard-Satterthwaite tétel}{}
 		Ha van legalább 3 alternatíva, továbbá $f$ szürjektív (mindegyik
@@ -1078,7 +1075,7 @@
 	\end{theorem}
 	
 	\begin{definition}{Elérhető}{}
-		...
+		Az f TVF és $\pi$ választási profil mellett az $a \in A$ alternatíva az $i$ szavazó számára $\pi$ elérhető, ha van olyan $\preceq \in L$ rendezés az alternatívákon, amire $f(\pi_-i, \preceq)=a$. Az i számára $\pi$ elérhető alternatívák halmazát $A(\pi,i)$ jelöli.
 	\end{definition}
 	
 		\begin{definition}{Háromféle szavazatmanipuláció}{}
@@ -1091,7 +1088,7 @@
 	
 	Következmény. Ha az $f$ TVF taktikázásbiztos és a $\Pi$ választási profilt átrendezések,feljavítások és jobbra shiftelések tetszőleges sorozata $\Pi'$-re módosítja, akkor $f(\Pi) = f(\Pi')$.
 	
-	\begin{definition}{jobbra shiftelt profil}{}
+	\begin{definition}{Jobbra shiftelt profil}{}
 		A $\Pi$ választási profilt jobbra shiftelt profilnak nevezzük, ha egyetlen szavazó sem tud a $\Pi$-beli szavazatán jobbra shiftelni.	A $\Pi$ választási profilt akkor mondjuk teljesen jobbra shiftelt profilnak, ha minden, a$\Pi$-ből átrendezések sorozatával kapható $\Pi'$ profil jobbra shiftelt
 	\end{definition}
 	Egy jobbra shiftelt $\Pi$ profilban tehát minden szavazat az adott szavazó számára elérhetetlen
@@ -1185,7 +1182,7 @@
 	\end{definition}
 	
 	\begin{definition}{Erős mag}{}
-		...
+		$\sigma$ erős mag, ha $\nexists$ gyengén blokkoló koalíciója
 	\end{definition}
 	
 	\begin{definition}{}{}
@@ -1222,10 +1219,7 @@
 	
 	\begin{theorem}{Lemma}{}
 		Ha j játékos egy újraosztás során $\sigma$-hoz képest jobban jár $\rightarrow$ a saját rangjánál kisebb rangú játékos lakását kapja \\
-		Ha j a saját rangjánál nagyobb rangú játékos lakását kapja $\Rightarrow \sigma$-hoz képest rosszul
-		
-		
-		 jár 
+		Ha j a saját rangjánál nagyobb rangú játékos lakását kapja $\Rightarrow \sigma$-hoz képest rosszul jár 
 	\end{theorem}
 	
 	\begin{theorem}{Shapley-Scart-tétel}{}
@@ -1446,6 +1440,35 @@
 	\newpage
 	\section{Előadás [Népszerű párosítások]}
 	Népszerű párosítások, stabil párosítások népszerűsége, maximális élszámú népszerű párosítás keresése Kavitha algoritmusával.
+	
+	\begin{definition}{Népszerű párosítások}{}
+		G=(V,E) gráf, M, N a G gráf párosításai, N $\prec$M, ha M-nek több szavazója van, mint N-nek: $|\{v \in V: N \prec_v M \}|>|\{v\in V:M\prec_v N\}|$
+	\end{definition}
+	
+	\begin{observation}{}{}
+		M népszerű, ha $\nexists$ N párosítás, amire M$\npreceq$N
+	\end{observation}
+	
+	\begin{theorem}{Gördenfors}{}
+		Minden stabil párosítás népszerű
+	\end{theorem}
+	Biz.:\\
+	Tfh. M stabil és N tetszőleges párosítás G-ben. Cél:M$\nprec$N (M-nek legalább annyi szavazója van, mint N-nek)\\
+	N szavazói: N$\backslash$M-beli élek bizonyos végpontjai\\
+	Ha $uv \in$(N$\backslash$M) és N-re szavaz, akkor v M-re szavaz, különben uv blokkolná M-et $\Rightarrow$ ellentmondás!
+	
+	\begin{statement}{}{}
+		Ha M stabil $\Rightarrow$ M min méretű népszerű párosítás
+	\end{statement}
+	
+	\begin{theorem}{Kavitha-algoritmus}{}
+		Lánykérő-algoritmust futtatunk, de ha egy fiút minden lány elutasított, akkor "személyiségfejlesztő" trainingre küldjük. Ekkor minden lány minden olyan fiúnál jobbnak fogja gondolni, mint aki nem volt trainingen.\\
+		Kavitha algoritmusa $G^K$ fiú-opt. stabil párosítást találja meg.
+	\end{theorem}
+	
+	\begin{theorem}{}{}
+		Ha M a $G^K$ stabil párosítása $\Rightarrow$ M-nek megfelelő élek G-ben max méretű párosítást alkotnak
+	\end{theorem}
 	
 	\newpage
 	\section{Források}

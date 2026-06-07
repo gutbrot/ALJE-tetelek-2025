@@ -7,9 +7,9 @@
 \select@language {magyar} \contentsline {paragraph}{Példa}{20}{Item.5}%
 \select@language {magyar} \contentsline {section}{\numberline {6}Előadás [Osztozkodási játék]}{21}{section.6}%
 \select@language {magyar} \contentsline {section}{\numberline {7}Előadás [Szavazási modell(TVSZ, TVT)]}{25}{section.7}%
-\select@language {magyar} \contentsline {section}{\numberline {8}Előadás [Vickrey-árverés]}{29}{section.8}%
-\select@language {magyar} \contentsline {section}{\numberline {9}Előadás [Újraosztási feladat]}{31}{section.9}%
-\select@language {magyar} \contentsline {section}{\numberline {10}Előadás [Stabil párosítások]}{34}{section.10}%
-\select@language {magyar} \contentsline {section}{\numberline {11}Előadás [Egyetemi felvételi probléma, vonalhúzási probléma]}{36}{section.11}%
-\select@language {magyar} \contentsline {section}{\numberline {12}Előadás [Népszerű párosítások]}{40}{section.12}%
-\select@language {magyar} \contentsline {section}{\numberline {13}Források}{41}{section.13}%
+\select@language {magyar} \contentsline {section}{\numberline {8}Előadás [Vickrey-árverés]}{28}{section.8}%
+\select@language {magyar} \contentsline {section}{\numberline {9}Előadás [Újraosztási feladat]}{30}{section.9}%
+\select@language {magyar} \contentsline {section}{\numberline {10}Előadás [Stabil párosítások]}{33}{section.10}%
+\select@language {magyar} \contentsline {section}{\numberline {11}Előadás [Egyetemi felvételi probléma, vonalhúzási probléma]}{35}{section.11}%
+\select@language {magyar} \contentsline {section}{\numberline {12}Előadás [Népszerű párosítások]}{39}{section.12}%
+\select@language {magyar} \contentsline {section}{\numberline {13}Források}{40}{section.13}%
